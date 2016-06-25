@@ -1,5 +1,6 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 import urllib
+
 
 class Bird(object):
 	__name = 'alice'
