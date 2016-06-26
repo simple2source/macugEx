@@ -1,0 +1,10 @@
+*.pyc
+src/fetch/log/
+src/fetch/task/
+src/fetch/database/
+*.swp
+.idea/
+*.bak
+*.conf
+src/company/db/
+src/company/csv/

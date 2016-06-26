@@ -1,0 +1,77 @@
+抓取机器信息
+
+123.58.128.216 user_00   Hick0000
+尽量用 user_00 , 个别需要root的时候用 ubuntu 账号  ubuntu  Hick!@#608
+在该机器上原有程序基本位于：/data/spider目录之下
+新版程序位于/data/fetch目录之下
+init.php文件将cookie信息放置到/data/spider/cookie目录之下，/data/auto_monitor.py进程会将更新过的cookie文件自动上传至102 103机器
+
+worktile 文档中的几个外网ip的 user_00 账户都是 User00sp   
+115.231.92.102
+新版程序位于/data/fetch目录之下，cookie目录防止cookie文件，task目录放置任务文件
+/data/fetch/db目录之下保存着简历信息，不可轻易删除
+
+115.231.92.103 
+新版程序位于/data/fetch目录之下，cookie目录防止cookie文件，task目录放置任务文件
+/data/fetch/db目录之下保存着简历信息，不可轻易删除
+
+
+
+
+
+
+51job抓取账号
+
+自己账号优先使用：
+'f1': {'txtMemberNameCN': '蓝海优势gz',  'txtUserNameCN': 'lhys374', 'txtPasswordCN': 'supin2015'},
+'f2': {'txtMemberNameCN': '蓝海优势bj',  'txtUserNameCN': 'lhys676', 'txtPasswordCN': 'supin2015'},
+'f3': {'txtMemberNameCN': '蓝海优势sz',  'txtUserNameCN': 'lhys469', 'txtPasswordCN': 'supin2015'},
+31: {'txtMemberNameCN': '盛德咨询2',  'txtUserNameCN': 'test0005', 'txtPasswordCN': 'supin2015'},
+
+运营所用账号
+
+瀛天南宏            tnh611       supin2015
+速聘信息            spxx373      supin20155
+速聘信息技术     spxx336      supin20155
+
+
+
+其他账号：
+会员名：泽欣网络传媒 用户名：918-927 密码：a12345
+
+前程：大连玉彤光学玻璃   用户名：dlyt734  密  码：abc123
+
+会员名：dlhd341 用户名：924-927 密 码：zx000111
+28: {'txtMemberNameCN': '美德乐组装',  'txtUserNameCN': '美德乐', 'txtPasswordCN': 'mdl123456'},
+29: {'txtMemberNameCN': '蓝拓机电dl',   'txtUserNameCN': '906-106', 'txtPasswordCN': 'zx000111'},
+30: {'txtMemberNameCN': '聚德dl',   'txtUserNameCN': 'jddl430', 'txtPasswordCN': 'zx000111'},
+
+
+
+
+CJOL账号
+
+LHYS  supin20155
+
+
+智联账号
+
+智联可以用来测试和摸索搜索条件的账号 jerrylau19 lr810920
+
+colachen
+231ccc231
+
+qianxunhuodai
+woshipsf
+
+tiaotiao123
+cherish423119
+
+83530120
+supin2015
+
+Vinson_2015
+2015vinson
+
+gzbian
+gzbian2015

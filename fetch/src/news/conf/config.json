@@ -1,0 +1,320 @@
+{
+  "list":
+  {
+    "v2ex": {
+      "url": "http://www.v2ex.com/index.xml",
+      "interval":1,
+      "full":1
+    },
+    "chinaz": {
+      "url": "http://app.chinaz.com/?app=rss&controller=index&action=index",
+      "interval":1,
+      "full":0
+    },
+    "oschina": {
+      "url": "http://www.oschina.net/news/rss",
+      "interval":1,
+      "full":1
+    },
+    "liuxiaofan": {
+      "url": "http://liuxiaofan.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "coolshell": {
+      "url": "http://coolshell.cn/feed",
+      "interval":1,
+      "full":1
+    },
+    "jobbole_rss": {
+      "url": "http://blog.jobbole.com/feed/",
+      "interval":1,
+      "full":1
+    },
+    "linuxcn": {
+      "url": "http://linux.cn/rss.xml",
+      "interval":1,
+      "full":1
+    },
+    "Freebuf": {
+      "url": "http://www.freebuf.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "phpdeveloper": {
+      "url": "http://www.phpdeveloper.org/feed",
+      "interval":1,
+      "full":1
+    },
+    "sitepoint": {
+      "url": "http://www.sitepoint.com/feed/",
+      "interval":1,
+      "full":1
+    },
+    "donews": {
+      "url": "http://rss.donews.com/news/original",
+      "interval":1,
+      "full":0
+    },
+    "htmlgoodies": {
+      "url": "http://www.htmlgoodies.com/rss.xml",
+      "interval":1,
+      "full":0
+    },
+    "taobaofed": {
+      "url": "http://taobaofed.org/atom.xml",
+      "interval":1,
+      "full":1
+    },
+    "mengxiangtiankong": {
+      "url": "http://feed.cnblogs.com/blog/u/40553/rss",
+      "interval":1,
+      "full":0
+    },
+    "planetpython": {
+      "url": "http://planetpython.org/rss20.xml",
+      "interval":1,
+      "full":1
+    },
+    "laruence": {
+      "url": "http://www.laruence.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "phphub": {
+      "url": "https://phphub.org/feed",
+      "interval":1,
+      "full":0
+    },
+    "pingwest": {
+      "url": "http://www.pingwest.com/feed/",
+      "interval":1,
+      "full":1
+    },
+    "cnbeta": {
+      "url": "http://cnbeta.feedsportal.com/c/34306/f/624776/index.rss",
+      "interval":1,
+      "full":0
+    },
+    "lijigang": {
+      "url": "http://www.lijigang.com/rss.xml",
+      "interval":1,
+      "full":0
+    },
+    "w3cplus": {
+      "url": "http://www.w3cplus.com/rss.xml",
+      "interval":1,
+      "full":1
+    },
+    "alloyteam": {
+      "url": "http://www.alloyteam.com/rss",
+      "interval":1,
+      "full":0
+    },
+    "ruanyifeng": {
+      "url": "http://www.ruanyifeng.com/blog/atom.xml",
+      "interval":1,
+      "full":1
+    },
+    "199it": {
+      "url": "https://www.199it.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "infoq": {
+      "url": "http://www.infoq.com/cn/feed",
+      "interval":1,
+      "full":0
+    },
+    "ibm": {
+      "url": "http://www.ibm.com/developerworks/cn/views/global/rss/libraryview.jsp",
+      "interval":1,
+      "full":0
+    },
+    "36kr": {
+      "url": "http://36kr.com/feed/",
+      "interval":1,
+      "full":1
+    },
+    "geekfan": {
+      "url": "http://www.geekfan.net/feed/",
+      "interval":1,
+      "full":1
+    },
+    "iplaysoft": {
+      "url": "http://feed.iplaysoft.com/",
+      "interval":1,
+      "full":0
+    },
+    "ipc": {
+      "url": "http://feed.ipc.me/",
+      "interval":1,
+      "full":0
+    },
+    "html5tricks": {
+      "url": "http://www.html5tricks.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "uisdc": {
+      "url": "http://www.uisdc.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "shejidaren": {
+      "url": "http://www.shejidaren.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "css88": {
+      "url": "http://www.css88.com/feed",
+      "interval":1,
+      "full":0
+    },
+    "tmtpost": {
+      "url": "http://www.tmtpost.com/feed?cat=-1204",
+      "interval":1,
+      "full":1
+    },
+    "51CTO": {
+      "url": "http://blog.51cto.com/rss_recommend.php",
+      "interval":1,
+      "full":0
+    },
+    "HackerNews": {
+      "url": "http://www.daemonology.net/hn-daily/index.rss",
+      "interval":1,
+      "full":1
+    },
+    "fexbaidu": {
+      "url": "http://fex.baidu.com/feed.xml",
+      "interval":1,
+      "full":1
+    },
+    "topthink": {
+      "url": "http://www.topthink.com/rss.xml",
+      "interval":1,
+      "full":0
+    },
+    "shumeipai": {
+      "url": "http://shumeipai.nxez.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "91ri": {
+      "url": "http://www.91ri.org/feed",
+      "interval":1,
+      "full":1
+    },
+    "xbeta": {
+      "url": "http://feed.xbeta.info/",
+      "interval":1,
+      "full":1
+    },
+    "portablesoft": {
+      "url": "http://www.portablesoft.org/feed/",
+      "interval":1,
+      "full":1
+    },
+    "daimajia": {
+      "url": "http://blog.daimajia.com/feed/",
+      "interval":1,
+      "full":1
+    },
+    "i7758": {
+      "url": "http://www.i7758.com/feed",
+      "interval":1,
+      "full":0
+    },
+    "geekpark": {
+      "url": "http://www.geekpark.net/rss",
+      "interval":1,
+      "full":1
+    },
+    "huxiu": {
+      "url": "http://www.huxiu.com/rss/0.xml",
+      "interval":1,
+      "full":1
+    },
+    "engadget": {
+      "url": "http://cn.engadget.com/rss.xml",
+      "interval":1,
+      "full":0
+    },
+    "isux": {
+      "url": "http://isux.tencent.com/feed",
+      "interval":1,
+      "full":1
+    },
+    "sina_rollnews": {
+      "url": "http://rss.sina.com.cn/tech/rollnews.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_allnews": {
+      "url": "http://rss.sina.com.cn/news/allnews/tech.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_internet": {
+      "url": "http://rss.sina.com.cn/tech/internet/home28.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_mobile": {
+      "url": "http://rss.sina.com.cn/tech/mobile/mobile_6.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_3G": {
+      "url": "http://rss.sina.com.cn/tech/3G/guonei.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_notebook": {
+      "url": "http://rss.sina.com.cn/tech/notebook/193_1.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_tele": {
+      "url": "http://rss.sina.com.cn/tech/tele/gn37.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_it": {
+      "url": "http://rss.sina.com.cn/tech/it/gn37.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_down": {
+      "url": "http://rss.sina.com.cn/tech/down/down20.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_discovery": {
+      "url": "http://rss.sina.com.cn/tech/discovery/discovery.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_camera": {
+      "url": "http://rss.sina.com.cn/tech/number/new_camera.xml",
+      "interval":1,
+      "full":0
+    },
+    "sina_elec": {
+      "url": "http://rss.sina.com.cn/tech/elec/buy_elec.xml",
+      "interval":1,
+      "full":0
+    },
+    "cnxct": {
+      "url": "http://www.cnxct.com/feed/",
+      "interval":1,
+      "full":1
+    },
+    "xiezhenye": {
+      "url": "http://xiezhenye.com/feed",
+      "interval":1,
+      "full":0
+    }
+  }
+}

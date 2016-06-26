@@ -1,0 +1,2490 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <title>根据关键词搜索简历结果</title>
+    <link type="text/css" rel="stylesheet" href="http://img01.zhaopin.cn/2014/common/css/reset.css">
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/reset.min.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/rd/rd_basic.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/rd/resumes_common.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/rd/resumes_index.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/rd/resumes_item.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/rd/resumes_result.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/rd/resumes_list.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/ui/xw_selection/set-selection.css" />
+    <link rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/ui/xw_rdAllUi/style.css" />
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/jquery-1.6.4.min.js"></script>
+</head>
+<style>
+    body table tr td.first-weight a.clicked {
+        color: #800;
+    }
+
+    .survey {
+        width: 12px;
+        color: #fff;
+        left: 50%;
+        margin-left: 480px;
+        top: 139px;
+        position: fixed;
+        background: url(http://img02.zhaopin.cn/2012/img/rd/survey_img_1.png) 0 0 no-repeat;
+        cursor: pointer;
+        _position: absolute;
+        _top: expression(documentElement.scrollTop+128);
+        background-color: #0f7acc;
+        padding: 30px 7px 12px;
+    }
+
+        .survey:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .back-to-top {
+        left: 50%;
+        margin-left: 479px;
+        z-index: 1000;
+        bottom: 100px;
+        position: fixed;
+        width: 26px;
+        height: 81px;
+        background: url(/Content/images/toTop.gif) 0 0 no-repeat;
+        cursor: pointer;
+        _position: absolute;
+        _top: expression(documentElement.scrollTop+documentElement.clientHeight-95);
+        display: none;
+    }
+
+    .online-service-margin {
+        margin-right: 2px;
+    }
+
+    .guide {
+        position: absolute;
+        top: -30px;
+        left: 300px;
+        width: 175px;
+        height: 66px;
+        background: url(/Content/images/here.png) no-repeat;
+    }
+</style>
+<style type="text/css">
+
+</style>
+<body>
+<!-- begin top --><link type="text/css" rel="stylesheet" href="http://img00.zhaopin.cn/2014/rd2/css/head.css"><div class="posRelat" id="RD_topCon">    <div class="top_control" id="top_control">        <div class="textCon">            <div class="showLogin"><!-- 显示部门名称 -->[<span title='BR1'>BR1</span>]<!-- 校聘入口 --></div>            <div class="links">                <!-- 显示切换到CS系统 --><a href="http://jobads.zhaopin.com/News/Feedback">消息中心</a><em>|</em>                <a href="#" onclick="window.open('http://interact.zhaopin.com/feedback/feedback_ent.asp', '_blank', 'width=1,height=1,left=100,top=60, scrollbars=0, overflow=auto, status=0');return false;">反馈</a><em>|</em>                <a href="http://img09.zhaopin.cn/2012/other/rdhelp201211/index.htm" target="_blank">帮助</a><em>|</em>                <a href="http://rd2.zhaopin.com/s/setup/password.asp">修改密码</a><em>|</em>                <a href="#" onclick="location.href = 'http://rd2.zhaopin.com/s/loginmgr/logout.asp';return false;">退出</a>            </div>        </div>    </div>    <!-- begin top menu -->    <div class="rd_nav_line">        <div id="RD_MenuCon">            <div id="comp_logo"><a href="http://rd2.zhaopin.com/s/homepage.asp"><!--显示Logo--> <img class='logoImg' src='http://img01.zhaopin.cn/2014/rd2/img/rd_logo1.png' title='网聘5.0' /></a></div>            <div id="RD_menu">                <ul id="RD_menu_ul">                    <li class="RD_menuItem" id="RD_menuItem_home"><a href="http://rd2.zhaopin.com/s/homepage.asp">首页</a></li>                    <li class="RD_menuItem" id="RD_menuItem_vaca">                        <a href="http://rd2.zhaopin.com/s/vacainfo/PositionManage.asp">职位管理</a>                        <div class="menu_box none">                            <div class="RD_subMenu_outer">                                <a href="http://rd2.zhaopin.com/s/vacainfo/PositionUpdate.asp">发布新职位</a>                                <a href="http://jobads.zhaopin.com/Position/PositionManage">管理职位列表</a>                                <a href="http://rd2.zhaopin.com/s/vacainfo/TemplateManage.asp">设置职位模板</a>                            </div>                        </div>                    </li>                    <li class="RD_menuItem" id="RD_menuItem_resu">                        <!--根据应聘简历版本决定使用新简历收件箱还是旧简历收件箱-->                        <a href="http://rd2.zhaopin.com/RdApply/Resumes/Apply/index">简历管理</a>                        <div class="menu_box none">                            <div class="RD_subMenu_outer">                                <a href="http://rd2.zhaopin.com/s/resuadmi/vacancyList.asp">简历收件箱</a>                                <a class="__ga__JobInviteLU_clickTopmenu_001" href="http://rd2.zhaopin.com/s/resuadmi/vacancyList.asp">发送橄榄枝</a>                                <a href="http://rd2.zhaopin.com/s/resuadmi/ShowFavoriteResumes.asp">按简历夹管理</a>                                <a href="http://rd2.zhaopin.com/s/resuadmi/resumevacancyRub.asp">回收站</a>                                <a href="http://rd2.zhaopin.com/s/resustor/resumemaintain.asp">人才储备</a>                            </div>                        </div>                    </li>                    <li class="RD_menuItem" id="RD_menuItem_sear">                        <a class="head_current" href="http://rdsearch.zhaopin.com/Home/SearchByCustom?source=rd">简历库</a>                        <div class="menu_box none">                            <div class="RD_subMenu_outer">                                <a href="http://rdsearch.zhaopin.com/Home/SearchByCustom?source=rd"><span>搜索简历</span></a>                                <a href="http://rd2.zhaopin.com/s/resusech/showInterimList.asp"><span>简历暂存夹</span></a>                                <a href="http://rd2.zhaopin.com/s/resuadmi/ShowFavoriteResumes_recent.asp"><span>已下载的简历</span></a>                            </div>                        </div>                    </li>                    <li class="RD_menuItem" id="RD_menuItem_repo">                        <a href="http://rd2.zhaopin.com/s/report2/rpt_pos.asp">统计报表</a>                        <div class="menu_box none">                            <div class="RD_subMenu_outer">                                <a href="http://rd2.zhaopin.com/s/report2/rpt_pos.asp"><span>职位发布效果统计</span></a>                                <a href="http://rd2.zhaopin.com/s/report2/rpt_sms.asp"><span>短信发送统计</span></a>                                <a href="http://rd2.zhaopin.com/s/report/operalog.asp"><span>操作日志</span></a>                            </div>                        </div>                    </li>                    <li class="RD_menuItem"><a target="_blank" href="http://eas.zhaopin.com/CompanyPlatform/PartnerLogin.aspx?resource=rd">智联测评</a></li>                    <!-- 易聘用户显示HR助手 -->                    <li class="RD_menuItem"><a target="_blank" href="http://hr.highpin.cn/Recruiter/ProductIntroduction?pagetype=2&loginname=201510301&accountnumber=CC582073021&IsAdmin=false">高端招聘</a></li>                    <li class="RD_menuItem" style="border-right:1px solid #EBEBEB;">                        <a href="#">控制面板</a>                        <div class="menu_box none" id="RD_menuItem_config_Popup">                            <div onclick="event.cancelBubble=true;" class="RD_subMenu_outer popupMoreMenuItems">                                <a class="configMenuItem">普通用户设置</a>                                <a href="http://rd2.zhaopin.com/s/setup/userInfo.asp">修改用户信息和密码</a>                                <a href="http://rd2.zhaopin.com/s/setup/emailTemplate.asp" class="configSubMenuItem">设置信件模板</a>                                <!-- 用户显示设置项 -->                                                            </div>                        </div>                    </li>                </ul>            </div>        </div>    </div>    <!-- end top menu --></div><!-- end top --><div id="live25" class="live800_20130926"></div><!--<script language="javascript" src="http://service.zhaopin.com/live800/chatClient/staticButton.js?companyID=8899&configID=25&codeType=steady&live800_city=&info=userId%3d659822043%26loginname%3d201510301%26name%3d%e5%b9%bf%e8%a5%bf%e5%b7%9d%e9%a6%99%e5%9d%8a%e9%a3%9f%e5%93%81%e6%9c%89%e9%99%90%e5%85%ac%e5%8f%b8%26hashCode%3dA72977B68DAACFE84E399F7903654CC9%26timestamp%3d1447396838013"></script>--><script type="text/javascript">    var lis = document.getElementById("RD_menu_ul").children;    var nowshow = 0;    for (var i = 0; i <= lis.length - 1; i++) {        lis[i].onmouseover = function () {            var subMenu = this.getElementsByTagName("div");            if (subMenu.length > 0) {                subMenu[0].style.display = "block";            }        };        lis[i].onmouseout = function () {            var subMenu = this.getElementsByTagName("div");            if (subMenu.length > 0) {                subMenu[0].style.display = "none";            }        };    }    function loadJS(id, fileUrl, callback) {        var scriptTag = document.getElementById(id);        var oHead = document.getElementsByTagName('HEAD').item(0);        var oScript = document.createElement("script");        if (scriptTag) oHead.removeChild(scriptTag);        oScript.id = id;        oScript.type = "text/javascript";        oScript.src = fileUrl;        if (callback) {            if (window.navigator.userAgent.toLowerCase().indexOf("msie") > -1) {                oScript.onreadystatechange = function () {                    if (oScript.readyState == "loaded" || oScript.readyState == "complete") {                        callback();                    }                };            } else {                oScript.onload = function () {                    callback();                };            }        }        oHead.appendChild(oScript);    }    $(document).ready(function () {        try {            loadJS("live800000", "http://service.zhaopin.com/live800/chatClient/staticButton.js?companyID=8899&configID=25&codeType=steady&live800_city=&info=userId%3d659822043%26loginname%3d201510301%26name%3d%e5%b9%bf%e8%a5%bf%e5%b7%9d%e9%a6%99%e5%9d%8a%e9%a3%9f%e5%93%81%e6%9c%89%e9%99%90%e5%85%ac%e5%8f%b8%26hashCode%3dA72977B68DAACFE84E399F7903654CC9%26timestamp%3d1447396838013", function () {                loadJS("live800001", "http://service.zhaopin.com/live800/chatClient/script/utils.js", function () {                    loadJS("live800002", "http://service.zhaopin.com/live800/chatClient/staticButtonStatic.js", checkStaticIcon_generateFn);                });            });            function writehtml() {                var temptext = StaticIcon_generate();                document.getElementById('live25').innerHTML = temptext;                setTimeout('write.src', 9000);            }            function checkStaticIcon_generateFn() {                if (typeof StaticIcon_generate == "undefined") {                    setTimeout(checkStaticIcon_generateFn, 3000);                    return;                }                writehtml();            }        } catch (e) { console.log(e); }    });</script>    <script language="javascript" type="text/javascript" src="http://img01.zhaopin.cn/2012/js/rd2/rdnotice.js?version=20151009"></script>        <div class="resumes-index">
+
+<div class="resumes-index-top">
+    <div id="breadcrumb" style="width: 950px; height: 30px;">
+        <div class="textCon">我的位置：<a href="http://rdsearch.zhaopin.com/?from=breadcrumb">智联简历库</a> &gt; 搜索简历</div>
+        <div id="live20" class="fr-margin online-service-margin">
+            <a id="live800iconlink" href="javascript:void(0)" onclick="try{parent.closeMini();}catch(e){;}globalStaticIcon.getOnGenerateClick()">
+                <img name="live800icon" id="live800icon" src="" border="0"></a>
+        </div>
+    </div>
+    <!--是否显示售卖链接isRootCompany-->
+        <span class="title-h1">搜索简历</span>
+    <span class="fr-margin">下载剩余：<span
+        class="fc-cc3333" id="DownloadBalanceCount">0</span>份</span>
+    
+        <span class="fr-margin fc999"><a href="http://rd2.zhaopin.com/s/resusech/showInterimList.asp">暂存简历</a>(<span
+            id="TemporaryResumeCount">0</span>)</span> <span class="fr-margin fc999">
+                <a href="http://rd2.zhaopin.com/s/resuadmi/ShowFavoriteResumes_recent.asp">已下载简历</a>(<span id="DownloadResumeCount">0</span>)</span>
+</div>
+
+        </div>
+    <div class="resumes-index-main">
+    <div class="resumes-index-title">
+        <a href="/Home/SearchByCustom" class="menu current">关键词搜索</a> <a href="/Home/SearchByPosition" class="menu ">根据发布职位搜索</a> <a href="/Home/SearchByResumeId" class="menu ">简历ID搜索</a>
+            <div class="fr-button">
+                <div class="btn-gray btn-gray-small fc315" id="devRecentlySerch">
+                    <span class="icon-img"></span>最近搜索过的条件
+                </div>
+                <div class="rd-resume-input" id="devSearcherSwitcher">
+                    <input id="searcherSwitcher_input" class="rd-popinput popinput-small"
+                        value="选择搜索器" title="选择搜索器" onfocus="this.blur()"
+                        type="button">
+                </div>
+                
+            </div>
+    </div>
+        <style type="text/css">
+.result-layer-input .wordTips,.result-layer-input .wordNum {font-size:12px;color:#999999;}
+.result-layer-input .wordTips em {font-style:normal;}
+</style>
+<div class="resumes-result-body">
+    <form name="frmMain" action="/Home/ResultForCustom">
+    <div class="resumes-result-top">
+        <div class="search-item result-item-tips search-item-add">
+            <div class="search-item-name">
+                关&nbsp;键&nbsp;词</div>
+            <input id="SF_1_1_1" name="SF_1_1_1"  maxlength="100"  value="php" class="rd-input input-xxbig" type="text" placeholder="请输入简历关键词，多关键词可用空格分隔"/>
+        </div>
+        <div class="search-item result-item-tips search-item-add">
+            <div class="search-item-name">
+                公司名称</div>
+            <input id="SF_1_1_25" name="SF_1_1_25" maxlength="200" value="" class="rd-input input-xxbig-add"
+                type="text" placeholder="请输入公司名称关键词" />
+        </div>
+        <div id="searchSubmit" class="input-submit resumes-result-button input-submit-big">
+            <button type="submit" disabled="disabled" >人才搜索</button>
+        </div>
+        <div class="rd-checkbox-add">
+            <input type="hidden" id="SF_1_1_25_ContainFields" name="SF_1_1_25_ContainFields"
+                value="COMPANY_NAME_ALL,COMPANY_NAME_LAST" />
+            <label for="SF_1_1_25_SelectField">
+                <input id="SF_1_1_25_SelectField" name="SF_1_1_25_SelectField"
+                    type="checkbox" /><span class="rd-checkbox-span">只搜最近一份工作</span></label></div>
+        <div class="rd-checkbox-add" style="width: 476px">
+            <label for="SF_1_1_1_IsContainsKeyWord">
+                <input id="SF_1_1_1_IsContainsKeyWord" name="SF_1_1_1_IsContainsKeyWord"
+                    type="checkbox"  /><span
+                        class="rd-checkbox-span">包含任一关键词</span></label></div>
+        <div class="button-tips" id="searchSubmitTips">
+            <div class="tips-img">
+                <em>◆</em> <span>◆</span>
+            </div>
+            输入关键词或设置条件，再进行搜索
+        </div>
+    </div>
+    <div class="resumes-result-form clearfix">
+        <div class="resumes-result-form-add">
+            <div class="result-form-top clearfix">
+                    <div class="resumes-result-item form-input">
+                        <div class="search-item-name">职位名称</div>
+            <div id="Selector_SF_1_1_2" class="rd-resume-input">
+                <input id="button_SF_1_1_2F" name="button_SF_1_1_2F" class="rd-popinput popinput-normal" onfocus="this.blur()" type="button" />
+                <input id="SF_1_1_2" name="SF_1_1_2" value="" type="hidden" />
+            </div>
+                    </div>
+                    <div class="resumes-result-item form-input">
+                        <div class="search-item-name">所在行业</div>
+            <div id="Selector_SF_1_1_3" class="rd-resume-input">
+                <input id="button_SF_1_1_3F" name="button_SF_1_1_3F" class="rd-popinput popinput-normal" onfocus="this.blur()" type="button" />
+                <input id="SF_1_1_3" name="SF_1_1_3" value="160400;210500" type="hidden" />
+            </div>
+                    </div>
+                    <div class="resumes-result-item form-input">
+                        <div class="search-item-name">更新日期</div>
+            <select id="SF_1_1_7" name="SF_1_1_7" class="rd-select popinput-normal"></select>
+                    </div>
+                    <div class="resumes-result-item select-item form-input">
+                        <div class="search-item-name">工作年限</div>
+            <select id="SF_1_1_4_min" name="SF_1_1_4" class="rd-select select-xsmall"></select>
+            <div  id="div_SF_1_1_4" class="item-name-select">-</div>
+            <select id="SF_1_1_4_max" name="SF_1_1_4" class="rd-select select-xsmall"></select>
+                    </div>
+                    <div class="resumes-result-item select-item form-input">
+                        <div class="search-item-name">学    历</div>
+            <select id="SF_1_1_5_min" name="SF_1_1_5" class="rd-select select-xsmall"></select>
+            <div  id="div_SF_1_1_5" class="item-name-select">-</div>
+            <select id="SF_1_1_5_max" name="SF_1_1_5" class="rd-select select-xsmall"></select>
+                    </div>
+                    <div class="resumes-result-item form-input">
+                        <div class="search-item-name">现居住地</div>
+            <div id="Selector_SF_1_1_6" class="rd-resume-input">
+                <input id="button_SF_1_1_6F" name="button_SF_1_1_6F" class="rd-popinput popinput-normal" onfocus="this.blur()" type="button" />
+                <input id="SF_1_1_6" name="SF_1_1_6" value="" type="hidden" />
+            </div>
+                    </div>
+                    <div class="resumes-result-item form-input">
+                        <div class="search-item-name">期望工作地区</div>
+            <div id="Selector_SF_1_1_18" class="rd-resume-input">
+                <input id="button_SF_1_1_18F" name="button_SF_1_1_18F" class="rd-popinput popinput-normal" onfocus="this.blur()" type="button" />
+                <input id="SF_1_1_18" name="SF_1_1_18" value="765" type="hidden" />
+            </div>
+                    </div>
+                    <div class="resumes-result-item form-input">
+                        <div class="search-item-name">年    龄</div>
+            <input  id="SF_1_1_8_min" name="SF_1_1_8" value="" class="rd-input input-xsmall" min="0" max="100" type="text" data-type="number">
+            <div class="item-name-select">-</div>
+            <input  id="SF_1_1_8_max" name="SF_1_1_8" value="" class="rd-input input-xsmall" min="0" max="100" type="text" data-type="number">
+                    </div>
+<input id="orderBy" name="orderBy" value="DATE_MODIFIED,1" type="hidden"/>            </div>
+                <div class="result-form-inline">
+                <div id="HrQueryConditionSettings" class="btn-gray btn-gray-small fc315">
+                    <span class="icon-img icon-bg"></span>更多可选搜索条件</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="result-tips">
+        <span class="rd-resume-tips-icon icon-down"></span>
+        <a>更多搜索条件</a>
+    </div>
+    <div class="result-tips-one">
+        <div id="HrQueryCondition" class="result-tips-oneleft">
+            您搜索的是：</div>
+        <div class="result-tips-icon fc315">
+            <span class="result-tips-iconbg result-icon-close">
+            </span><a id="clearConditionSettings" href="javascript:void(0)">
+                清空搜索条件</a>
+        </div>
+            <div class="result-tips-icon fc315">
+            <span class="result-tips-iconbg"></span><a id="saveConditionSettings"
+                href="javascript:void(0)">保存搜索条件</a></div>
+    </div>
+    </form>
+</div>
+<div class="result-layer">
+    <div class="result-layer-img">
+        <em>◆</em> <span>◆</span>
+    </div>
+    <div class="result-layer-body">
+        <!---下面为错误样式,result-layer-input替换layer-input-error为错误提示样式，并增加layer-input-error-tips--->
+        <div class="result-layer-input">
+            <div class="wordTips">最多保存99条，还可保存<em class="surplusNum">99</em>条。</div>
+	        <input id="searcher-name" type="text" name="" value="">
+	        <div class="wordNum">最多15个字</div>
+        </div>
+        <div class="layer-input-error-tips fc990000">
+        </div>
+        <div class="result-layer-botton">
+            <div id="save-searcher" class="layer-botton">
+                保&nbsp;存</div>
+            <div id="cancel-searcher" class="layer-botton layer-botton-blue">
+                取&nbsp;消</div>
+        </div>
+    </div>
+    <!---已下2个DIV已经隐藏，需要动态与result-layer-body进行显示及隐藏--->
+    <div class="result-success fc333">
+        保存成功!
+    </div>
+    <div class="result-success-icon fc333">
+        正在保存搜索器
+    </div>
+</div>
+<div class="resumes-list">
+    <div class="search-list-title">
+        <div class="list-title">
+            <div class="rd-resumelist-span">
+                多于<span>4000</span>份简历
+            </div>
+        </div>
+        <div class="list-title fr fr-border">
+            <div class="bottom-page">
+                <a  class="rd-page-top gray-page">首页</a>
+<a  class="rd-page-lefticon left-icon gray-left-icon"></a>
+<span id="rd-resumelist-pageNum">1/134</span>
+ <a href="/Home/ResultForCustom?SF_1_1_1=php&SF_1_1_3=160400%3B210500&SF_1_1_18=765&SF_1_1_27=0&orderBy=DATE_MODIFIED,1&exclude=1&pageIndex=2" class="rd-page-lefticon right-icon"></a>
+<span>到</span>
+<input class="rd-resumelist-page" type="text" value="2"  />
+<input id="rd-resumelist-pageCount" type="hidden" value="134" />
+<span>页</span>
+<button class="rd-resumelist-img" type="button"></button>
+            </div>
+        </div>
+        <div class="list-title fr fr-border">
+            <div class="rd-resumelist-num manner-icon1">
+                &nbsp;每页显示 <span class="resumelist-num-icon manner-border">30</span><span class="resumelist-num-icon">60</span>
+                条
+            </div>
+        </div>
+            <div class="list-title fr">
+                <div class="rd-resumelist-num manner-icon1">
+                    &nbsp;查看方式 <span id="displayModel-list" class="rd-resumelist-manner manner-icon1-current manner-border" title="简单列表" tag="list"></span><span id="displayModel-detail" class="rd-resumelist-manner manner-icon2"
+                        title="详细列表" tag="detail"></span>
+                </div>
+            </div>
+    </div>
+    <div class="search-list-title gray-bg-img">
+        <div class="list-title">
+            <div class="result-tips-two-add">
+                <span class="rd-checkbox-span">简历语言</span>
+                <select id="rd-result-select" name="SF_1_1_27"  onchange="dyweTrackEvent('rdsearch','resumelang');">
+                    <option value="">全部</option>
+                    <option value="0" selected>中文</option>
+                    <option value="1" >英文</option>
+                </select>
+            </div>
+            <div class="result-tips-two-fl">
+                <input id="SF_1_1_26" class="rd-result-checkbox" name="SF_1_1_26" type="checkbox"   onclick="dyweTrackEvent('rdsearch', 'hasphoto');" />
+                <span class="rd-checkbox-span">
+                    <label for="SF_1_1_26">
+                        有照片</label></span>
+            </div>
+            <div class="result-tips-two-fl">
+                <input id="exclude" class="rd-result-checkbox" name="exclude" type="checkbox"  checked onclick="dyweTrackEvent('rdsearch', 'exclude');" />
+                <span class="rd-checkbox-span">
+                    <label for="exclude" id="excludeTips" title="同一求职者的多份简历只显示最新的一份" style="color: red">
+                        去重</label></span>
+            </div>
+        </div>
+        <div class="list-title fr-border">
+            排序方式: <span class="list-title-input"><span class="blue-border" name="orderBy" id="orderBy_DATE_MODIFIED"
+                tag="DATE_MODIFIED" title="更新时间由近到远"><span class="rd-show-img bule-icon-01" style="margin-right: 2px;"></span>时间</span><span class="blue-border" name="orderBy" id="orderBy_score" tag="score"
+                    title="相关度由高到低"><span class="rd-show-img bule-icon-02" style="margin-right: 2px;"></span>相关度 </span><span class="blue-border" name="orderBy" id="orderBy_BIRTH_YEAR" tag="BIRTH_YEAR"
+                        title="年龄由高到低排序">年龄<span class="rd-show-img showimg-down"></span>
+                    </span><span class="blue-border" name="orderBy" id="orderBy_EDUCATION_LEVEL" tag="EDUCATION_LEVEL"
+                        title="学历由低到高排序">学历<span class="rd-show-img showimg-up"></span>
+                    </span></span>
+
+        </div>
+            <div class="list-title fr fr-border">
+                <div  onclick="dyweTrackEvent('rdsearch','changecol');" class="btn-gray btn-gray-small fc315" id="HrInfoFieldSettings" tag="HrID_113E8FFF1B82A0584C45721F8B0A33F7">
+                    <span class="icon-img icon-bg"></span>修改显示字段
+                </div>
+            </div>
+    </div>
+    <form name="frmResult" method="post">
+        <input type="hidden" name="select_unique_id" value="" />
+        <input type="hidden" name="selectedResumeList" value="" />
+        <input type="hidden" name="resumeName" value="" />
+        <input type="hidden" name="resumeUrl" value="" />
+        <input type="hidden" name="chkid" value="" />
+        <input type="hidden" name="searchKeyword" value="" />
+        <input type="hidden" name="schoolName" value="" />
+        <input type="hidden" name="companyName" value="" />
+        <table cellspacing="0" cellpadding="0" border="0">
+            <thead>
+                <tr>
+                    <td width="13" nowrap></td>
+                        <td  nowrap>
+                            简历名称
+                        </td>
+                        <td width="18" nowrap></td>
+                        <td width=140 nowrap>
+                            职位名称
+                        </td>
+                        <td width=45 nowrap>
+                            学历
+                        </td>
+                        <td width=40 nowrap>
+                            性别
+                        </td>
+                        <td width=40 nowrap>
+                            年龄
+                        </td>
+                        <td width=80 nowrap>
+                            现居住地
+                        </td>
+                        <td width=60 nowrap>
+                            更新时间
+                        </td>
+                </tr>
+            </thead>
+            <tbody>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="php程序员" resumename="php程序员" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM186878620R90250001000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM186878620R90250001000_1.htm|JM186878620R90250001000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM186878620R90250001000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM186878620R90250001000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM186878620R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM186878620R90250001000_1_1?searchresume=1" target="_blank">php程序员</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>PHP程序员</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>25</td>
+                                <td>深圳-宝安区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM186878620R90250001000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM186878620R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM186878620R90250001000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳-宝安区</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-05 ～ 2015-10</span>深圳市猎中猎网络有限公司（5个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            PHP程序员&nbsp;&nbsp;|&nbsp;&nbsp;面议</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：主要使用Thinkphp、JavaScript、Jquery，Mysql。首页改版(http //www.lie2lie.com)在公司期间主要负责完成新页面，解决Bug和使用Javascript，Jquery完成大量前端效果同时解决浏览器兼容性问题，和SEO优化。公司后台管理系统编写脚本计划任务统计每天注册人数，用户登录次数统计详情，订单数量等。用户注册
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2010-09 ～ 2014-06&nbsp;&nbsp;&nbsp;&nbsp;吉林大学珠海学院&nbsp;&nbsp;&nbsp;&nbsp;自动化&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="PHP工程师" resumename="PHP工程师" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM223377505R90250001000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM223377505R90250001000_1.htm|JM223377505R90250001000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM223377505R90250001000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM223377505R90250001000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM223377505R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM223377505R90250001000_1_1?searchresume=1" target="_blank">PHP工程师</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>PHP工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>26</td>
+                                <td>深圳-宝安区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM223377505R90250001000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM223377505R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM223377505R90250001000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳-宝安区</span> <span>期望月薪：15001-25000元/月</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-03 ～ 至今</span>深圳淘美居电子商务（8个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            PHP工程师&nbsp;&nbsp;|&nbsp;&nbsp;10001-15000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;上市公司&nbsp;&nbsp;|&nbsp;&nbsp;10000人以上
+                                                        <p>
+                                                            工作描述：公司O2O电商平台建设开发，涉及PC端、M端网站、管理总后台、品牌商后台、经销商后台在内，包含商品详情信息及对应区域门店及配套商品搭配等的发布展现、商品评论及商品成交记录展现管理系统、购物车订单结算支付、客户后台系统、促销抽奖活动、品牌旗舰店系统、站内广告管理发布系统、推广文章管理系统、物流信息接口对接、多个CPS广告联盟对接、销售终端机接入、BI统计分析
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2007-06 ～ 2010-06&nbsp;&nbsp;&nbsp;&nbsp;四川成都电子科技大学&nbsp;&nbsp;&nbsp;&nbsp;软件开发&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="1年经验PHP软件工程师" resumename="1年经验PHP软件工程师" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM364993281R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM364993281R90250000000_1.htm|JM364993281R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM364993281R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM364993281R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM364993281R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM364993281R90250000000_1_1?searchresume=1" target="_blank">1年经验PHP软件工程师</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>PHP软件工程师</td>
+                                <td>大专</td>
+                                <td>男</td>
+                                <td>24</td>
+                                <td>广州-天河区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM364993281R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM364993281R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM364993281R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2014/12/8/C4BE87B5D8154C3F9171E5226D776065.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：广州-天河区</span> <span>期望月薪：4001-6000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-03 ～ 2015-10</span>东莞市客途网络科技有限公司（7个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            PHP软件工程师&nbsp;&nbsp;|&nbsp;&nbsp;2001-4000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;20人以下
+                                                        <p>
+                                                            工作描述：负责网站的设计实现，用户体验数据库的优化问题
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2012-09 ～ 2014-12&nbsp;&nbsp;&nbsp;&nbsp;湖南软件职业学院&nbsp;&nbsp;&nbsp;&nbsp;软件工程&nbsp;&nbsp;&nbsp;&nbsp;大专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="php程序员 深圳" resumename="php程序员 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM526853465R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM526853465R90250000000_1.htm|JM526853465R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM526853465R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM526853465R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM526853465R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM526853465R90250000000_1_1?searchresume=1" target="_blank">php程序员 深圳</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>软件工程师</td>
+                                <td>高中</td>
+                                <td>男</td>
+                                <td>20</td>
+                                <td>深圳-福田区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM526853465R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM526853465R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM526853465R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/10/22/3f147b12-4f0f-459c-98e9-03f6c919a3a1.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳-福田区</span> <span>期望月薪：4001-6000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-07 ～ 2015-10</span>北大红杉资本管理有限公司（3个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            软件工程师&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;500-999人
+                                                        <p>
+                                                            工作描述：模块开发以及维护
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2011-09 ～ 2014-07&nbsp;&nbsp;&nbsp;&nbsp;罗岗中学&nbsp;&nbsp;&nbsp;&nbsp;IT&nbsp;&nbsp;&nbsp;&nbsp;高中<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="求职PHP程序员 " resumename="求职PHP程序员 " 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM342648027R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM342648027R90250000000_1.htm|JM342648027R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM342648027R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM342648027R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM342648027R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM342648027R90250000000_1_1?searchresume=1" target="_blank">求职PHP程序员 </a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>IT项目经理/主管</td>
+                                <td>大专</td>
+                                <td>男</td>
+                                <td>23</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM342648027R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM342648027R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM342648027R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-03 ～ 至今</span>深圳市道源生命智慧管理咨询有限公司（8个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            IT项目经理/主管&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        教育/培训/院校&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;20人以下
+                                                        <p>
+                                                            工作描述：根据股东对平台网站建设的要求，整理需求文档；需求评审，项目督促把控；项目分阶段验收，开发完成的功能进行测试，并编写bug说明文档。产品经理、项目经理、测试员等职位的工作都有兼顾，，更多的是偏向管理的工作。下一份工作希望学习更多的技术，期待更好的自己。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2012-09 ～ 2015-09&nbsp;&nbsp;&nbsp;&nbsp;广东机电职业技术学院&nbsp;&nbsp;&nbsp;&nbsp;移动通信技术&nbsp;&nbsp;&nbsp;&nbsp;大专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="前端开发 Web前端工程师 PHP前端" resumename="前端开发 Web前端工程师 PHP前端" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM594493327R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM594493327R90250000000_1.htm|JM594493327R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM594493327R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM594493327R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594493327R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594493327R90250000000_1_1?searchresume=1" target="_blank">前端开发 Web前端工程师 PHP前端</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>网页设计/制作/美工</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>21</td>
+                                <td>上海-浦东新区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM594493327R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594493327R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594493327R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/11/7/712cab95-f826-4638-a7ba-1de0d7f3dc0c.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：上海-浦东新区</span> <span>期望月薪：4001-6000元/月</span><br>
+                                                        当前状态：应届毕业生
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-07 ～ 2014-08</span>同城指南网购物商城（1个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            网页设计/制作/美工&nbsp;&nbsp;|&nbsp;&nbsp;1000-2000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：协同公司美工，完成购物商品详情页的编辑及美化，了解了一些电子商务的业务流程，将平面设计的学习付诸于实践，提高了Photoshop的操作熟练度
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2012-09 ～ 至今&nbsp;&nbsp;&nbsp;&nbsp;湖北理工学院&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="计算机软件/系统集成 深圳" resumename="计算机软件/系统集成 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM178636590R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM178636590R90250000000_1.htm|JM178636590R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM178636590R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM178636590R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM178636590R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM178636590R90250000000_1_1?searchresume=1" target="_blank">计算机软件/系统集成 深圳</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>软件研发工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>26</td>
+                                <td>深圳-龙岗区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM178636590R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM178636590R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM178636590R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2013/6/27/621D8CA753FE46588892F908F940F680.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳-龙岗区</span> <span>期望月薪：10001-15000元/月</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-01 ～ 至今</span>武汉佰钧成科技服务有限公司（10个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            软件研发工程师&nbsp;&nbsp;|&nbsp;&nbsp;8001-10000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;上市公司&nbsp;&nbsp;|&nbsp;&nbsp;1000-9999人
+                                                        <p>
+                                                            工作描述：转入心声社区团队，主要使用的框架为thinkphp 2.0。工作职责为负责华为心声社区新版本的开发与维护。工作细节偏前端，处理各种网页重构，hack问题，js交互，用tp实现后端逻辑处理。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2009-09 ～ 2013-07&nbsp;&nbsp;&nbsp;&nbsp;武汉理工大学华夏学院&nbsp;&nbsp;&nbsp;&nbsp;软件工程&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="O2O、电子商务、跨境电商产品经理，Android工程师，3年，深圳" resumename="O2O、电子商务、跨境电商产品经理，Android工程师，3年，深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM524348907R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM524348907R90250000000_1.htm|JM524348907R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM524348907R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM524348907R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM524348907R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM524348907R90250000000_1_1?searchresume=1" target="_blank">O2O、电子商务、跨境电商产品经理，Android工程...</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>互联网产品经理/主管</td>
+                                <td>大专</td>
+                                <td>男</td>
+                                <td>26</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM524348907R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM524348907R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM524348907R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/6/8/CD684090D30648AFA8C3A21ADE73278A.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：15001-25000元/月</span><br>
+                                                        当前状态：目前暂无跳槽打算
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-06 ～ 至今</span>深圳市具人网络科技有限公司（5个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            互联网产品经理/主管&nbsp;&nbsp;|&nbsp;&nbsp;15001-25000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;20-99人
+                                                        <p>
+                                                            工作描述：        接管“家具专搜”家具交易平台，做适当的市场调研，进行市场需求分析，规划产品发展路线，设计产品商业和服务模式，定义产品的功能模块，作出产品原型图，并在原型图中增加用户交互。        指导UI设计师、后台开发人员、前端开发人员，作好产品效果图，底层数据结构搭建及前端程序实现；及时与市场人员，运营人员进行沟通，综合整理反馈，并修改和优化产品
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2010-09 ～ 2013-06&nbsp;&nbsp;&nbsp;&nbsp;深圳信息职业技术学院&nbsp;&nbsp;&nbsp;&nbsp;信息科学技术&nbsp;&nbsp;&nbsp;&nbsp;大专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="运维经理 技术经理 网络专家 10年" resumename="运维经理 技术经理 网络专家 10年" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM291247250R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM291247250R90250000000_1.htm|JM291247250R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM291247250R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM291247250R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM291247250R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM291247250R90250000000_1_1?searchresume=1" target="_blank">运维经理 技术经理 网络专家 10年</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>运维总监</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>32</td>
+                                <td>北京-海淀区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM291247250R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM291247250R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM291247250R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：北京-海淀区</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-06 ～ 至今</span>智联招聘（5个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            运维总监&nbsp;&nbsp;|&nbsp;&nbsp;面议</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：1、负责系统的网络规划、部署与优化； 2、负责为网站及软件产品各项目团队提供前期网络系统及服务器资源的整体规划设计； 3、负责运维工作中出现的技术上的疑难杂症的牵头及攻关； 4、部门的员招聘，工作内容的分配，绩效考核以及技术培训； 5、负责设计开发运维平台系统，实现运维自动化，各应用监控脚本的编写及报警； 6、研究服务架构、实现性能优化，提高系统的安全性；
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2002-09 ～ 2006-06&nbsp;&nbsp;&nbsp;&nbsp;北京工商大学&nbsp;&nbsp;&nbsp;&nbsp;电子商务&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="互联网技术研发 from2004" resumename="互联网技术研发 from2004" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR147676900R90000000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR147676900R90000000000_1.htm|JR147676900R90000000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR147676900R90000000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR147676900R90000000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR147676900R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR147676900R90000000000_1_1?searchresume=1" target="_blank">互联网技术研发 from2004</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>IT技术/研发总监</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>33</td>
+                                <td>郑州</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR147676900R90000000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR147676900R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR147676900R90000000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2014/6/16/2401f28f-d284-4525-b31e-88d7d8c7100e.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：郑州</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-01 ～ 至今</span>河南鑫山科技（10个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            IT技术/研发总监&nbsp;&nbsp;|&nbsp;&nbsp;25000元/月以上</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;1000-9999人
+                                                        <p>
+                                                            工作描述：集团下科技公司，任职技术总监。基于企业IT建设目标，对项目进行整体的设计、规划、分解；对产品技术框架进行核心论证，参与核心技术的设计与实现；日常团队事务负责人员招聘、技术培训；1.集团ERP系统用JavaEE搭建s商场类的企业ERP，覆盖人事、考勤、个人、店铺、合同、租赁、资金租赁等业务。2.Web3D设计平台利用WebGL构建在线家居设计平台。较传统的设
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2000-08 ～ 2004-07&nbsp;&nbsp;&nbsp;&nbsp;中原工学院&nbsp;&nbsp;&nbsp;&nbsp;电气工程及自动化&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="移动开发 iOS Android 技术总监 深圳" resumename="移动开发 iOS Android 技术总监 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM532379824R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM532379824R90250000000_1.htm|JM532379824R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM532379824R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM532379824R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM532379824R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM532379824R90250000000_1_1?searchresume=1" target="_blank">移动开发 iOS Android 技术总监 深圳</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>技术总监</td>
+                                <td>硕士</td>
+                                <td>男</td>
+                                <td>40</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM532379824R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM532379824R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM532379824R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-08 ～ 至今</span>深圳国泰安教育技术股份有限公司（3个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            技术总监&nbsp;&nbsp;|&nbsp;&nbsp;25000元/月以上</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;1000-9999人
+                                                        <p>
+                                                            工作描述：担任移动开发线技术总监，负责公司内所有Android/iOS项目的研发工作。任职期间，领导开发团队成功交付了数字化教学平台、虚拟仿真、费用控制系统、课程资源包、移动OA客户端等几款移动端产品并获得好评。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1996-09 ～ 1999-09&nbsp;&nbsp;&nbsp;&nbsp;西北工业大学&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;硕士<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="李圣的简历" resumename="李圣的简历" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM097339178R90250001000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM097339178R90250001000_1.htm|JM097339178R90250001000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM097339178R90250001000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM097339178R90250001000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM097339178R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM097339178R90250001000_1_1?searchresume=1" target="_blank">李圣的简历</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>技术与策划</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>26</td>
+                                <td>上海-长宁区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM097339178R90250001000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM097339178R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM097339178R90250001000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/1/5/396A7799CF5F4353824E4628A16D9093.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：上海-长宁区</span> <span>期望月薪：15001-25000元/月</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2013-01 ～ 至今</span>上海八克利起商务咨询有限公司（2年10个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            技术与策划&nbsp;&nbsp;|&nbsp;&nbsp;15001-25000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;外商独资&nbsp;&nbsp;|&nbsp;&nbsp;20-99人
+                                                        <p>
+                                                            工作描述：工作经验：善于WordPress开发及Html5开发。1. 2013年3月，作为项目负责人成功商谈接下日本最大眼科集团的网站建设及推广服务，项目内容包括：市场分析，数据报告分析，网站策划，广告策划，执行，完善等。2. 同年6月，接手日本某音乐学校在上海的网站建设及推广服务，工作内容同上。3. 2014年1月，作为项目负责人为日本最大房地产公司做品牌推广及活
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2011-09 ～ 2013-06&nbsp;&nbsp;&nbsp;&nbsp;大连交通大学&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="产品" resumename="产品" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM545850440R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM545850440R90250000000_1.htm|JM545850440R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM545850440R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM545850440R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM545850440R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM545850440R90250000000_1_1?searchresume=1" target="_blank">产品</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>互联网产品专员/助理</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>22</td>
+                                <td>北京</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM545850440R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM545850440R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM545850440R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/8/17/81159d33-2929-4001-b7c0-c5caa47ef5a6.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：北京</span> <span>期望月薪：6001-8000元/月</span><br>
+                                                        当前状态：应届毕业生
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-09 ～ 2015-10</span>深圳人人筹网络科技有限公司（1个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            互联网产品专员/助理&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;100-499人
+                                                        <p>
+                                                            工作描述：负责公司众筹项目的活动策划、文案编辑，公司新媒体的运营（软文编写与审查）
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2011-09 ～ 2015-06&nbsp;&nbsp;&nbsp;&nbsp;中山大学&nbsp;&nbsp;&nbsp;&nbsp;信息安全&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="软件工程师&#160;&#160;&#160;&#160;2年 &#160;&#160;上海" resumename="软件工程师&#160;&#160;&#160;&#160;2年 &#160;&#160;上海" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM323753694R90250001000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM323753694R90250001000_1.htm|JM323753694R90250001000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM323753694R90250001000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM323753694R90250001000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM323753694R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM323753694R90250001000_1_1?searchresume=1" target="_blank">软件工程师&#160;&#160;&#160;&#160;2年 &#160;&#160;上海</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>软件工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>24</td>
+                                <td>上海-黄浦区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM323753694R90250001000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM323753694R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM323753694R90250001000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2014/9/19/03D11DA1E03E4286A4B32F695549B254.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：上海-黄浦区</span> <span>期望月薪：8001-10000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-10 ～ 2015-10</span>CRM(客户关系管理)</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            软件工程师&nbsp;&nbsp;|&nbsp;&nbsp;面议</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：责任描述：负责项目的架构，采用的是B/S架构。项目描述：主要负责项目的需求分析和撰写需求说明书，项目的整体架构，采用的是B/S架构，当然兼做了UI层，用html+css+javascript做的。时间是从10月2号到10月15号。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2011-09 ～ 2015-06&nbsp;&nbsp;&nbsp;&nbsp;东北林业大学&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="王琰简历" resumename="王琰简历" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM605907748R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM605907748R90250000000_1.htm|JM605907748R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM605907748R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM605907748R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM605907748R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM605907748R90250000000_1_1?searchresume=1" target="_blank">王琰简历</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>IT技术支持/维护工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>36</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM605907748R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM605907748R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM605907748R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/11/11/AD6EC50F3D4E4BB3B1A848CA47BBFBE6.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-09 ～ 至今</span>北京国双科技有限公司（1年2个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            IT技术支持/维护工程师&nbsp;&nbsp;|&nbsp;&nbsp;面议</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;500-999人
+                                                        <p>
+                                                            工作描述：1、部署上海移动视频基地的Web Dissector系统。该系统的功能包括监控www.cmvideo.cn、wap.cmvideo.cn网站的点击率、访问率等指标，呈现网页的热力图等。（应用到的工具、技术：Windows、CentOS、IIS、Javascript、tomcat、mysql、Cloudera Distribution Hadoop）2、将集
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1999-09 ～ 2003-07&nbsp;&nbsp;&nbsp;&nbsp;山东工商学院&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="软件工程师 1年 深圳" resumename="软件工程师 1年 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM603492167R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM603492167R90250000000_1.htm|JM603492167R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM603492167R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM603492167R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM603492167R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM603492167R90250000000_1_1?searchresume=1" target="_blank">软件工程师 1年 深圳</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>软件工程师</td>
+                                <td>初中</td>
+                                <td>男</td>
+                                <td>21</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM603492167R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM603492167R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM603492167R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/11/11/241580A304144B56A4ED042F2A6883C2.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：4001-6000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-10 ～ 2015-10</span>海南智宇信息科技有限公司（1年）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            软件工程师&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;其它&nbsp;&nbsp;|&nbsp;&nbsp;20-99人
+                                                        <p>
+                                                            工作描述：2014年10月-2015年10月，在海南智宇信息科技有限公司担任PHP软件工程师，负责公司项目的开发。
+                                                        </p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="软件测试 2年 深圳" resumename="软件测试 2年 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM594801549R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM594801549R90250000000_1.htm|JM594801549R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM594801549R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM594801549R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594801549R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594801549R90250000000_1_1?searchresume=1" target="_blank">软件测试 2年 深圳</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>软件测试</td>
+                                <td>大专</td>
+                                <td>男</td>
+                                <td>25</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM594801549R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594801549R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM594801549R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：6001-8000元/月</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2013-11 ～ 至今</span>中国惠普有限公司（2年）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            软件测试&nbsp;&nbsp;|&nbsp;&nbsp;2001-4000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：前端页面的HTML+Css的开发，完成测试文档和测试用例，提交测试报告，提交测试中的Bug。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2010-09 ～ 2013-07&nbsp;&nbsp;&nbsp;&nbsp;九江职业大学&nbsp;&nbsp;&nbsp;&nbsp;软件技术&nbsp;&nbsp;&nbsp;&nbsp;大专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="赵晨阳&#160;&#160;游戏制作人/产品总监/产品经理" resumename="赵晨阳&#160;&#160;游戏制作人/产品总监/产品经理" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR078602648R90250011000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR078602648R90250011000_1.htm|JR078602648R90250011000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR078602648R90250011000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR078602648R90250011000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR078602648R90250011000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR078602648R90250011000_1_1?searchresume=1" target="_blank">赵晨阳&#160;&#160;游戏制作人/产品总监/产品经理</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>互联网产品经理/主管</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>29</td>
+                                <td>北京-朝阳区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR078602648R90250011000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR078602648R90250011000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR078602648R90250011000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2011/12/4/2C842929A2974C3F8A9B62FA3D10116A.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：北京-朝阳区</span> <span>期望月薪：25000元/月以上</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2013-11 ～ 至今</span>北京陌陌科技有限技术公司（2年）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            互联网产品经理/主管&nbsp;&nbsp;|&nbsp;&nbsp;15001-25000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;上市公司&nbsp;&nbsp;|&nbsp;&nbsp;500-999人
+                                                        <p>
+                                                            工作描述：于2013年11月入职后，参与平台内的各类游戏产品上线、修改、运营等工作，主要负责过《陌陌争霸》、《炸弹斗地主》项目的上线全流程。针对各产品做SDK接入改造方案，制定项目对接周期和上线考核方案。通过运用技术手段统计游戏的客观数据，确保产品上线的稳定收益率达到平台指标。所经手的上线产品留存均在40%以上，并且7日留存在10%以上。所经手的游戏产品级别有平均月
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2004-09 ～ 2008-07&nbsp;&nbsp;&nbsp;&nbsp;西安交通大学&nbsp;&nbsp;&nbsp;&nbsp;机械工程及自动化&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="13年IT行业经验（5年开发及8年管理工作经验）" resumename="13年IT行业经验（5年开发及8年管理工作经验）" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR264666698R90250014000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR264666698R90250014000_1.htm|JR264666698R90250014000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR264666698R90250014000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR264666698R90250014000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR264666698R90250014000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR264666698R90250014000_1_1?searchresume=1" target="_blank">13年IT行业经验（5年开发及8年管理工作经验）</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>总监</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>40</td>
+                                <td>北京-朝阳区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR264666698R90250014000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR264666698R90250014000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR264666698R90250014000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2010/1/19/0447B55372B84B7885F801DB6D20085E.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：北京-朝阳区</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2006-08 ～ 至今</span>中国航天科工运载火箭发射技术有限公司（9年3个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            总监&nbsp;&nbsp;|&nbsp;&nbsp;面议</h2>
+                                                        航空/航天研究与制造&nbsp;&nbsp;|&nbsp;&nbsp;国企&nbsp;&nbsp;|&nbsp;&nbsp;500-999人
+                                                        <p>
+                                                            工作描述：主要从事企、事业单位及集团的中长期信息化建设的规划、立项评估、项目审查、开发、实施、外包项目管理及部门管理等。 全面负责项目立项评估审查、组织、计划、协调、控制管理工作及外包项目全过程管理；负责项目需求的汇总、整理和分析、参与和审核系统结构；负责组织编写可行性报告和审核报告；负责项目开发的设计文档、合同、技术协议等材料撰写；负责协调人力、物力、财力资源，保
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1994-09 ～ 1998-07&nbsp;&nbsp;&nbsp;&nbsp;河北大学&nbsp;&nbsp;&nbsp;&nbsp;计算机应用&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="副总经理/总经理/高级管理&#160;&#160;20年 北京 IT多行业系统研发/智能交通/安防" resumename="副总经理/总经理/高级管理&#160;&#160;20年 北京 IT多行业系统研发/智能交通/安防" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR150302693R90000000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR150302693R90000000000_1.htm|JR150302693R90000000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR150302693R90000000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR150302693R90000000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR150302693R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR150302693R90000000000_1_1?searchresume=1" target="_blank">副总经理/总经理/高级管理&#160;&#160;20年 北京 IT多行业...</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>技术副总裁、政府事业部CEO(总经理...</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>43</td>
+                                <td>北京</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR150302693R90000000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR150302693R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR150302693R90000000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：北京</span> <span>期望月薪：25000元/月以上</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-06 ～ 至今</span>南方科宇集团公司（1年5个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            技术副总裁、政府事业部CEO(总经理)&nbsp;&nbsp;|&nbsp;&nbsp;面议</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;股份制企业&nbsp;&nbsp;|&nbsp;&nbsp;100-499人
+                                                        <p>
+                                                            工作描述：食品、药品、化妆品、保健食品、医疗器械等行业监管专家；食品药品追溯系统平台；农产品、肉类、生鲜食品追溯管理。药品、化妆品、保健食品、医疗器械电子商务平台；（包含 B2B/B2C;O2O ） 等南方科宇作为食品药品监管信息化领域的领军企业，自2001年成立以来，专业为各级食品药品监管部门、食品药品流通、医疗卫生机构提供整体信息化解决方案、软件产品及咨询服务。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1993-09 ～ 1997-06&nbsp;&nbsp;&nbsp;&nbsp;北京科技大学&nbsp;&nbsp;&nbsp;&nbsp;计算机&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="软件/互联网开发/系统集成 1年 深圳" resumename="软件/互联网开发/系统集成 1年 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM601031328R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM601031328R90250000000_1.htm|JM601031328R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM601031328R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM601031328R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM601031328R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM601031328R90250000000_1_1?searchresume=1" target="_blank">软件/互联网开发/系统集成 1年 深圳</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>软件工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>22</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM601031328R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM601031328R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM601031328R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/11/3/8A695A1FA0884519B87A3B735BEB5BDE.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：10001-15000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-02 ～ 至今</span>NC softwaretailor（1年9个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            软件工程师&nbsp;&nbsp;|&nbsp;&nbsp;10001-15000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：两年工作经验：受雇于一家软件外包公司，为客户公司全球三大电梯公司之一的蒂森克虏伯公司工作。描述：两年工作经验：受雇于一家软件外包公司，为客户公司全球三大电梯公司之一的蒂森克虏伯公司工作。1. Linux运维工程师，工作主要负责为客户公司维护客户公司的服务器。他们有一个LAMP销售系统，全球各个分公司都在使用这个系统。而这些系统则是运行在linux服务器上，
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2010-09 ～ 2014-06&nbsp;&nbsp;&nbsp;&nbsp;江西师范大学&nbsp;&nbsp;&nbsp;&nbsp;软件工程&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="技术总监/项目经理/技术经理/Java资深工程师" resumename="技术总监/项目经理/技术经理/Java资深工程师" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR100928941R90000000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR100928941R90000000000_1.htm|JR100928941R90000000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR100928941R90000000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR100928941R90000000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR100928941R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR100928941R90000000000_1_1?searchresume=1" target="_blank">技术总监/项目经理/技术经理/Java资深工程师</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>信息技术经理/主管</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>36</td>
+                                <td>北京</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR100928941R90000000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR100928941R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR100928941R90000000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2008/3/24/8F8F1C021DAC49CE8C60598E4E75F2E8.JPG" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：北京</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2008-08 ～ 至今</span>中国国际金融有限公司（7年3个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            信息技术经理/主管&nbsp;&nbsp;|&nbsp;&nbsp;25000元/月以上</h2>
+                                                        基金/证券/期货/投资&nbsp;&nbsp;|&nbsp;&nbsp;国企&nbsp;&nbsp;|&nbsp;&nbsp;1000-9999人
+                                                        <p>
+                                                            工作描述：负责公司内部应用软件的开发。 1. CRIS系统：CRIS是一个中金合规管理系统，主要功能包括披露信息管理、限制名单管理、越墙信息管理、关键字管理等。为了实现合规管理系统的办公自动化的需求，利用现有需求及进一步的调研结果，采用Java及用户体验好的Flash工具等，实现了合规管理的办公自动化软件CRIS。2. RtDistribute金融交易数据发布系统：
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1995-09 ～ 1999-07&nbsp;&nbsp;&nbsp;&nbsp;沈阳航空工业学院&nbsp;&nbsp;&nbsp;&nbsp;计算机及应用&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="游戏设计/开发 2年 北，上，广，长沙" resumename="游戏设计/开发 2年 北，上，广，长沙" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM559428234R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM559428234R90250000000_1.htm|JM559428234R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM559428234R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM559428234R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM559428234R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM559428234R90250000000_1_1?searchresume=1" target="_blank">游戏设计/开发 2年 北，上，广，长沙</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>游戏设计/开发</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>35</td>
+                                <td>衡阳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM559428234R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM559428234R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM559428234R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：衡阳</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-03 ～ 至今</span>北京国脉互联信息顾问有限公司衡阳分公司（1年8个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            游戏设计/开发&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：工作内容为二部分：1.前端页面开发 2.基于egret和微信jssdk接口的Html5游戏开发
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1998-09 ～ 2002-09&nbsp;&nbsp;&nbsp;&nbsp;湖南农业大学&nbsp;&nbsp;&nbsp;&nbsp;动物科学&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="简历" resumename="简历" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM335260022R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM335260022R90250000000_1.htm|JM335260022R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM335260022R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM335260022R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM335260022R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM335260022R90250000000_1_1?searchresume=1" target="_blank">简历</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>嵌入式软件开发工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>24</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM335260022R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM335260022R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM335260022R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2014/9/27/02385D69D60B47E5886468211E9F96D5.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2014-10 ～ 2015-06</span>北京国承万通信息科技有限公司（8个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            嵌入式软件开发工程师&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：主要从事公运动蓝牙耳机固件开发，产品目前已量产。stm32+csr 开发。负责六轴传感器，心跳传感器驱动开发。负责工厂测试程序开发，和硬件工程师设计测试逻辑。负责设备bootloader程序开发。协助硬件工程师调试音频型号。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2011-09 ～ 2015-07&nbsp;&nbsp;&nbsp;&nbsp;江西农业大学&nbsp;&nbsp;&nbsp;&nbsp;软件工程&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="WEB前端开发 1年 深圳" resumename="WEB前端开发 1年 深圳" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM598582776R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM598582776R90250000000_1.htm|JM598582776R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM598582776R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM598582776R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM598582776R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM598582776R90250000000_1_1?searchresume=1" target="_blank">WEB前端开发 1年 深圳</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>WEB前端开发</td>
+                                <td>中专</td>
+                                <td>男</td>
+                                <td>21</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM598582776R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM598582776R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM598582776R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：4001-6000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-05 ～ 至今</span>华育国际（6个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            WEB前端开发&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：做过电话销售，在教育机构学习网站开发PHP，经过5个月的培训，我对前端比较感兴趣，而且比较熟，所以望公司能给个机会。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2015-05 ～ 至今&nbsp;&nbsp;&nbsp;&nbsp;华育国际&nbsp;&nbsp;&nbsp;&nbsp;网站开发&nbsp;&nbsp;&nbsp;&nbsp;中专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="技术经理 技术总监  IBM Oracle 敏捷 Scrum Tech Leader" resumename="技术经理 技术总监  IBM Oracle 敏捷 Scrum Tech Leader" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM558070803R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM558070803R90250000000_1.htm|JM558070803R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM558070803R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM558070803R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM558070803R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM558070803R90250000000_1_1?searchresume=1" target="_blank">技术经理 技术总监  IBM Oracle 敏捷 Scrum Tec...</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>Consultant</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>36</td>
+                                <td>深圳</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM558070803R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM558070803R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM558070803R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/8/19/63316EF76883477FAA13E72803A0BED5.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳</span> <span>期望月薪：25000元/月以上</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2013-12 ～ 至今</span>IBM（1年11个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            Consultant&nbsp;&nbsp;|&nbsp;&nbsp;25000元/月以上</h2>
+                                                        IT服务(系统/数据/维护)&nbsp;&nbsp;|&nbsp;&nbsp;外商独资&nbsp;&nbsp;|&nbsp;&nbsp;10000人以上
+                                                        <p>
+                                                            工作描述：* 新业务模型设计。与香港J.P. Morgan（摩根大通） 的AD  BA  QA沟通完成新业务模型的设计。例如：沪港通等。 *BUG修复。COSMOS是J.P. Morgan的股票交易系统。 由于系统需求变更等因素，导致原有功能不再适用。对BUG进行分析，给出解决方案，如果方案在讨论后通过，实施该解决方案。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2005-06 ～ 2009-05&nbsp;&nbsp;&nbsp;&nbsp;上海交通大学&nbsp;&nbsp;&nbsp;&nbsp;计算机及应用&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="运维经理 运维主管 运维架构师 高级运维工程师" resumename="运维经理 运维主管 运维架构师 高级运维工程师" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR065575086R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR065575086R90250000000_1.htm|JR065575086R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR065575086R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR065575086R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR065575086R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR065575086R90250000000_1_1?searchresume=1" target="_blank">运维经理 运维主管 运维架构师 高级运维工程师</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>运维架构师</td>
+                                <td>大专</td>
+                                <td>男</td>
+                                <td>41</td>
+                                <td>临沂</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR065575086R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR065575086R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR065575086R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：临沂</span> <span>期望月薪：15001-25000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-01 ～ 2015-07</span>北京量科邦信息技术有限公司（6个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            运维架构师&nbsp;&nbsp;|&nbsp;&nbsp;25000元/月以上</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;20-99人
+                                                        <p>
+                                                            工作描述：1.实现机房容灾2.制定并实施运维规范、标准3.制定灾备手册和灾难恢复计划4.制定并实施生产环境信息安全方案5.构建mysql高可用集群及优化6.构建并运维大数据平台7.重构基础架构，全虚拟化服务器，构建模板服务器以实现环境快速交付8.构建zabbix监控系统及外部监控9.构建并运维nginx、tomcat、memcached、redis、activemq
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+1996-08 ～ 1998-08&nbsp;&nbsp;&nbsp;&nbsp;中国计算机学院&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;大专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="计算机软、硬件/互联网/IT" resumename="计算机软、硬件/互联网/IT" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR130660734R90000000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JR130660734R90000000000_1.htm|JR130660734R90000000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JR130660734R90000000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JR130660734R90000000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR130660734R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR130660734R90000000000_1_1?searchresume=1" target="_blank">计算机软、硬件/互联网/IT</a>
+                                    <img src='http://img02.zhaopin.cn/2012/img/rd/icon_havephoto.gif' width='12' height='12' />
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>互联网软件工程师</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>31</td>
+                                <td>东莞</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JR130660734R90000000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR130660734R90000000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JR130660734R90000000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="http://my.zhaopin.com/pic/2015/3/24/DC0B269ED3404F0D8AB751F659AA3968.jpg" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：东莞</span> <span>期望月薪：8001-10000元/月</span><br>
+                                                        当前状态：我目前在职，正考虑换个新环境（如有合适的工作机会，到岗时间一个月左右）
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-02 ～ 2015-10</span>广东东莞动新网络科技有限公司（8个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            互联网软件工程师&nbsp;&nbsp;|&nbsp;&nbsp;8001-10000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;民营&nbsp;&nbsp;|&nbsp;&nbsp;20-99人
+                                                        <p>
+                                                            工作描述：负责全权设计，开发，维护公司多个网站。
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2003-09 ～ 2008-07&nbsp;&nbsp;&nbsp;&nbsp;长春理工大学&nbsp;&nbsp;&nbsp;&nbsp;计算机科学技术&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="个人简历" resumename="个人简历" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM595940618R90250000000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM595940618R90250000000_1.htm|JM595940618R90250000000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM595940618R90250000000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM595940618R90250000000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM595940618R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM595940618R90250000000_1_1?searchresume=1" target="_blank">个人简历</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>项目专员/助理</td>
+                                <td>大专</td>
+                                <td>男</td>
+                                <td>23</td>
+                                <td>深圳-南山区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM595940618R90250000000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM595940618R90250000000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM595940618R90250000000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳-南山区</span> <span>期望月薪：4001-6000元/月</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2015-05 ～ 至今</span>深圳微网网络科技有限公司（6个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            项目专员/助理&nbsp;&nbsp;|&nbsp;&nbsp;4001-6000元/月</h2>
+                                                        互联网/电子商务&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：后台数据的CURD和从数据库取数据到前端页面展示以及产品功能模块开发
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2008-05 ～ 2011-03&nbsp;&nbsp;&nbsp;&nbsp;广西玉林商贸技校&nbsp;&nbsp;&nbsp;&nbsp;机械设计制造及其自动化&nbsp;&nbsp;&nbsp;&nbsp;大专<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        <tr valign="top">
+                            <td>
+                                <input type="checkbox" name="chkid" dev_name="运维工程师" resumename="运维工程师" 
+                                               resumeurl="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM161052625R90250001000_1.htm" 
+                                               value="http://resume.zhaopin.com/P5/JR0616/6474/R900/000/JM161052625R90250001000_1.htm|JM161052625R90250001000_1" 
+                                               onclick="unChkSelectAll('chkall')"
+                                               class = "smpcheckbox" data-smpcvid="JM161052625R90250001000_1" data-smpownerid="" data-smpxtable="" data-smpkpi="M1" 
+                                               />
+                            </td>
+                                        <td class="first-weight">
+                                    <a tag="JM161052625R90250001000_1" onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM161052625R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM161052625R90250001000_1_1?searchresume=1" target="_blank">运维工程师</a>
+                                    
+
+                                </td>
+                                <td class="rd-show-btn">
+                                         <a></a>
+                                </td>
+                                <td>linux运维/研发</td>
+                                <td>本科</td>
+                                <td>男</td>
+                                <td>24</td>
+                                <td>深圳-宝安区</td>
+                                <td>15-11-12</td>
+                        </tr>
+                                <tr class="info" style="display: none" tag="JM161052625R90250001000_1">
+                                    <td colspan="9">
+                                        <div class="resumes-list-none clearfix">
+                                            <div class="resumes-avatar">
+                                                <a onclick="javascript:viewOneResume('http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM161052625R90250001000_1_1?searchresume=1');this.style.color='#800000';return false;" href="http://rd.zhaopin.com/resumepreview/resume/viewone/2/JM161052625R90250001000_1_1?searchresume=1" target="_blank">
+                                                    <img src="http://img02.zhaopin.cn/2012/img/rd/lookResumes.jpg" tag="" width="93" height="131" />
+                                                </a>
+                                            </div>
+                                            <div class="resumes-list-none-right">
+                                                <div class="resumes-content">
+                                                    <div class="resumes-none-main">
+                                                        <span class="span-padding">居住地：深圳-宝安区</span> <span>期望月薪：面议</span><br>
+                                                        当前状态：我目前处于离职状态，可立即上岗
+                                                    </div>
+                                                </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最近工作</h1>
+                                                        <h2>
+                                                            <span class="span-padding tips">2013-06 ～ 2015-09</span>成都普连众通科技有限公司（2年3个月）</h2>
+                                                        <h2>
+                                                            -&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                            linux运维/研发&nbsp;&nbsp;|&nbsp;&nbsp;6001-8000元/月</h2>
+                                                        计算机软件&nbsp;&nbsp;|&nbsp;&nbsp;-&nbsp;&nbsp;|&nbsp;&nbsp;-
+                                                        <p>
+                                                            工作描述：熟悉交换机和路由器的基本配置。负责公司电子科大西区科技园的无线网络覆盖的网络组建工作。负责公司局域网组建和维护工作。能对网络基本故障进行定位并且解决问题。熟悉C＼C  程序开发，能够进行Windows、Linux程序开发。熟悉Linux系统，对linux下的Samba、SSH、NFS、Apache、nginx、php、mysql、squid、proftp、
+                                                        </p>
+                                                    </div>
+                                                    <div class="resumes-content">
+                                                        <h1>最高学历</h1>
+2010-09 ～ 2014-07&nbsp;&nbsp;&nbsp;&nbsp;四川大学锦城学院&nbsp;&nbsp;&nbsp;&nbsp;计算机科学与技术&nbsp;&nbsp;&nbsp;&nbsp;本科<br/>                                                    </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+            </tbody>
+        </table>
+
+        <!-- Trace Data Start -->
+        <input type="hidden" id="dda_operatorid" value="659822043" />
+        <input type="hidden" id="dda_companyid" value="112719765" />
+        <input type="hidden" id="dda_type" value="cvdownload" />
+        <input type="hidden" id="dda_custom" value="" />
+        <input type="hidden" id="dda_source" value="2" />
+        <input type="hidden" id="dda_position" value="searchresultkeywords" />
+        <!-- Trace Data End   -->
+
+    </form>
+    <div class="bottom-button">
+        <div class="bottom-input">
+            <input id="chkall" type="checkbox" onclick="ChkSelectAll('chkid', 'chkall')" value="1"
+                name="chkall" />全选
+        </div>
+        <div class="resumelist-button-left">
+            <a class="rd-button rd-button-small" onclick="Javascript:viewmore('&searchresume=1')" name="view"><span
+                class="rd-button-icon left-icon1"></span>查看</a>
+                <a class="rd-button rd-button-small smpevent"
+                onclick="Javascript:movetofavorite('rdsearch','download')" name="download" data-smpposition="searchresultkeywords" data-smpaction="downloadresume"><span
+                    class="rd-button-icon left-icon2"></span>下载 </a><a class="rd-button rd-button-small smpevent"
+                onclick="Javascript:movetovacancy('rdsearch', 'recommend')" name="recommend" data-smpposition="searchresultkeywords" data-smpaction="recommendresume"><span
+                    class="rd-button-icon left-icon3"></span>推荐 </a><a class="rd-button rd-button-small smpevent"
+                onclick="Javascript:movetointerim('rdsearch', 'ts')" name="save" data-smpposition="searchresultkeywords" data-smpaction="savetemporaryresume"><span class="rd-button-icon left-icon4"></span>暂存 </a>
+        </div>
+        <div class="bottom-page fr">
+            <a  class="rd-page-top gray-page">首页</a>
+<a  class="rd-page-lefticon left-icon gray-left-icon"></a>
+<span id="rd-resumelist-pageNum">1/134</span>
+ <a href="/Home/ResultForCustom?SF_1_1_1=php&SF_1_1_3=160400%3B210500&SF_1_1_18=765&SF_1_1_27=0&orderBy=DATE_MODIFIED,1&exclude=1&pageIndex=2" class="rd-page-lefticon right-icon"></a>
+<span>到</span>
+<input class="rd-resumelist-page" type="text" value="2"  />
+<input id="rd-resumelist-pageCount" type="hidden" value="134" />
+<span>页</span>
+<button class="rd-resumelist-img" type="button"></button>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    
+        <div class="rd-resume-foot">
+            版权所有 zhaopin.com 2015
+        </div>
+        <a href="http://www.wenjuan.com/s/Enauqi/" target="_blank" class="survey" style="font-family: Verdana">你最钟意的简历调查</a>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/ui/jquery.zlzp.popupbase.js"></script>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/ui/xw_selection/jquery.zlzp.selection.js"></script>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/arrdata.js"></script>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/basedata.js"></script>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/ui/xw_rdAllUi/all-ui-min.js"></script>
+        <script type="text/javascript" src="http://rd2.zhaopin.com/s/js/erd2/animationPopupDiv.js"></script>
+        <script type="text/javascript" src="http://rd2.zhaopin.com/s/include/js/utilScript.js"></script>
+    <script type="text/javascript" src="/Scripts/rd_func.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery_plugin.js"></script>
+    <script type="text/javascript" src="/Scripts/search_control_com.js"></script>
+    <script type="text/javascript" src="/Scripts/search_business_ext.js"></script>
+    <script type="text/javascript">
+        var count = $('.rd-resumelist-span').find('span').text();
+        var url4zpAnalytics = document.location.pathname + document.location.search + '&rt=' + count;
+    </script>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/za/rdga.js"></script>
+    
+    <script language="javascript" type="text/javascript">
+       
+$("#button_SF_1_1_18F").selectCity({ district:[],outInput:"button_SF_1_1_18F",
+				   hiddenInput:"SF_1_1_18",title:"期望工作地区"});
+    lib_singleSelect("SF_1_1_7",arrNewUpDate,"");
+    $("#button_SF_1_1_6F").selectCity({ outInput:"button_SF_1_1_6F",
+				   hiddenInput:"SF_1_1_6"});
+    lib_select("SF_1_1_5",arrEducation,"");
+    
+    lib_select("SF_1_1_4",arrWorkYear,"");
+    $("#button_SF_1_1_3F").selectPosition({outInput:"button_SF_1_1_3F",hiddenInput:"SF_1_1_3",data:arrIndustry,title:"所在行业"
+	});
+          
+        $("#button_SF_1_1_2F").selectPosition({
+		outInput:"button_SF_1_1_2F",
+		hiddenInput:"SF_1_1_2",
+		data:arrJobtype,
+		selectType:"job",
+		title:"职位名称"
+	});
+
+        $(document).ready(function() {
+
+            InitCompanyName("");
+            /*搜索器改版 删除 jjj 20130326
+            var sn = $.query.get(searcherName);
+            if (sn.length > 0) {
+                $("#searcherSwitcher_input").val("搜索器：" + sn.substring(0, 6) + "...").attr("title", "搜索器：" + sn);
+                $("#delSerchSpan").css("display", "inline-block");
+            }*/
+
+            if ($.cookie(cookieKeyFlag + "isOpen") === "false") {
+                $(".resumes-result-form").css('display', 'none');
+                $(".result-tips").find("a").text("更多搜索条件");
+            } else {
+                $(".resumes-result-form").css('display', 'block');
+                $(".result-tips").find("a").text("收起搜索条件");
+            }
+
+            var conditionText = $.cookie(cookieKeyFlag + "ConditionText");
+            if (conditionText === null) {
+                conditionText = getSearchText();
+                if (conditionText.length > 0) {
+                    conditionText = conditionText.length > 50 ? conditionText.substr(0, 50) + "..." : conditionText
+                    $("#HrQueryCondition").html("您搜索的是：" + conditionText);
+                    var custom = $.cookie(cookieKeyFlag + searchFlag);
+                    
+                    if (custom !== null && custom !== "" && "True"=="True") {
+                        addSearchLog(window.location.href, conditionText);
+                    }
+                }
+            } else {
+                $("#HrQueryCondition").html(conditionText);
+                removeCookie(cookieKeyFlag + "ConditionText");
+            }
+
+            //当控件点击按钮有relative时
+            $(".result-tips").prev().find("div").each(function() {
+                var _el = $(this);
+                if (_el.css("position") === "relative") {
+                    _el.addClass("relativePosition");
+                }
+            });
+
+            //如果结果为空，给空页的搜索关键字赋值
+            var resultcount = 4000;
+            if (resultcount == 0) {
+                var queries = $("#HrQueryCondition").text().split("：");
+                if (queries.length > 1) {
+                    var queryCondition = queries[1];
+                    $("#SearchConditionTextOnNoResult").html(queryCondition.length > 15 ? queryCondition.substring(0, 15) : queryCondition);
+                }
+            } else {
+                //高亮设置的关键字
+                document.frmResult.searchKeyword.value = $.query.get("SF_1_1_1"); //+ $.query.get("SF_1_1_11") + $.query.get("SF_1_1_25").split(':')[1] ;
+                document.frmResult.searchKeyword.value = $.trim(document.frmResult.searchKeyword.value);
+                //高亮--公司名称
+                document.frmResult.companyName.value = '';
+                if ($.query.get("SF_1_1_25") !== "") { //公司名称
+                    var arrValue = $.query.get("SF_1_1_25").split(":");
+                    if (arrValue.length > 1) {
+                        document.frmResult.companyName.value = $.trim(arrValue[1]);
+                    }
+                }
+                //高亮--学校名称
+                document.frmResult.schoolName.value = $.trim($.query.get("SF_1_1_11"));
+            }
+        });
+
+        $("#saveConditionSettings").click(function() {
+            var count = 0;
+            $.getJSON("/Json/SearcherList", function(data) {
+                if (data != null && data.length >= 0) {
+                    count = 99 - data.length;
+                    $(".surplusNum:first").html(count);
+                    if (count > 0 ) {
+                       if (searchCondition(true) == 0) {
+                            alert("当前无搜索条件，无法保存");
+                            return;
+                        }
+                        var _top =$("#saveConditionSettings").offset().top,
+                            _left = $("#saveConditionSettings").offset().left;
+                        $(".result-layer").css('left', _left - 78).css('top', _top + 22).show();
+                        $(".result-success").hide();
+                        $(".layer-input-error-tips").hide();
+                        $("#searcher-name").val("");
+                        $(".result-layer-body").show();
+                        var queries = $("#HrQueryCondition").text().split("：");
+                        if (queries.length > 1) {
+                            var queryCondition = queries[1];
+                            if (queryCondition.length > 15) {
+                                queryCondition = queryCondition.substring(0, 15);
+                            }
+                            $("#searcher-name").val(queryCondition.replace(" ", "_"));
+                        }
+                        
+                    } else {
+                        var r=confirm("您的搜索器已满，请删除一个搜索器");
+                        if (r == true) {
+                             showSearchList();
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                }
+          });  
+       });
+
+        $(".result-tips").click(function() {
+            var el = $(this);
+            var txt = el.find("a");
+            var slideDiv = el.prev();
+            var relaDiv = slideDiv.find(".relativePosition");
+            relaDiv.css("position", "static");
+            if (txt.text() === "更多搜索条件") {
+                txt.text("收起搜索条件");
+                setForeverCookie(cookieKeyFlag + "isOpen", true);
+            } else {
+                txt.text("更多搜索条件");
+                setForeverCookie(cookieKeyFlag + "isOpen", false);
+            }
+            el.find("span").toggleClass("icon-down");
+            $(".resumes-result-form").slideToggle(function() {
+                relaDiv.css("position", "relative");
+            });
+        });
+
+        function SaveSearcher(displayName) {
+            var query = getSubmitQuery();
+            var errorTips = $(".layer-input-error-tips");
+            $.getJSON("/Json/SaveSearcher", { displayName: displayName, conditionStr: query }, function(data) {
+                $(".result-success-icon").hide();
+                if (data === 0) {
+                    $(".result-layer-body").show();
+                    errorTips.text("该搜索器名字已经存在");
+                    errorTips.show();
+                    $(".wordNum").hide();
+                } else if (data === -1) {
+                    $("#searcher-name").parent().addClass("layer-input-error");
+                    $(".result-layer-body").show();
+                    errorTips.text("保存搜索器失败");
+                    errorTips.show();
+                    $(".wordNum").hide();
+                } else {
+                    var searcherCtr = $("#searcher-name");
+                    searcherCtr.val("");
+                    searcherCtr.parent().removeClass("layer-input-error");
+                    $(".layer-input-error-tips").hide();
+                    $(".result-layer-body").hide();
+                    $(".result-success").show();
+                    $(".result-layer").delay(1000).fadeOut(500);
+                }
+            });
+        }
+
+        var lenFor = function(str) {
+            var byteLen = 0, len = str.length;
+            if (str) {
+                for (var i = 0; i < len; i++) {
+                    if (str.charCodeAt(i) > 255) {
+                        byteLen += 2;
+                    } else {
+                        byteLen++;
+                    }
+                }
+                return byteLen;
+            } else {
+                return 0;
+            }
+        };
+        $("saveConditionSettings").click(function() {
+            $.getJSON("/Json/SearcherList", function(data) {
+                if (data != null && data.length > 0) {
+                    $(".surplusNum").val(99 - data);
+                }
+            });
+
+        });
+        $("#save-searcher").click(function() {
+            $(".wordNum").show();
+            var el = $("#searcher-name");
+            var er = $(".layer-input-error-tips");
+            if (el.val() === "") {
+                $(".wordNum").hide();
+                el.parent().addClass("layer-input-error");
+                er.text("请输入搜索器名称");
+                er.show();
+            } else if (lenFor(el.val()) > 30) {
+                $(".wordNum").hide();
+                el.parent().addClass("layer-input-error");
+                er.text("最多15个汉字");
+                er.show();
+            } else {
+                $(".wordNum").hide();
+                $(".result-layer-body").hide();
+                $(".result-success").hide();
+                $(".result-success-icon").show();
+                SaveSearcher(el.val());
+            }
+        });
+
+        $(".layer-botton-blue").click(function() {
+            $(".result-layer").hide();
+        })
+
+        $(".rd-result-checkbox").click(function() {
+            var key = $(this).attr("name");
+            var query = null;
+            var urlQuery = $.query.toString();
+            if (urlQuery !== "" && urlQuery.indexOf("SF_") > -1) {
+                if ($("#" + key).is(":checked")) {
+                    query = $.query.remove(pageIndexFlag).set(key, "1");
+                } else {
+                    query = $.query.remove(pageIndexFlag).remove(key);
+                }
+            }
+            if (query != null) {
+                jumpNewPage(query);
+            }
+        });
+
+        $("#rd-result-select").change(function() {
+            var key = $(this).attr("name");
+            var value = $(this).val();
+            var query = null;
+            var urlQuery = $.query.toString();
+            if (urlQuery !== "" && urlQuery.indexOf("SF_") > -1) {
+                if (value != "") {
+                    query = $.query.remove(pageIndexFlag).set(key, value);
+                } else {
+                    query = $.query.remove(pageIndexFlag).remove(key);
+                }
+            }
+            if (query != null) {
+                jumpNewPage(query);
+            }
+        });
+
+        function addSearchLog(url, urlDesc) {
+            $.ajax({
+                type: "POST",
+                url: "/Json/SaveSearchLog",
+                data: '{searchExp:"' + url + '",searchDesc:"' + encodeURIComponent(urlDesc) + '"}',
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    removeCookie(cookieKeyFlag + searchFlag);
+                }
+            });
+        }
+
+        $.ajaxSetup({
+            cache: false //关闭AJAX相应的缓存
+        });
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        //回到顶部
+        var $backToTopTxt = "", $backToTopEle = $('<div class="back-to-top"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+        }), $backToTopFun = function () {
+            var st = $(document).scrollTop(), winh = $(window).height();
+            (st > 300) ? $backToTopEle.show() : $backToTopEle.hide();
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+                $backToTopEle.css("top", st + winh - 166);
+            }
+        };
+        $(window).bind("scroll", $backToTopFun);
+        $(function () { $backToTopFun(); });
+
+        // ERD 主导航弹层
+        $('#headerNav').find('.popSubNav').mouseenter(function () {
+            $('.popoSubNavLay').hide();
+            if ($(this).hasClass('psn1')) {
+                $('#subNav1').show();
+            } else if ($(this).hasClass('psn2')) {
+                $('#subNav2').show();
+            } else if ($(this).hasClass('psn3')) {
+                $('#subNav3').show();
+            } else if ($(this).hasClass('psn4')) {
+                $('#subNav4').show();
+            } else if ($(this).hasClass('psn5')) {
+                $('#subNav5').show();
+            }
+        });
+
+        $('.popoSubNavLay').mouseleave(function () { $(this).hide() });
+
+    </script>
+    <!--统计-->
+    <script language="javascript" type="text/javascript" src="http://img01.zhaopin.cn/2012/js/za/smp.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://service.zhaopin.com/live800/chatClient/staticButton.js?companyID=8899&configID=25&codeType=steady&live800_city=%e5%8d%97%e6%96%b9%e5%91%bc%e5%8f%ab%e4%b8%ad%e5%bf%83&info=userId%3d659822043%26loginname%3d201510301%26name%3d%e5%b9%bf%e8%a5%bf%e5%b7%9d%e9%a6%99%e5%9d%8a%e9%a3%9f%e5%93%81%e6%9c%89%e9%99%90%e5%85%ac%e5%8f%b8%26hashCode%3dl%0f%08%ef%bf%bdJ%ef%bf%bdKZ%ef%bf%bd%ef%bf%bd%ef%bf%bdcM%16)%26timestamp%3d1447396838000"></script>
+    <script language="javascript" type="text/javascript" id='write'>        function writehtml() { var temptext = StaticIcon_generate(); document.getElementById('live20').innerHTML = temptext; setTimeout('write.src', 9000); } writehtml();</script>
+    
+    <script type="text/javascript" src="http://images.zhaopin.com/2012/js/jquery.cookie.js"></script>   
+</body>
+</html>

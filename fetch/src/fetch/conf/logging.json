@@ -1,0 +1,60 @@
+{
+    "handlers": {
+        "file": {
+            "filename": "/data/log/default.log",
+            "formatter": "standard",
+            "class": "logging.handlers.WatchedFileHandler",
+            "level": "INFO"
+        },
+        "error": {
+            "filename": "/data/log/allerror.log",
+            "formatter": "standard",
+            "class": "logging.handlers.WatchedFileHandler",
+            "level": "ERROR"
+        },
+        "buy": {
+            "filename": "/data/log/buybuy.log",
+            "formatter": "standard",
+            "class": "logging.handlers.WatchedFileHandler",
+            "level": "INFO"
+        },
+        "trans": {
+            "filename": "/data/log/transtrans.log",
+            "formatter": "standard",
+            "class": "logging.handlers.WatchedFileHandler",
+            "level": "INFO"
+        },
+        "pub": {
+            "filename": "/data/log/pubpub.log",
+            "formatter": "standard",
+            "class": "logging.handlers.WatchedFileHandler",
+            "level": "INFO"
+        },
+       "stream": {
+            "formatter": "standard",
+            "class": "logging.StreamHandler",
+            "level": "DEBUG"
+        }
+    },
+    "loggers": {
+        "": {
+            "level": 10,
+            "handlers": [
+                "file", "stream", "error"
+            ]
+        },
+        "buy2": {
+            "level": 10,
+            "handlers": [
+                "file", "stream", "error", "buy"
+            ]
+        }
+    },
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "standard": {
+            "format": "[%(asctime)s][%(filename)s][%(funcName)s][Line:%(lineno)d][%(levelname)s]:%(message)s"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "handlers": {
+        "file": {
+            "filename": "lala.log",
+            "formatter": "standard",
+            "class": "logging.handlers.WatchedFileHandler",
+            "level": "INFO"
+        }
+    },
+    "loggers": {
+        "": {
+            "level": 10,
+            "handlers": [
+                "file"
+            ]
+        }
+    },
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "standard": {
+            "format": "[%(asctime)s][%(filename)s][%(funcName)s][Line:%(lineno)d][%(levelname)s]:%(message)s"
+        }
+    }
+}

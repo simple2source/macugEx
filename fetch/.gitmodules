@@ -1,0 +1,3 @@
+[submodule "src/fetch/fetchclass/extract_seg_insert/libs/Search-module"]
+	path = src/fetch/fetchclass/extract_seg_insert/libs/Search-module
+	url = https://git.oschina.net/hick/Search-module.git
