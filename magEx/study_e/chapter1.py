@@ -66,3 +66,26 @@ def prime_test(lst):
 
 count_prime([2,3,4,7,8,11,55,77,7])
 prime_test([2,3,4,7,8,11,55,77,7])
+
+
+# google 上找到的一个求素数的算法
+
+def primeSieve(sieveSize):
+    # Returns a list of prime numbers calculated using
+    # the Sieve of Eratosthenes algorithm.
+    sieve = [True] * sieveSize
+    sieve[0] = False  # zero and one are not prime numbers
+    sieve[1] = False
+    # create the sieve
+    for i in range(2, int(math.sqrt(sieveSize))+1):
+         pointer = i * 2
+         while pointer < sieveSize:
+             sieve[pointer] = False
+             pointer += i
+    primes = []
+    for i in range(sieveSize):
+        if sieve[i] == True:
+            primes.append(i)
+    print primes
+    return primes
+primeSieve(25)
