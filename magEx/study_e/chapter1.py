@@ -5,7 +5,8 @@ import math
 in_number = 33
 i = 0
 while i < 3:
-    guess_number = int(raw_input("please input int number:"))
+    # guess_number = int(raw_input("please input int number:"))
+    guess_number = 33
     if guess_number == in_number:
         print("congratulations！ you win!")
         break
@@ -68,7 +69,7 @@ count_prime([2,3,4,7,8,11,55,77,7])
 prime_test([2,3,4,7,8,11,55,77,7])
 
 
-# google 上找到的一个求素数的算法
+# google 上找到的一个求素数的算法 https://inventwithpython.com/hacking/chapter23.html
 
 def primeSieve(sieveSize):
     # Returns a list of prime numbers calculated using
@@ -88,4 +89,26 @@ def primeSieve(sieveSize):
             primes.append(i)
     print primes
     return primes
-primeSieve(25)
+primeSieve(100)
+
+print math.factorial(5)
+
+# 杨辉三角
+
+
+def print_pascal(line):
+    results = []
+    for _ in range(line):
+        row = [1]
+        if results:
+            last_row = results[-1]
+            row.extend(sum(pair) for pair in zip(last_row,  last_row[1:]))
+            row.append(1)
+            print last_row,last_row[1:]
+        results.append(row)
+    return results
+
+for x in print_pascal(10):
+    print x
+
+
