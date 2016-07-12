@@ -46,8 +46,8 @@ def str2int_dict(v):
     num = 0
     length = len(v) - 1
     if '.' in v:
-        l1 = '.'.split(v)
-        length = len(l1[0])
+        l1 = v.split('.')
+        length = len(l1[0]) - 1
     for i in v:
         if i not in d.keys():
             raise ValueError("not a digital")
@@ -56,6 +56,9 @@ def str2int_dict(v):
             continue
         num = d[i] * (10 ** length) + num
         length = length - 1
+        print num
     print num
     print type(num)
-str2int_dict('10.44')
+str2int_dict('10246600.01062323435354')
+
+print 1023341000.43454623234354545
