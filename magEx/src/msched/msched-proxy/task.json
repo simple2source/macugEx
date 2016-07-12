@@ -1,0 +1,10 @@
+{
+  "task": {
+    "job_id": "xxxx/xxx",
+    "params": {},
+    "concurrent": 1,
+    "fail_rate": 0,
+    "timeout": 0
+  },
+  "targets": []
+}

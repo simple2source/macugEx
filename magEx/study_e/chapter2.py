@@ -59,6 +59,6 @@ def str2int_dict(v):
         print num
     print num
     print type(num)
-str2int_dict('10246600.01062323435354')
+str2int_dict('10246600.0062323435354')
 
 print 1023341000.43454623234354545
