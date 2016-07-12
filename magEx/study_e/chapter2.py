@@ -38,11 +38,16 @@ def transformation(m):
 print '*****'
 
 # 另一种思路使用字典做映射实现
+
+
 def str2int_dict(v):
     d = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4,
          '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '.': '.'}
     num = 0
     length = len(v) - 1
+    if '.' in v:
+        l1 = '.'.split(v)
+        length = len(l1[0])
     for i in v:
         if i not in d.keys():
             raise ValueError("not a digital")
@@ -51,6 +56,6 @@ def str2int_dict(v):
             continue
         num = d[i] * (10 ** length) + num
         length = length - 1
-        print num
+    print num
     print type(num)
-str2int_dict('12734')
+str2int_dict('10.44')
