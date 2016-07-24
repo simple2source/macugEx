@@ -61,4 +61,8 @@ def str2int_dict(v):
     print type(num)
 str2int_dict('10246600.0062323435354')
 
-print 1023341000.43454623234354545
+
+print type(ac)
+print type(ad)
+if 1:
+    print 'www'
