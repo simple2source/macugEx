@@ -89,20 +89,41 @@ def walk_1(path):
 	print files
 
 
-def walk(path, l2=None):
-	if l2 is None:
-		l2 = []
-	l1 = os.listdir(path)
-	for f in l1:
+def walk(path, files=[], dirs=None):
+	# depth-first
+	if dirs is None:
+		dirs = []
+	dirs.append(path)
+	cur = dirs.pop()
+	for f in os.listdir(cur):
 		if os.path.isdir(os.path.join(path, f)):
-			l2.append(os.path.abspath(os.path.join(path, f)))
-			return walk(os.path.join(path, f))
+			walk(os.path.join(path, f))
 		else:
-			l2.append(f)
-	print l2
+			files.append(f)
+	print files
+
+
+def walk_generator(path):
+	# depth-first generator
+	for f in os.listdir(path):
+		if os.path.isdir(os.path.join(path, f)):
+			walk(os.path.join(path, f))
+		else:
+			yield f
 
 
 # 实现一个优先队列，由用户指定比较函数
 
 
 # 实现tail -f的功能
+# 用generator实现
+
+def tail_f(path):
+	offset = 0
+	while True:
+		with open(path) as f:
+			f.seek(offset)
+			for line in f:
+				yield line
+			offset = f.tell()
+		time.sleep(1)
