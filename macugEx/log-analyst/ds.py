@@ -10,7 +10,10 @@ def read_log(path):
 
 
 def parse(path):
-	o = re.compile()
+	o = re.compile(r'(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) .* .* '
+					r'\[(?P<time>.*)\] "(?P<method>\w+) (?P<url>[^\s]*) '
+				r'(?P<version>[\w|/\.\d]*)" (?P<status>\d{3}) (?P<length>\d+) '
+				r'"(?P<referer>[^\s]*)" "(?P<ua>.*)"')
 	for line in read_log(path):
 		m = o.search(line.rstrip('\n'))
 		if m:
