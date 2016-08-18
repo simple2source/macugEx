@@ -61,7 +61,7 @@ def render_line(name, labels, data):
 	line.title = name
 	line.x_labels = labels
 	line.add(name, data)
-	return line.render()
+	return line.render(is_unicode=True)
 
 
 def render_bar():
