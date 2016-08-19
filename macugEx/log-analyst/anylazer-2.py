@@ -58,7 +58,7 @@ def agg(path, interval=10):
 def send(count, traffic, error_rate):
 	line = 'access_log count={},traffic={},error_rate={}'.format(count, traffic, error_rate)
 	res = requests.post('http://127.0.0.1:8086/write', data=line, params={'db': 'lines'})
-	if int(res.status_code()) >= 300:
+	if int(res.status_code) >= 300:
 		print(res.content())
 
 
