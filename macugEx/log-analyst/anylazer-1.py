@@ -4,7 +4,7 @@ import re
 import sys
 import pygal
 import datetime
-"""使用 pygal 画图 version 1,每分钟对时间进行统计流量汇总"""
+"""使用 pygal 画图 version 1,每分钟对时间进行统计流量汇总，批处理方式"""
 
 
 def read_log(path):
