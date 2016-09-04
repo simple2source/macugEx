@@ -1,24 +1,20 @@
 from Queue import Queue
 import threading
 
-a = threading.Thread()
-b = threading.Event()
-c = threading.Lock()
-d = threading.Condition()
+lock = threading.Lock()
+ab = 0
 
 
-class A(object):
-	def __init__(self):
-		pass
+def change():
+	global ab
+	print lock.acquire()
+	try:
+		ab += 1
+	finally:
+		lock.release()
 
-	def __enter__(self):
-		print 'ssss'
-		return None
-
-	def __exit__(self, *args):
-		print 'xxxx'
-		return None
-
-a1 = A()
-with a1:
-	print a1, 'in ov'
+if __name__ == '__main__':
+	for i in range(4):
+		p = threading.Thread(target=change)
+		p.start()
+	print ab

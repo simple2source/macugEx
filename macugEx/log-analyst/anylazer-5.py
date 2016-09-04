@@ -9,6 +9,7 @@ import threading
 import requests
 import queue
 import multiprocessing
+from concurrent.futures import ProcessPoolExecutor
 """ version 4,对数据进行流式处理，多线程的方式，一个线程读一个文件，
 	parse 使用多进程的方式进行管理, agg 以多进程的方式处理管理，先进行聚合后入influxdb"""
 
@@ -99,6 +100,7 @@ def manage(*paths):
 		read_work(path, read_que)
 	for i in [1, 2, 3, 4]:
 		p = multiprocessing.Process(target=parse, name='parse-{}'.format(i), args=(parse_que, read_que))
+		p.daemon = True
 		p.start()
 	agg_manager(parse_que)
 	while not event.is_set():
