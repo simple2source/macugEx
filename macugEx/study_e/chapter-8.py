@@ -3,7 +3,7 @@ import argparse
 import threading
 from functools import wraps
 
-# 实现 tail命令， 包括 -n 和 -f 选项， 可以使用argparse实现命令行参数解析
+# - 实现 tail命令， 包括 -n 和 -f 选项， 可以使用argparse实现命令行参数解析
 
 
 class Tail(object):
@@ -43,7 +43,7 @@ print args.n
 # 		t.tail_f()
 
 
-# 学习单例设计模式， 并使用装饰器实现单例类
+# - 学习单例设计模式， 并使用装饰器实现单例类
 
 def singleton(cls):
 	instance = {}
@@ -62,4 +62,23 @@ class Myclass():
 
 mc = Myclass()
 
-# 不用内置数据结构，实现栈、队列和列表
+# - 不用内置数据结构，实现栈、队列和列表
+
+
+# - 实现 staticmethod 装饰器
+
+
+# - 假设已经存在函数 get_permissions可以获取当前用户的
+# 权限列表， 设计一个权限管理类，既可以作为装饰器，对一个函数授权，也可以作为上下文管理，对一段代码授权
+#
+# 例如
+# permissions = get_permissions()
+#
+# if 'admin' in permissions:
+#     ## do somethings
+# else:
+#    raise Exception('Permissions denied')
+
+
+
+# - 实现 contextlib.contextmanager装饰器
