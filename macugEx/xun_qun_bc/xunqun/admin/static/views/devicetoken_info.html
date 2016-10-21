@@ -1,0 +1,63 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel" data-ng-init="getRecords()">
+        <div class="x_title">
+            <h2>搜索:</h2>
+            <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-left top_search" style="height:10px;">
+                <div class="input-group">
+                    <input class="form-control" placeholder="输入user id" type="text" ng-model="user_id">
+					<span class="input-group-btn">
+									<button class="btn btn-default" type="button" ng-click="searchRecords()"><i
+                                            class="fa fa-search"></i>
+                                    </button>
+								</span>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 form-group pull-left" style="height:10px;">
+                <select class="form-control" ng-model="num" ng-options="n for n in numlist">
+                    <option value="" disabled>每页显示</option>
+                </select>
+            </div>
+            <!--
+            <ul class="nav navbar-right panel_toolbox">
+                <li class="pull-right"><a class="close-link"><i class="fa fa-close"></i></a></li>
+                <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+            </ul>
+            -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <!-- content starts here -->
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>user id</th>
+                    <th>devicetoken</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="data in datas" ng-model="datas">
+                    <td>{[data.user_id]}</td>
+                    <td>{[data._id]}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="example_info" class="dataTables_info">总页数 : {[totalPage]}</div>
+            <div class="dataTables_paginate paging_full_numbers">
+                <a class="first paginate_button paginate_button_disabled" ng-show="pagelist.length && pagelist[0] != 1"
+                   ng-click="jumpPage(1)">第一页</a>
+                <a class="previous paginate_button paginate_button_disabled" ng-show="current_page != 1"
+                   ng-click="jumpPage(current_page-1)">上一页</a>
+				<span>
+								<a ng-repeat="page in pagelist"
+                                   ng-class="{true:'paginate_active',false:'paginate_button'}[current_page==page]"
+                                   ng-click="jumpPage(page)">{[page]}</a>
+							</span>
+                <a class="next paginate_button" ng-show="pagelist.length && current_page != totalPage"
+                   ng-click="jumpPage(current_page+1)">下一页</a>
+                <a class="last paginate_button" ng-show="pagelist.length && pagelist[pagelist.length-1] != totalPage"
+                   ng-click="jumpPage(totalPage)">最后一页</a>
+            </div>
+            <!-- content ends here -->
+        </div>
+    </div>
+</div>

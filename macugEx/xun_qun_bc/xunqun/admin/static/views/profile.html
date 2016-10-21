@@ -1,0 +1,19 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <table class="table">
+        <tr>
+            <th>创建时间</th>
+            <th>等级权限</th>
+            <th>最后登录时间</th>
+            <th>昵称</th>
+        </tr>
+        <tr>
+            <td>{[data.maketime]}</td>
+            <td>{[data.permissions]}</td>
+            <td>{[data.lasttime]}</td>
+            <td>
+                <input type="text" ng-model="nickname">
+                <button type="button" class="btn btn-xs btn-info" ng-click="modify_name()">修改</button>
+            </td>
+        </tr>
+    </table>
+</div>

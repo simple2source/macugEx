@@ -1,0 +1,169 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel" data-ng-init="getRecords()">
+        <div class="x_title" style="height:45px;">
+            <div class="col-md-1 col-sm-1 col-xs-1 form-group pull-left">
+                <select class="form-control" ng-model="selectTimeRange" ng-change="freshQuery()">
+                    <option value="">按翻页</option>
+                    <option value="1">按时间</option>
+                </select>
+            </div>
+
+            <div ng-hide="selectTimeRange">
+                <div class="col-md-3 col-sm-3 col-xs-3 form-group pull-left top_search">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="输入imei" type="text" ng-model="imei">
+					<span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="searchRecords()"><i
+                                class="fa fa-search"></i>
+                        </button>
+                    </span>
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 form-group pull-left">
+                    <select class="form-control" ng-model="type" ng-options="k for (k,i) in {'GPS': 1, 'LBS': 2}">
+                        <option value="">----</option>
+                    </select>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 form-group pull-left">
+                    <select class="form-control" ng-model="num" ng-options="n for n in numlist">
+                        <option value="" disabled>每页显示</option>
+                    </select>
+                </div>
+            </div>
+
+            <div ng-show="selectTimeRange">
+                <div class="col-md-3 col-sm-3 col-xs-3 form-group pull-left top_search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" datetime-picker="yyyy-MM-dd HH:mm:ss"
+                               ng-model="startDateTime"
+                               is-open="startOpen"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="startOpen=true"><i
+                                class="fa fa-calendar"></i></button>
+                    </span>
+                    </div>
+                </div>
+                <span style="float: left;">~</span>
+                <div class="col-md-3 col-sm-3 col-xs-3 form-group pull-left top_search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" datetime-picker="yyyy-MM-dd HH:mm:ss"
+                               ng-model="endDateTime"
+                               is-open="endOpen"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="endOpen=true"><i
+                            class="fa fa-calendar"></i></button>
+                </span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 form-group pull-left top_search">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="输入imei" type="text" ng-model="imei">
+					<span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="searchRecords()"><i
+                                class="fa fa-search"></i>
+                        </button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1 col-sm-1 col-xs-1 form-group pull-left">
+                <button ng-hide="mapShowed" ng-click="mapShow()" class="btn btn-default">显示地图</button>
+                <button ng-show="mapShowed" ng-click="mapHide()" class="btn btn-primary">关闭地图</button>
+            </div>
+            <!--
+            <ul class="nav navbar-right panel_toolbox">
+                <li class="pull-right"><a class="close-link"><i class="fa fa-close"></i></a></li>
+                <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+            </ul>
+            -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <!-- content starts here -->
+            <div ng-show="mapShowed" id="amap_container" style="width:100%;height: 600px;"></div>
+            <table ng-hide="mapShowed" class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>imei</th>
+                    <th>时间戳</th>
+                    <th>经纬度</th>
+                    <th>原始值</th>
+                    <th>半径</th>
+                    <th>定位类型</th>
+                    <th>地址</th>
+                    <th>省</th>
+                    <th>市</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="data in datas" ng-model="datas">
+                    <td>{[data.imei]}</td>
+                    <td>{[data.timestamp * 1000|date:'yyyy-MM-dd HH:mm:ss']}</td>
+                    <td>{[data.loc]}</td>
+                    <td>{[data.raw_loc]}</td>
+                    <td>{[data.radius]}</td>
+                    <td>{[data.type]}</td>
+                    <td>{[data.address]}</td>
+                    <td>{[data.province]}</td>
+                    <td>{[data.city]}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div ng-hide="selectTimeRange">
+                <div id="example_info" class="dataTables_info">总页数 : {[totalPage]}</div>
+                <div class="dataTables_paginate paging_full_numbers" ng-style="paginate_style">
+                    <a class="first paginate_button paginate_button_disabled"
+                       ng-show="pagelist.length && pagelist[0] != 1"
+                       ng-click="jumpPage(1)">第一页</a>
+                    <a class="previous paginate_button paginate_button_disabled" ng-show="current_page != 1"
+                       ng-click="jumpPage(current_page-1)">上一页</a>
+				<span>
+								<a ng-repeat="page in pagelist"
+                                   ng-class="{true:'paginate_active',false:'paginate_button'}[current_page==page]"
+                                   ng-click="jumpPage(page)">{[page]}</a>
+							</span>
+                    <a class="next paginate_button" ng-show="pagelist.length && current_page != totalPage"
+                       ng-click="jumpPage(current_page+1)">下一页</a>
+                    <a class="last paginate_button"
+                       ng-show="pagelist.length && pagelist[pagelist.length-1] != totalPage"
+                       ng-click="jumpPage(totalPage)">最后一页</a>
+                </div>
+            </div>
+
+            <div ng-show="mapShowed">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-md-3 col-sm-3 col-xs-3 form-group">
+                        <select class="form-control" ng-init="slice_num=10" ng-model="slice_num"
+                                ng-options="n as n+'个点一组' for n in [3,5,10,15,20,30,50,80,120,180,230,300]"></select>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 form-group">
+                        <select class="form-control" ng-init="m=5" ng-model="m"
+                                ng-options="n as n+'次多项式' for n in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"></select>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 form-group">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="curve_fitting()">曲线拟合
+                            </button>
+                        </span>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 form-group">
+                        <select class="form-control" ng-init="filter_type='all'" ng-model="filter_type" ng-change="point_filter()">
+                            <option value="all" selected="selected">显示全部</option>
+                            <option value="gps">忽略lbs</option>
+                            <option value="lbs">忽略gps</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 form-group">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="line_draw()">数据连线
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- content ends here -->
+        </div>
+    </div>
+</div>

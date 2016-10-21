@@ -1,0 +1,113 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel" data-ng-init="getRecords()">
+        <div class="x_title">
+            <h2>搜索:</h2>
+            <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-left top_search" style="height:10px;">
+                <div class="input-group">
+                    <input class="form-control" placeholder="输入版本号" type="number" ng-model="number">
+					<span class="input-group-btn">
+									<button class="btn btn-default" type="button" ng-click="searchRecords()"><i
+                                            class="fa fa-search"></i>
+                                    </button>
+								</span>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 form-group pull-left" style="height:10px;">
+                <select class="form-control" ng-model="num" ng-options="n for n in numlist">
+                    <option value="" disabled>每页显示</option>
+                </select>
+            </div>
+            <ul class="nav navbar-right panel_toolbox">
+                <li class="pull-right">
+                    <a class="close-link" style="cursor:pointer;" data-toggle="modal" data-target="#myModal"><i
+                            class="fa fa-android fa-2x"></i>上传安卓版本</a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <!-- content starts here -->
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>版本号</th>
+                    <th>名字</th>
+                    <th>平台</th>
+                    <th>说明</th>
+                    <th>文件</th>
+                    <th>上传时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="data in datas" ng-model="datas">
+                    <td>{[data.number]}</td>
+                    <td>{[data.name]}</td>
+                    <td>{[data.platform]}</td>
+                    <td>{[data.log]}</td>
+                    <td><a ng-href="http://{[server_uri]}/android/{[data.file_id]}.apk">{[data.file_id]}.apk</a></td>
+                    <td>{[data.maketime]}
+                        <a ng-show="deletable" style="color: red;cursor: pointer;"
+                                        ng-click="delete(data.number)">X</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="example_info" class="dataTables_info">总页数 : {[totalPage]}</div>
+            <div class="dataTables_paginate paging_full_numbers">
+                <a class="first paginate_button paginate_button_disabled" ng-show="pagelist.length && pagelist[0] != 1"
+                   ng-click="jumpPage(1)">第一页</a>
+                <a class="previous paginate_button paginate_button_disabled" ng-show="current_page != 1"
+                   ng-click="jumpPage(current_page-1)">上一页</a>
+				<span>
+								<a ng-repeat="page in pagelist"
+                                   ng-class="{true:'paginate_active',false:'paginate_button'}[current_page==page]"
+                                   ng-click="jumpPage(page)">{[page]}</a>
+							</span>
+                <a class="next paginate_button" ng-show="pagelist.length && current_page != totalPage"
+                   ng-click="jumpPage(current_page+1)">下一页</a>
+                <a class="last paginate_button" ng-show="pagelist.length && pagelist[pagelist.length-1] != totalPage"
+                   ng-click="jumpPage(totalPage)">最后一页</a>
+            </div>
+            <!-- content ends here -->
+        </div>
+    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog" spinner spinner-name="spin">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">选择文件并上传</h4>
+            </div>
+            <div class="modal-body">
+                <form class="Form" action="/admin/version/upload" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        &nbsp;&nbsp;版本号: <input type="number" class="form-control" name="number">
+                    </div>
+                    <div class="form-group">
+                        版本名称: <input type="text" class="form-control" name="name">
+                    </div>
+                    <div class="form-group">
+                        更新说明: <textarea name="log" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        平台:
+                        <select name="platform" class="form-control">
+                            <option value="android">安卓</option>
+                            <option value="ios" disabled>IOS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="file">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary submitForm" style="margin-bottom:0px;">上传</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

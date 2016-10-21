@@ -1,0 +1,17 @@
+site_name: APP文档
+docs_dir: ../docs_app
+pages:
+- '消息推送':
+    - '家庭圈': 'push.md'
+    - '客服模块': 'service/push.md'
+- 'APIv1接口':
+    - '家庭圈': 'index.md'
+    - '客服模块': 'service/index.md'
+    - '其他模块': 'other.md'
+- 'APIv2接口': apiv2.md
+- '错误代码':
+    - '家庭圈': 'error.md'
+    - '客服模块': 'service/error.md'
+- 'ChangeLog': ChangeLog.md
+theme: mkdocs
+copyright: 'YK01 Team@2016'

@@ -1,0 +1,153 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel" data-ng-init="getRecords()">
+        <div class="x_title">
+            <h2>搜索:</h2>
+            <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-left top_search" style="height:10px;">
+                <div class="input-group">
+                    <input class="form-control" placeholder="输入id" type="text" ng-model="_id">
+					<span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="searchRecords()"><i
+                                class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 form-group pull-left" style="height:10px;">
+                <select class="form-control" ng-model="num" ng-options="n for n in numlist">
+                    <option value="" disabled>每页显示</option>
+                </select>
+            </div>
+            <ul class="nav navbar-right panel_toolbox">
+                <li class="pull-right">
+                    <a class="close-link" style="cursor:pointer;" data-toggle="modal" data-target="#myModal"><i
+                            class="fa fa-users fa-2x"></i>新建账号</a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <!-- content starts here -->
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>昵称</th>
+                    <th>创建时间</th>
+                    <th>最后登录时间</th>
+                    <th>权限</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="data in datas" ng-model="datas">
+                    <td>{[data._id]}</td>
+                    <td>{[data.nickname]}</td>
+                    <td>{[data.maketime]}</td>
+                    <td>{[data.lasttime]}</td>
+                    <td>{[data.permissions]}</td>
+                    <td><a style="cursor: pointer;"
+                           ng-click="modify(data._id)"><i class="fa fa-edit"></i></a></td>
+                    <td><a ng-show="data._id!='admin'" style="color: red;cursor: pointer;"
+                           ng-click="delete(data._id)">X</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="example_info" class="dataTables_info">总页数 : {[totalPage]}</div>
+            <div class="dataTables_paginate paging_full_numbers">
+                <a class="first paginate_button paginate_button_disabled" ng-show="pagelist.length && pagelist[0] != 1"
+                   ng-click="jumpPage(1)">第一页</a>
+                <a class="previous paginate_button paginate_button_disabled" ng-show="current_page != 1"
+                   ng-click="jumpPage(current_page-1)">上一页</a>
+				<span>
+								<a ng-repeat="page in pagelist"
+                                   ng-class="{true:'paginate_active',false:'paginate_button'}[current_page==page]"
+                                   ng-click="jumpPage(page)">{[page]}</a>
+							</span>
+                <a class="next paginate_button" ng-show="pagelist.length && current_page != totalPage"
+                   ng-click="jumpPage(current_page+1)">下一页</a>
+                <a class="last paginate_button" ng-show="pagelist.length && pagelist[pagelist.length-1] != totalPage"
+                   ng-click="jumpPage(totalPage)">最后一页</a>
+            </div>
+            <!-- content ends here -->
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">新建后台账号</h4>
+            </div>
+            <div class="modal-body">
+                <form class="Form" action="/admin/admin/create" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        id(必填): <input type="text" class="form-control" name="_id">
+                    </div>
+                    <div class="form-group">
+                        昵称(*): <input type="text" class="form-control" name="nickname">
+                    </div>
+                    <div class="form-group">
+                        权限(必填):
+                        <select>
+                            <option value="guest">访客成员(guest)</option>
+                            <option value="story_manage">故事管理员(story_manage)</option>
+                            <option value="category_manage">故事分类管理员(category_manage)</option>
+                            <option value="version_manage">Android版本管理员(version_manage)</option>
+                            <option value="document">文档查看员(document)</option>
+                        </select>
+                        <button type="button" class="btn btn-xs btn-default" ng-click="addPermissions($event)">添加</button>
+                        <button type="button" class="btn btn-xs btn-default" ng-click="delPermissions($event)">移除</button>
+                    </div>
+                    <div class="form-group" style="overflow: auto;">{[new_permissions]}</div>
+                    <input type="hidden" name="permissions" value="{[new_permissions]}">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary submitForm" style="margin-bottom:0px;">创建</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="form-group">
+                    id: <input type="text" class="form-control" name="_id" disabled="true">
+                </div>
+                <div class="form-group">
+                    昵称(*): <input type="text" class="form-control" name="nickname" ng-model="temp.nickname">
+                </div>
+                <div class="form-group">
+                    权限(必填):
+                    <select>
+                        <option value="guest">访客成员(guest)</option>
+                        <option value="story_manage">故事管理员(story_manage)</option>
+                        <option value="category_manage">故事分类管理员(category_manage)</option>
+                        <option value="version_manage">版本管理员(version_manage)</option>
+                        <option value="document">文档查看员(document)</option>
+                        <option value="plaza_manage">广场管理员(plaza_manage)</option>
+                        <option value="debug">腕表测试员(debug)</option>
+                        <option value="watch_manage">腕表管理员(watch_manage)</option>
+                        <option value="game_manage">游戏管理员(game_manage)</option>
+                        <option value="service_manage">客服管理员(service_manage)</option>
+                    </select>
+                    <button type="button" class="btn btn-xs btn-default" ng-click="addPermissions_temp($event)">添加</button>
+                    <button type="button" class="btn btn-xs btn-default" ng-click="delPermissions_temp($event)">移除</button>
+                </div>
+                <div class="form-group" style="overflow: auto;">{[temp.permissions]}</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" style="margin-bottom:0px;" ng-click="submit_temp()">修改</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>

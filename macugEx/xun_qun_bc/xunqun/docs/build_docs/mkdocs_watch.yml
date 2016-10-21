@@ -1,0 +1,9 @@
+site_name: 腕表文档
+docs_dir: ../docs_watch
+pages:
+- '项目说明': index.md
+- 'tcp指令文档': instruct.md
+- 'http接口文档': interface.md
+- '获取配置信息': config.md
+copyright: 'YK01 Team@2016'
+theme: mkdocs

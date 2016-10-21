@@ -1,0 +1,62 @@
+{
+  "0000": {
+    "name": "test man",
+    "tcp_url": [
+      "s.ios16.com",
+      8000
+    ],
+    "http_url": [
+      "h.ios16.com",
+      8001
+    ],
+    "static_url": [
+      "static.ios16.com",
+      80
+    ]
+  },
+  "0001": {
+    "name": "test woman",
+    "tcp_url": [
+      "s.ios16.com",
+      8000
+    ],
+    "http_url": [
+      "h.ios16.com",
+      8001
+    ],
+    "static_url": [
+      "static.ios16.com",
+      80
+    ]
+  },
+  "1000": {
+    "name": "produce man",
+    "tcp_url": [
+      "s.mobilebrother.net",
+      8000
+    ],
+    "http_url": [
+      "h.mobilebrother.net",
+      8001
+    ],
+    "static_url": [
+      "static.mobilebrother.net",
+      80
+    ]
+  },
+  "1001": {
+    "name": "produce woman",
+    "tcp_url": [
+      "s.mobilebrother.net",
+      8000
+    ],
+    "http_url": [
+      "h.mobilebrother.net",
+      8001
+    ],
+    "static_url": [
+      "static.mobilebrother.net",
+      80
+    ]
+  }
+}
