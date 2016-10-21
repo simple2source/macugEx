@@ -1,0 +1,10 @@
+{
+  "default": {
+    "images": {
+      "group": "./misc/group_default.jpg",
+      "user": "./misc/user_default.jpg",
+      "watch": "./misc/watch_default.jpg",
+      "contact": "./misc/contact_default.jpg"
+    }
+  }
+}
