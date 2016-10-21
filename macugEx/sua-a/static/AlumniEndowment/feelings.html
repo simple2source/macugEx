@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <title>情怀榜</title>
+    <link href="/static/AlumniEndowment/css/reset.css" rel="stylesheet">
+    <link href="/static/AlumniEndowment/css/alumni-information.css" rel="stylesheet">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+<style>
+    img{width: 100%;}
+</style>
+      <script src="../../../lekong100/js/bluetooth_cup.js"></script>
+  </head>
+
+<body style="background: #d8d8d8;">
+    <div class="contain">
+        <ul class="fee-ul">
+            <li>
+                <div class="fee-li-1"> <span class="fee-span-color">1</span><img style="float: right;margin-top: 5vw;" src="/static/AlumniEndowment/images/6c2fbab.png" alt=""></div>
+                <div class="fee-li-2">
+                    <p style="font-size: 0.5em">09计算机</p>
+                    <p style="font-size: 1em">山东和</p>
+                </div>
+                <div class="fee-li-3">
+                    <p style="font-size: 1.2em"><img src="/static/AlumniEndowment/images/168bebc.png" alt=""></p>
+                    <p style="font-size: 1.2em"><span style="color: #cf0000;">9999</span> 元</p>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <div class="fee-li-1"> <span class="fee-span-color">2</span><img style="float: right;margin-top: 5vw;" src="/static/AlumniEndowment/images/6c2fbab.png" alt=""></div>
+                <div class="fee-li-2">
+                    <p style="font-size:0.5em">09计算机</p>
+                    <p style="font-size: 1em">山东和</p>
+                </div>
+                <div class="fee-li-3">
+                    <p style="font-size: 1.2em"><img src="/static/AlumniEndowment/images/168bebc.png" alt=""></p>
+                    <p style="font-size: 1.2em"><span style="color: #cf0000">9999</span> 元</p>
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "/resource/users/donateRanks",
+            dataType : "json",
+            success: function(data){
+                if(data.code == 0){
+                    for(var i = 0 ; i<data.users.length;i++){
+
+                        var user = data.users[i];
+
+                        var id = user.userid;
+                        var imgURL = user.image_url;
+                        var name = user.name;
+                        var grade = user.grade;
+                        var specialty = user.specialty;
+                        var amount = user.amount;
+
+                        a = i+1;
+                        var template = "<li id="+id+"><div class='fee-li-1'><span class='fee-span-color'>"+a+"</span><img style='float: right;margin-top: 5vw;' src='"+imgURL+"'></div><div class='fee-li-2'><p style='font-size: 0.5em'>"+grade+specialty+"</p> <p style='font-size: 1em'>"+name+"</p></div><div class='fee-li-3'><p style='font-size: 1.2em'><img src='/static/AlumniEndowment/images/168bebc.png'></p><p style='font-size: 1.2em'><span style='color: #cf0000;'>"+amount+"</span> 元</p></div><div class='clear'></div></li>";
+                        $('.fee-ul').append(template);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

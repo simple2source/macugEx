@@ -1,0 +1,310 @@
+/*活动圈子*/
+*{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+}
+
+/*校友活动*/
+.activity_box{
+	width:99%;
+	height:100%;
+	border:1px solid #ccc;
+	box-shadow:0 -5px 3px #ccc;
+	border-radius:8px;
+}	
+nav{
+	width:99%;
+	height:40px;
+	margin-top:3px;
+}
+nav .navbar{
+	width:99%;
+	height:40px;
+	margin:auto;
+	justify-content:center;
+	display:-webkit-flex;
+}
+nav .navbar a{
+	margin:auto;
+	display:inline-block;
+	width:100px;
+	height:40px;
+	border:1px solid #ccc;
+	line-height:40px;
+	border-radius:5px;
+	text-align:center;
+	color:#666;
+}
+.navbar a:first-child{
+	flex:1;
+}
+.navbar a:last-child{
+	flex:1;
+}
+/*活动方式*/
+.activity_way{
+	width:99%;
+	margin-top:20px;
+}
+.activity_way ul{
+	width:99%;
+	height:50px;
+	margin:auto;
+	justify-content:center;
+	display:-webkit-flex; 
+}
+.activity_way ul li{
+	float:left;
+	width:103px;
+	height:100px;
+	text-align:center;
+}
+.activity_way ul li a{
+	display:block;
+	width:100px;
+	height:100px;
+	color:#666;
+}
+.activity_way ul li:nth-child(3) a{
+	height:70px;
+}
+.activity_way ul li:nth-child(3){
+	line-height:31px;
+	padding-top:10px;
+}
+.activity_way ul li:last-child{
+	line-height:22px;
+}
+/*最新活动*/
+.latest_activities{
+	width:70px;
+	height:20px;
+	margin:auto;
+	color:#666;
+	margin-top:100px;
+	text-align:center;
+	border-bottom:2px solid #f00;
+}
+/*教育活动*/
+.education_activities{
+	width:100%;
+}
+.activity_first{
+	width:99%;
+	height:100px;
+	border:1px solid #ccc;
+	border-radius:8px;
+}
+.activity_first .son{
+	width:50%;
+	margin:auto;
+}
+.activity_first h2 a{
+	font-size:20px;
+	color:#666;
+	font-weight:200;
+}
+
+.activity_first h2,p{
+	width:99%;
+	margin:auto;
+	margin-top:15px;
+}
+.activity_first p a{
+	color:#666;
+}
+.activity_first p span{
+	margin-left:100px;
+}
+/*发布活动*/
+.Release_activity{
+	width:99%;
+	height:40px;
+	margin:80px 0 5px 0;
+}
+.Release_activity a{
+	width:100%;
+	display:block;
+	height:inherit;
+	text-align:center;
+	line-height:40px;
+	background:orange;
+	border-radius:5px;
+	color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+/*兴趣圈子里面的内容*/
+.activity_box .activity{
+	width:99%;
+}
+.activity ul{
+	width:99%;
+	height:260px;
+	margin:auto;
+	margin-top:30px;
+}
+.activity ul li{
+	float:left;
+	width:100px;
+	height:130px;
+	text-align: center;
+}
+.activity ul li a{
+	color:#666;
+}
+.activity ul li:nth-child(4){
+	line-height:35px;
+
+}
+.activity ul li:nth-child(4) img{
+	padding-top:5px;
+}
+/*最新话题*/
+.Topic{
+	width:90px;
+	height:23px;
+	margin:auto;
+	border-bottom:2px solid blue;
+	text-align:center;
+	color:#333;
+	font-size:16px;
+	font-family:'Microsoft YaHei';
+}
+/*话题内容*/
+.Topic_content{
+	width:99%;
+	height:100px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	margin:0 10px;
+}
+.Topic_content .box{
+	width:99%;
+	margin:auto;
+}
+.Topic_content h3 a{color:#666;}
+.Topic_content h3{
+	width:99%;
+	margin:auto;
+	margin-top:30px;
+	font-size:12px;
+	color:#666;
+	line-height:30px;
+}
+.Topic_content h3 span{
+	margin-left:75%;
+}
+/*创建圈子*/
+.create_activity{
+	width:99%;
+	height:40px;
+	margin-top:30px;
+}
+.create_activity a{
+	display:block;
+	width:100%;
+	height:40px;
+	background:orange;
+	text-align: center;
+	line-height:40px;
+	color:#fff;
+	border-radius: 8px;
+}
+/*media*/
+
+@media screen and (min-width:320px){
+.Topic_content{width:98%;margin:auto;}
+.activity_first .son{
+	width:93%;
+	margin:auto;
+}
+}
+
+@media screen and (min-width:360px){
+.activity ul{
+	width:87%;
+}
+}
+
+@media screen and (min-width:410px){
+.Topic_content{width:98%;margin:auto;}
+.activity_first .son{
+	width:70%;
+	margin:auto;
+}
+.activity ul{
+	width:74%;
+}
+.Topic_content .box{
+	width:76%;
+	margin:auto;
+}	
+}
+
+@media screen and (min-width:540px){
+
+@media screen and (min-width:600px){
+.activity_first .son{
+	width:50%;
+	margin:auto;
+}
+.activity ul{
+	width:55%;
+}
+.Topic_content .box{
+	width:54%;
+	margin:auto;
+}
+}
+
+@media screen and (min-width:760px){
+.activity_first .son{
+	width:39%;
+	margin:auto;
+}
+.activity ul{
+	width:41%;
+}
+.Topic_content .box{
+	width:41%;
+	margin:auto;
+}
+}
+
+@media screen and (min-width:800px){
+.activity_first .son{
+	width:36%;
+	margin:auto;
+}
+.activity ul{
+	width:39%;
+}
+.Topic_content .box{
+	width:39%;
+	margin:auto;
+}
+}
+@media screen and (min-width:1024px){
+.activity_first .son{
+	width:23%;
+	margin:auto;
+}
+.activity ul{
+	width:29%;
+}
+.Topic_content .box{
+	width:24%;
+	margin:auto;
+}
+}

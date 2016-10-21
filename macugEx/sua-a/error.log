@@ -1,0 +1,2099 @@
+2016-09-26 18:44:41,802 ERROR view 
+view:<api.resources.user.UsersList object at 0x110c121d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 60, in view
+    rsp.headers.append(('Access-Control-Allow-Origin', '*'))
+AttributeError: 'dict' object has no attribute 'headers'
+2016-09-26 18:44:41,805 ERROR view 
+view:<api.resources.user.UsersCount object at 0x110c12110>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 60, in view
+    rsp.headers.append(('Access-Control-Allow-Origin', '*'))
+AttributeError: 'dict' object has no attribute 'headers'
+2016-09-26 18:46:46,922 ERROR view 
+view:<api.resources.user.UsersCount object at 0x111001110>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 60, in view
+    rsp.headers['Access-Control-Allow-Origin'] = '*'
+AttributeError: 'dict' object has no attribute 'headers'
+2016-09-26 18:46:46,930 ERROR view 
+view:<api.resources.user.UsersList object at 0x1110011d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 60, in view
+    rsp.headers['Access-Control-Allow-Origin'] = '*'
+AttributeError: 'dict' object has no attribute 'headers'
+2016-09-26 18:48:28,813 ERROR view 
+view:<api.resources.user.UsersCount object at 0x105e630d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 62, in view
+    return rsp
+  File "/Users/fff/SUAA/api/wrappers.py", line 62, in view
+    return rsp
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2016-09-26 18:49:44,870 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/representations/json.py", line 23, in output_json
+    resp.headers.extend(headers or {})
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/datastructures.py", line 1040, in extend
+    for key, value in iterable:
+ValueError: too many values to unpack
+2016-09-26 18:49:48,773 ERROR view 
+view:<api.resources.user.UsersList object at 0x110fea1d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 62, in view
+    return rsp, 200, ['Access-Control-Allow-Origin', '*']
+  File "/Users/fff/SUAA/api/wrappers.py", line 62, in view
+    return rsp, 200, ['Access-Control-Allow-Origin', '*']
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/bdb.py", line 67, in dispatch_line
+    self.user_line(frame)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/pdb.py", line 158, in user_line
+    self.interaction(frame, None)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/pdb.py", line 210, in interaction
+    self.cmdloop()
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/cmd.py", line 130, in cmdloop
+    line = raw_input(self.prompt)
+KeyboardInterrupt
+2016-09-26 18:53:51,931 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/representations/json.py", line 20, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 332, in _iterencode_list
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: ObjectId('57e8fe335cfd175823dac07f') is not JSON serializable
+2016-09-28 11:10:50,842 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 207, in <module>
+    main()
+  File "app.py", line 190, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/company.py", line 12, in <module>
+    class CompanyResource(Resource):
+  File "/Users/fff/SUAA/api/resources/company.py", line 13, in CompanyResource
+    img_url = '%s/images/company' % conf.STATIC_URL
+AttributeError: 'module' object has no attribute 'STATIC_URL'
+2016-09-28 17:23:36,197 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 207, in <module>
+    main()
+  File "app.py", line 190, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/company.py", line 12, in <module>
+    class CompanyResource(Resource):
+  File "/Users/fff/SUAA/api/resources/company.py", line 13, in CompanyResource
+    img_url = '%s/images/company' % conf.STATIC_URL
+AttributeError: 'module' object has no attribute 'STATIC_URL'
+2016-09-29 20:40:17,255 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 232, in <module>
+    main()
+  File "app.py", line 218, in main
+    api.init_app(app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 118, in init_app
+    self._init_app(app)
+  File "/Users/fff/SUAA/api/wrappers.py", line 77, in _init_app
+    self._register_view(app, resource, *urls, **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 437, in _register_view
+    raise ValueError('This endpoint (%s) is already set to the class %s.' % (endpoint, previous_view_class.__name__))
+ValueError: This endpoint (careerinfo) is already set to the class CareerInfo.
+2016-09-29 20:48:54,360 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 232, in <module>
+    main()
+  File "app.py", line 218, in main
+    api.init_app(app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 118, in init_app
+    self._init_app(app)
+  File "/Users/fff/SUAA/api/wrappers.py", line 77, in _init_app
+    self._register_view(app, resource, *urls, **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 437, in _register_view
+    raise ValueError('This endpoint (%s) is already set to the class %s.' % (endpoint, previous_view_class.__name__))
+ValueError: This endpoint (careerinfo) is already set to the class CareerInfo.
+2016-09-30 09:29:50,513 ERROR view 
+view:<api.resources.user.UsersList object at 0x10cc5af10>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 121, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 108, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/user.py", line 108, in post
+    userid = args['userid']
+KeyError: 'userid'
+2016-09-30 10:10:36,274 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: TypeError(u"'Collection' object is not callable. If you meant to call the 'delteOne' method on a 'Collection' object it is failing because no such method exists.",) is not JSON serializable
+2016-09-30 10:20:49,116 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: TypeError(u"'Collection' object is not callable. If you meant to call the 'delte_one' method on a 'Collection' object it is failing because no such method exists.",) is not JSON serializable
+2016-09-30 10:22:03,576 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 232, in <module>
+    main()
+  File "app.py", line 215, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/user.py", line 84
+    db.user.delete_one.({'_id': userid})
+                       ^
+SyntaxError: invalid syntax
+2016-10-08 09:42:40,599 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 222, in main
+    api.init_app(app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 118, in init_app
+    self._init_app(app)
+  File "/Users/fff/SUAA/api/wrappers.py", line 87, in _init_app
+    self._register_view(app, resource, *urls, **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 437, in _register_view
+    raise ValueError('This endpoint (%s) is already set to the class %s.' % (endpoint, previous_view_class.__name__))
+ValueError: This endpoint (careerinfo) is already set to the class CareerInfo.
+2016-10-09 17:34:56,126 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 222, in main
+    api.init_app(app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 118, in init_app
+    self._init_app(app)
+  File "/Users/fff/SUAA/api/wrappers.py", line 87, in _init_app
+    self._register_view(app, resource, *urls, **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 437, in _register_view
+    raise ValueError('This endpoint (%s) is already set to the class %s.' % (endpoint, previous_view_class.__name__))
+ValueError: This endpoint (careerinfo) is already set to the class CareerInfo.
+2016-10-10 12:08:18,339 ERROR view 
+view:<api.resources.news.News object at 0x10e1032d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 141, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-10 12:08:20,167 ERROR view 
+view:<api.resources.news.News object at 0x10e1032d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 141, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-10 12:08:20,422 ERROR view 
+view:<api.resources.news.News object at 0x10e1032d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 141, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-10 12:08:20,635 ERROR view 
+view:<api.resources.news.News object at 0x10e1032d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 141, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-10 12:09:14,619 ERROR view 
+view:<api.resources.news.News object at 0x10e1032d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 141, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-10 12:09:16,079 ERROR view 
+view:<api.resources.news.News object at 0x10e1032d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 141, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-11 16:45:51,483 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/quote.py", line 109
+    class QuotesCount(QuoteResource):
+                                    ^
+IndentationError: expected an indented block
+2016-10-11 16:46:01,422 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/quote.py", line 109
+    class QuotesCount(QuoteResource):
+                                    ^
+IndentationError: expected an indented block
+2016-10-11 16:50:07,159 ERROR view 
+view:<api.resources.association.Associations object at 0x104747dd0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 71, in post
+    db.association.insert(association)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2205, in insert
+    check_keys, manipulate, write_concern)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 530, in _insert
+    check_keys, manipulate, write_concern, op_id, bypass_doc_val)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 494, in _insert_one
+    doc['_id'] = ObjectId()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/datastructures.py", line 182, in __setitem__
+    is_immutable(self)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/datastructures.py", line 28, in is_immutable
+    raise TypeError('%r objects are immutable' % self.__class__.__name__)
+TypeError: 'ImmutableMultiDict' objects are immutable
+2016-10-13 12:00:38,757 ERROR view 
+view:<api.resources.association.Association object at 0x107710310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update({'_id': ObjectId(aid)}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2237, in update
+    check_keys, multi, manipulate, write_concern)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:02:44,381 ERROR view 
+view:<api.resources.association.Association object at 0x10a9cc310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 36, in post
+    db.association.update({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2237, in update
+    check_keys, multi, manipulate, write_concern)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:04:59,052 ERROR view 
+view:<api.resources.association.Association object at 0x10a6a2310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 36, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:05:56,229 ERROR view 
+view:<api.resources.association.Association object at 0x108e75310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:06:56,053 ERROR view 
+view:<api.resources.association.Association object at 0x1017b1310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:09:39,578 ERROR view 
+view:<api.resources.association.Association object at 0x111122310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:15:08,793 ERROR view 
+view:<api.resources.association.Association object at 0x111122310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:21:57,058 ERROR view 
+view:<api.resources.association.Association object at 0x111122310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 12:23:02,031 ERROR view 
+view:<api.resources.association.Association object at 0x111122310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-13 14:10:52,528 ERROR view 
+view:<api.resources.association.Association object at 0x10e23f310>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 37, in post
+    db.association.update_one({'_id': aid}, {'$set': form_data}, upsert=True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 835, in update_one
+    bypass_doc_val=bypass_document_validation)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 710, in _update
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 301, in _check_write_command_response
+    raise WriteError(error.get("errmsg"), error.get("code"), error)
+WriteError: '$set' is empty. You must specify a field like so: {$set: {<field>: ...}}
+2016-10-14 09:33:21,448 ERROR view 
+view:<api.resources.news.News object at 0x107a179d0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 153, in post
+    new.pop('_id')
+KeyError: '_id'
+2016-10-14 09:36:36,143 ERROR view 
+view:<api.resources.quote.Quote object at 0x107a17c50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/quote.py", line 113, in post
+    quote.pop('_id')
+KeyError: '_id'
+2016-10-14 09:36:41,194 ERROR view 
+view:<api.resources.quote.Quote object at 0x107a17c50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/quote.py", line 113, in post
+    quote.pop('_id')
+KeyError: '_id'
+2016-10-14 10:09:04,021 ERROR view 
+view:<api.resources.quote.Quote object at 0x107a17c50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/quote.py", line 113, in post
+    quote.pop('_id')
+KeyError: '_id'
+2016-10-14 10:23:26,383 ERROR view 
+view:<api.resources.association.AssociationCount object at 0x10583ef90>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 63, in get
+    'count': db.association.count()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 1235, in count
+    return self._count(cmd)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 1194, in _count
+    with self._socket_for_reads() as (sock_info, slave_ok):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/mongo_client.py", line 752, in _socket_for_reads
+    with self._get_socket(read_preference) as sock_info:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/mongo_client.py", line 716, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/topology.py", line 142, in select_server
+    address))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/topology.py", line 118, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: 127.0.0.1:27017: [Errno 61] Connection refused
+2016-10-14 10:23:26,395 ERROR view 
+view:<api.resources.association.Associations object at 0x10583ee50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 209, in get_page_num_to_float
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 75, in get
+    'associations': list(db.association.find().skip(page * num).limit(num))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/cursor.py", line 1012, in _refresh
+    self.__read_concern))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/cursor.py", line 850, in __send_message
+    **kwargs)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/mongo_client.py", line 781, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/topology.py", line 142, in select_server
+    address))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/topology.py", line 118, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: 127.0.0.1:27017: [Errno 61] Connection refused
+2016-10-14 10:23:39,970 ERROR view 
+view:<api.resources.association.Associations object at 0x10583ee50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 85, in post
+    _id = db.association.insert(form_data)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2203, in insert
+    with self._socket_for_writes() as sock_info:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/mongo_client.py", line 716, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/topology.py", line 142, in select_server
+    address))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/topology.py", line 118, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: 127.0.0.1:27017: [Errno 61] Connection refused
+2016-10-14 10:29:25,597 ERROR view 
+view:<api.resources.association.Associations object at 0x1029f5f50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 86, in post
+    _id = db.association.insert(form_data)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2205, in insert
+    check_keys, manipulate, write_concern)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 530, in _insert
+    check_keys, manipulate, write_concern, op_id, bypass_doc_val)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 513, in _insert_one
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 300, in _check_write_command_response
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+DuplicateKeyError: E11000 duplicate key error collection: suaa.association index: _id_ dup key: { : "www" }
+2016-10-14 10:30:32,057 ERROR view 
+view:<api.resources.association.Associations object at 0x10e59cf50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 86, in post
+    _id = db.association.insert(form_data)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2205, in insert
+    check_keys, manipulate, write_concern)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 530, in _insert
+    check_keys, manipulate, write_concern, op_id, bypass_doc_val)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 513, in _insert_one
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 300, in _check_write_command_response
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+DuplicateKeyError: E11000 duplicate key error collection: suaa.association index: _id_ dup key: { : "www" }
+2016-10-14 10:31:36,002 ERROR view 
+view:<api.resources.association.Associations object at 0x10e59cf50>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/association.py", line 86, in post
+    _id = db.association.insert(form_data)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 2205, in insert
+    check_keys, manipulate, write_concern)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 530, in _insert
+    check_keys, manipulate, write_concern, op_id, bypass_doc_val)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/collection.py", line 513, in _insert_one
+    _check_write_command_response([(0, result)])
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/pymongo/helpers.py", line 300, in _check_write_command_response
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+DuplicateKeyError: E11000 duplicate key error collection: suaa.association index: _id_ dup key: { : "www" }
+2016-10-14 10:47:25,904 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1044bb820> is not JSON serializable
+2016-10-14 10:48:37,661 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1044a1460> is not JSON serializable
+2016-10-14 10:48:53,599 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1044bbb90> is not JSON serializable
+2016-10-14 11:03:55,655 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1046c05a0> is not JSON serializable
+2016-10-14 11:03:59,425 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1044bb820> is not JSON serializable
+2016-10-14 11:04:19,252 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1046c0500> is not JSON serializable
+2016-10-14 11:04:22,686 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1046c03c0> is not JSON serializable
+2016-10-14 11:06:10,368 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x106d59f00> is not JSON serializable
+2016-10-14 11:37:47,760 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x106d596e0> is not JSON serializable
+2016-10-14 11:39:17,161 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x106f7b550> is not JSON serializable
+2016-10-14 14:25:58,383 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1035fb780> is not JSON serializable
+2016-10-14 14:30:44,406 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1035fb410> is not JSON serializable
+2016-10-14 15:11:34,156 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10d422960> is not JSON serializable
+2016-10-14 15:11:52,476 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10d43fe60> is not JSON serializable
+2016-10-14 15:19:08,973 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10a9fa9b0> is not JSON serializable
+2016-10-14 15:22:06,183 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x101e4d9b0> is not JSON serializable
+2016-10-14 15:28:34,722 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x101e4d410> is not JSON serializable
+2016-10-14 15:36:24,097 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x101e4d780> is not JSON serializable
+2016-10-14 15:36:36,708 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x101e30640> is not JSON serializable
+2016-10-14 15:45:54,351 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10211c4b0> is not JSON serializable
+2016-10-14 16:28:27,292 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10211c460> is not JSON serializable
+2016-10-14 16:37:12,036 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10b320dc0> is not JSON serializable
+2016-10-14 17:02:26,192 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10b320780> is not JSON serializable
+2016-10-14 17:20:25,627 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10b320730> is not JSON serializable
+2016-10-14 17:51:16,250 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10b320960> is not JSON serializable
+2016-10-14 17:51:24,461 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10b320dc0> is not JSON serializable
+2016-10-14 17:51:36,097 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x10b7a1320> is not JSON serializable
+2016-10-14 17:52:17,454 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <pymongo.results.UpdateResult object at 0x1088d7870> is not JSON serializable
+2016-10-14 17:54:36,219 ERROR view 
+view:<api.resources.news.News object at 0x1069f6a90>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 183, in change_str_to_object_id
+    return view(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 166, in post
+    print _id._id,'----'
+AttributeError: 'UpdateResult' object has no attribute '_id'
+2016-10-14 18:25:30,601 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <class 'api.resources.news.A'> is not JSON serializable
+2016-10-14 18:26:17,214 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 481, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask_restful/__init__.py", line 510, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 48, in custom_output_json
+    'default': custom_dumps_fix
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 434, in _iterencode
+    for chunk in _iterencode_dict(o, _current_indent_level):
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+    for chunk in chunks:
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "/Users/fff/SUAA/api/wrappers.py", line 40, in custom_dumps_fix
+    raise TypeError(repr(obj) + ' is not JSON serializable')
+TypeError: <class 'api.resources.news.A'> is not JSON serializable
+2016-10-18 16:38:50,362 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/admin/run.py", line 17, in <module>
+    import setting
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named setting
+2016-10-18 16:38:56,324 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/admin/run.py", line 17, in <module>
+    import setting
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named setting
+2016-10-19 06:03:43,294 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/news.py", line 35
+    <<<<<<< HEAD
+     ^
+SyntaxError: invalid syntax
+2016-10-19 06:12:22,721 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/news.py", line 7, in <module>
+    import lxml.html as lh
+ImportError: No module named lxml.html
+2016-10-19 07:20:35,088 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "app.py", line 236, in <module>
+    main()
+  File "app.py", line 216, in main
+    __import__(name)
+  File "/Users/fff/SUAA/api/resources/news.py", line 7, in <module>
+    import lxml.html as lh
+ImportError: No module named lxml.html
+2016-10-20 09:38:42,969 ERROR view 
+view:<api.resources.news.NewsSearch object at 0x109954fd0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 205, in get
+    'content': title['content']
+KeyError: 'content'
+2016-10-20 09:38:48,054 ERROR view 
+view:<api.resources.news.NewsSearch object at 0x109954fd0>
+data:
+Traceback (most recent call last):
+  File "/Users/fff/SUAA/api/wrappers.py", line 139, in view
+    rsp = v.dispatch_request(*args, **kwargs)
+  File "/Users/fff/SUAA/api/wrappers.py", line 126, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/fff/SUAA/api/resources/news.py", line 205, in get
+    'content': title['content']
+KeyError: 'content'

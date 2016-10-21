@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>编辑校友卡</title>
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <link rel="stylesheet" href="/static/common/weui.min.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*rem字体*/
+        html {font-size: 100px;}
+        @media (min-width: 320px) {
+            html {
+                font-size: 100px;
+            }
+        }
+        @media (min-width: 360px) {
+            html {
+                font-size: 112.5px
+            }
+        }
+        @media (min-width: 400px) {
+            html {
+                font-size: 125px;
+            }
+        }
+        @media (min-width: 640px) {
+            html {
+                font-size: 200px;
+            }
+        }
+
+        /*内容*/
+        .contain {padding: 6%;}
+        .contain .header .icon {font-size: .16rem;width: 100%;height: 58px;line-height: 58px;border: 1px solid #b2b2b2;border-radius: 5px;color: #a3a3a3}
+        .contain .header .icon .img {width: 58px;height: 100%;margin-right: 10%;border-radius: 50%;}
+        .contain .header .info {font-size: .16rem;width: 100%;height: 58px;line-height: 58px;border: 1px solid #b2b2b2;border-radius: 5px;color: #a3a3a3;margin-top: 4%}
+        .contain .header div span:first-child {margin-left: 10%}
+        .contain .header div span:nth-child(2) {margin-right: 10%}
+        .contain .middle {font-size: 0.14rem;padding: 0;margin: 0.1rem 0;}
+        .contain .middle hr {margin: 0;display: inline-block;width: 0.4rem}
+        .contain .footer {font-size: 0.16rem}
+        .contain .footer input {width: 95%;padding: 0.05rem;border-radius: 5px;font-size: 0.16rem;outline: none;border: 1px solid #c0c0c0;-webkit-appearance: none;margin-top: 0.1rem;margin-bottom: 0.2rem}
+        .contain .save {height: 0.5rem;line-height: 0.5rem;width: 90%;font-size: 0.18rem;text-align: center;background: #efb639;color: white;border-radius: 5px;margin: .4rem auto}
+    </style>
+</head>
+<body>
+<div class="contain">
+    <header class="header">
+        <div class="icon clearfix">
+            <span class="">头像</span>
+            <span class="fr">&gt;</span>
+            <img class="fr img" src="/static/AlumniCard/img/u116.png" alt="头像">
+        </div>
+        <a href="/static/AlumniCard/base-info.html">
+            <div class="info clearfix">
+                <span>基本信息</span>
+                <span class="fr">&gt;</span>
+            </div>
+        </a>
+    </header>
+    <div class="middle">
+        <hr/>
+        完善以下信息，开启更多权限
+        <hr/>
+    </div>
+    <div class="footer">
+        所在行业：
+        <input id="career" type="text" placeholder="互联网" value="">
+        职业：（帮你找到更多同行校友）
+        <input id="profession" type="text" placeholder="销售工程师" value="">
+    </div>
+    <div id="save" class="save">保存</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        /*获取用户ID*/
+        var userid = getUserId();
+        /*头像*/
+        var imgLocalPath;
+        var imgServerPath;
+        $(".icon").click(function () {
+            wx.chooseImage({
+                count: 1, // 默认9
+                sizeType: 'compressed', // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                success: function (res) {
+                    var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                    imgLocalPath = localIds;
+                    if(localIds){
+                        $.ajax({
+                            type:"POST",
+                            url:"/resource/user/" + userid,
+                            dataType:"json",
+                            data:{image_file:localIds}
+                        });
+                        $(".img").attr("src",localIds);
+                    }
+                }
+            });
+
+            wx.uploadImage({
+                localId: 'imgLocalPath', // 需要上传的图片的本地ID，由chooseImage接口获得
+                isShowProgressTips: 1, // 默认为1，显示进度提示
+                success: function (res) {
+                    var serverId = res.serverId; // 返回图片的服务器端ID
+                    imgServerPath = serverId;
+                }
+            });
+        });
+
+        $("#save").click(function () {
+            var data = {};
+            if ($("#career").val()) data['career'] = $("#career").val();
+            if ($("#profession").val()) data['profession'] = $("#profession").val();
+            if (!data){alert("请填写后再保存");return false;}
+            $.ajax({
+                type: "POST",
+                url: "/resource/user/" + userid,
+                dataType: "json",
+                data: data,
+                success: function (result) {
+                    if (result.code == 0) {
+                        alert("已保存");
+                       /* window.location = '/static/AlumniCard/Create-AlumniCard.html';*/
+                    }
+                }
+            });
+        });
+
+        $.get("/resource/user/" + userid, function (result) {
+            if (result.code == 0) {
+                setUser(result);
+
+                if (result.career) $('#career').val(result.career);
+                if (result.profession) $('#profession').val(result.profession);
+                if (result.image_url) $(".img").attr("src",result.image_url);
+            }
+        });
+    })
+
+</script>
+</body>
+</html>

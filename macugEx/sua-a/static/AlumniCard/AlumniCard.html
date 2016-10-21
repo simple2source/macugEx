@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>校友卡</title>
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*内容*/
+        .contain {
+            padding: 10%;
+        }
+
+        .contain > p {
+            font-size: 16px;
+        }
+
+        .contain > form > ul li {
+            margin-top: 10px;
+        }
+
+        .contain > form > ul li p {
+            color: #6a6a6a;
+        }
+
+        .contain > form > ul li input {
+            width: 95%;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            border: 1px solid #c0c0c0;
+            -webkit-appearance: none;
+        }
+
+        .contain .sub {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background: #efb639;
+            font-size: 22px;
+            font-family: 微软雅黑;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 5px;
+            margin-top: 50px;
+            outline: none;
+            border: none
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <p>校友卡可作为以后返校的凭证，请汕大校友真实填写以下信息，不支持非汕大的朋友填写。</p>
+    <form id="form">
+        <ul>
+            <li>
+                <p>真实姓名：</p>
+                <input type="text" id="name" placeholder="必填" required>
+            </li>
+            <li>
+                <p>入学年级：</p>
+                <input type="text" id="grade" placeholder="必填" required>
+            </li>
+            <li>
+                <p>专业：</p>
+                <input type="text" id="specialty" placeholder="必填" required>
+            </li>
+            <li>
+                <p>手机号码：</p>
+                <input type="text" id="phone" placeholder="必填" required>
+            </li>
+        </ul>
+        <button type="button" id="sub" class="sub">生成我的校友卡</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var userid = getUserId();
+
+        $("#sub").click(function () {
+            var user = getUser();
+            var user_phone = user['phone'];
+            if(!user_phone){
+                /*正则判断手机号码*/
+                var phone = $("#phone").val();
+                if(!(/^[1][3-8]+\d{9}$/.test(phone))){
+                    alert("请填写正确的手机号码");
+                    $("#phone").focus();
+                    return false;
+                }
+            }
+
+            /*赋data值*/
+            var data = {};
+            if ($("#name").val()) data['name'] = $("#name").val();
+            if ($("#grade").val()) data['grade'] = $("#grade").val();
+            if ($("#specialty").val()) data['specialty'] = $("#specialty").val();
+            if ($("#phone").val()) data['phone'] = $("#phone").val();
+            if (!data) return false;
+            /*上传*/
+            $.ajax({
+                type: "POST",
+                url: "/resource/user/" + userid,
+                dataType: "json",
+                data: data,
+                success: function (result) {
+                    if (result.code == 0) {
+                        window.location = '/static/AlumniCard/Create-AlumniCard.html';
+                    } else {
+                        console.log('Error:', JSON.stringify(a));
+                    }
+                }
+            });
+        })
+    })
+
+</script>
+
+</body>
+</html>

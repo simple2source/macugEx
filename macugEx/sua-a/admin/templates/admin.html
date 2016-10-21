@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>校友卡</title>
+    <!--quill.css--><link href="https://cdn.quilljs.com/1.0.6/quill.snow.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap core css -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <!-- Custom styling plus plugins -->
+    <link href="/static/css/custom.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="nav-md" ng-app="admin">
+<div class="container body">
+    <div class="main_container" ng-controller="main_container" data-ng-init="server_uri='{{server_uri}}'">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border:0;">
+                    <a href="/#/" class="site_title">
+                        <img src="/static/images/logo.png" style="width:50px;"/><span>校友会</span>
+                    </a>
+                </div>
+                <a href="/#/">
+                    <div class="profile clearfix" style="padding-bottom: 20px;">
+                        <div class="profile_pic">
+                            <img src="/static/images/user.png" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>&nbsp;<!--占位符--></span>
+                            <h2 data-ng-init="username='{{username}}'">{[username]}</h2>
+                        </div>
+                    </div>
+                </a>
+                <br/>
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <ul class="nav side-menu" id="menubar">
+                            {% for menu in menubar %}
+                            <li class="active">
+                                <a><i class="fa {{menu['icon']}}"></i>{{menu['name']}}<span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu" style="display:none">
+                                    {% for mid, submenu in menu['submenubar'].iteritems() %}
+                                    <li control="{{mid}}" class="control">
+                                        <a href="/#/{{mid}}"> {{submenu['name']}}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav class="" role="navigation">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <img src="/static/images/user.png" alt="">
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                <li><a href="javascript:;" ng-click="logout()"><i class="fa fa-sign-out pull-right"></i>
+                                    Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="right_col" role="main">
+            <div>
+                <div class="page-title" style="margin:25px">
+                    <div class="title_left">
+                        <h3>{[page_name || 'loading..']}</h3>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="row" id="ng-view" ng-view></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.form.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/angular.min.js"></script>
+<script src="/static/js/angular-route.js"></script>
+<script src="https://cdn.quilljs.com/1.0.6/quill.js"></script>
+<script src="/static/js/spin.min.js"></script>
+<script src="/static/js/angular-spinner.js"></script>
+<script src="/static/js/notify/pnotify.core.js"></script>
+<script src="/static/js/notify/pnotify.buttons.js"></script>
+<script src="/static/js/notify/pnotify.nonblock.js"></script>
+<script src="/static/js/ui-bootstrap-tpls-1.1.2.min.js"></script>
+<script src="/static/js/datetime-picker.min.js"></script>
+<!--<script src="/static/js/echarts.min.js"></script>-->
+<script>
+    /** ******  left menu  *********************** **/
+    var sidebar_lock = 1;
+    $(function () {
+        $('#sidebar-menu li ul').slideUp();
+        $('#sidebar-menu li').removeClass('active');
+
+        $('#sidebar-menu li').click(function () {
+            if (sidebar_lock >= 0) {
+                sidebar_lock = sidebar_lock - 1;
+                setTimeout(function () {
+                    sidebar_lock = sidebar_lock + 1;
+                }, 200);
+                if ($(this).is('.active')) {
+                    $(this).removeClass('active');
+                    $('ul', this).slideUp();
+                    $(this).removeClass('nv');
+                    $(this).addClass('vn');
+                } else {
+                    $('#sidebar-menu li ul').slideUp();
+                    $(this).removeClass('vn');
+                    $(this).addClass('nv');
+                    $('ul', this).slideDown();
+                    $('#sidebar-menu li').removeClass('active');
+                    $(this).addClass('active');
+                }
+            }
+        });
+        $('#menu_toggle').click(function () {
+            if ($('body').hasClass('nav-md')) {
+                $('body').removeClass('nav-md');
+                $('body').addClass('nav-sm');
+                $('.left_col').removeClass('scroll-view');
+                $('.left_col').removeAttr('style');
+                $('.sidebar-footer').hide();
+
+                if ($('#sidebar-menu li').hasClass('active')) {
+                    $('#sidebar-menu li.active').addClass('active-sm');
+                    $('#sidebar-menu li.active').removeClass('active');
+                }
+            } else {
+                $('body').removeClass('nav-sm');
+                $('body').addClass('nav-md');
+                $('.sidebar-footer').show();
+
+                if ($('#sidebar-menu li').hasClass('active-sm')) {
+                    $('#sidebar-menu li.active-sm').addClass('active');
+                    $('#sidebar-menu li.active-sm').removeClass('active-sm');
+                }
+            }
+        });
+    });
+    /** ******  /left menu  *********************** **/
+    /** ******  tooltip  *********************** **/
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    /** ******  /tooltip  *********************** **/
+    /** ******  progressbar  *********************** **/
+    if ($(".progress .progress-bar")[0]) {
+        $('.progress .progress-bar').progressbar(); // bootstrap 3
+    }
+    /** ******  /progressbar  *********************** **/
+    /** ******  switchery  *********************** **/
+    if ($(".js-switch")[0]) {
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        elems.forEach(function (html) {
+            var switchery = new Switchery(html, {
+                color: '#26B99A'
+            });
+        });
+    }
+    /** ******  /switcher  *********************** **/
+    /** ******  collapse panel  *********************** **/
+// Close ibox function
+    $('.close-link').click(function () {
+        var content = $(this).closest('div.x_panel');
+        content.remove();
+    });
+    // Collapse ibox function
+    $('.collapse-link').click(function () {
+        var x_panel = $(this).closest('div.x_panel');
+        var button = $(this).find('i');
+        var content = x_panel.find('div.x_content');
+        content.slideToggle(200);
+        (x_panel.hasClass('fixed_height_390') ? x_panel.toggleClass('').toggleClass('fixed_height_390') : '');
+        (x_panel.hasClass('fixed_height_320') ? x_panel.toggleClass('').toggleClass('fixed_height_320') : '');
+        button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+        setTimeout(function () {
+            x_panel.resize();
+        }, 50);
+    });
+    /** ******  /collapse panel  *********************** **/
+    /** ******  iswitch  *********************** **/
+    if ($("input.flat")[0]) {
+        $(document).ready(function () {
+            $('input.flat').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass: 'iradio_flat-green'
+            });
+        });
+    }
+    /** ******  /iswitch  *********************** **/
+    /** ******  star rating  *********************** **/
+// Starrr plugin (https://github.com/dobtco/starrr)
+    var __slice = [].slice;
+    (function ($, window) {
+        var Starrr;
+        Starrr = (function () {
+            Starrr.prototype.defaults = {
+                rating: void 0,
+                numStars: 5,
+                change: function (e, value) {
+                }
+            };
+            function Starrr($el, options) {
+                var i, _, _ref, _this = this;
+                this.options = $.extend({}, this.defaults, options);
+                this.$el = $el;
+                _ref = this.defaults;
+                for (i in _ref) {
+                    _ = _ref[i];
+                    if (this.$el.data(i) != null) {
+                        this.options[i] = this.$el.data(i);
+                    }
+                }
+                this.createStars();
+                this.syncRating();
+                this.$el.on('mouseover.starrr', 'span', function (e) {
+                    return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);
+                });
+                this.$el.on('mouseout.starrr', function () {
+                    return _this.syncRating();
+                });
+                this.$el.on('click.starrr', 'span', function (e) {
+                    return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);
+                });
+                this.$el.on('starrr:change', this.options.change);
+            }
+
+            Starrr.prototype.createStars = function () {
+                var _i, _ref, _results;
+
+                _results = [];
+                for (_i = 1, _ref = this.options.numStars; 1 <= _ref ? _i <= _ref : _i >= _ref; 1 <= _ref ? _i++ : _i--) {
+                    _results.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>"));
+                }
+                return _results;
+            };
+            Starrr.prototype.setRating = function (rating) {
+                if (this.options.rating === rating) {
+                    rating = void 0;
+                }
+                this.options.rating = rating;
+                this.syncRating();
+                return this.$el.trigger('starrr:change', rating);
+            };
+            Starrr.prototype.syncRating = function (rating) {
+                var i, _i, _j, _ref;
+
+                rating || (rating = this.options.rating);
+                if (rating) {
+                    for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+                        this.$el.find('span').eq(i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+                    }
+                }
+                if (rating && rating < 5) {
+                    for (i = _j = rating; rating <= 4 ? _j <= 4 : _j >= 4; i = rating <= 4 ? ++_j : --_j) {
+                        this.$el.find('span').eq(i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+                    }
+                }
+                if (!rating) {
+                    return this.$el.find('span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+                }
+            };
+            return Starrr;
+        })();
+        return $.fn.extend({
+            starrr: function () {
+                var args, option;
+                option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+                return this.each(function () {
+                    var data;
+
+                    data = $(this).data('star-rating');
+                    if (!data) {
+                        $(this).data('star-rating', (data = new Starrr($(this), option)));
+                    }
+                    if (typeof option === 'string') {
+                        return data[option].apply(data, args);
+                    }
+                });
+            }
+        });
+    })(window.jQuery, window);
+    $(function () {
+        return $(".starrr").starrr();
+    });
+    $(document).ready(function () {
+        $('#stars').on('starrr:change', function (e, value) {
+            $('#count').html(value);
+        });
+        $('#stars-existing').on('starrr:change', function (e, value) {
+            $('#count-existing').html(value);
+        });
+    });
+    /** ******  /star rating  *********************** **/
+    /** ******  table  *********************** **/
+    $('table input').on('ifChecked', function () {
+        check_state = '';
+        $(this).parent().parent().parent().addClass('selected');
+        countChecked();
+    });
+    $('table input').on('ifUnchecked', function () {
+        check_state = '';
+        $(this).parent().parent().parent().removeClass('selected');
+        countChecked();
+    });
+    var check_state = '';
+    $('.bulk_action input').on('ifChecked', function () {
+        check_state = '';
+        $(this).parent().parent().parent().addClass('selected');
+        countChecked();
+    });
+    $('.bulk_action input').on('ifUnchecked', function () {
+        check_state = '';
+        $(this).parent().parent().parent().removeClass('selected');
+        countChecked();
+    });
+    $('.bulk_action input#check-all').on('ifChecked', function () {
+        check_state = 'check_all';
+        countChecked();
+    });
+    $('.bulk_action input#check-all').on('ifUnchecked', function () {
+        check_state = 'uncheck_all';
+        countChecked();
+    });
+    function countChecked() {
+        if (check_state == 'check_all') {
+            $(".bulk_action input[name='table_records']").iCheck('check');
+        }
+        if (check_state == 'uncheck_all') {
+            $(".bulk_action input[name='table_records']").iCheck('uncheck');
+        }
+        var n = $(".bulk_action input[name='table_records']:checked").length;
+        if (n > 0) {
+            $('.column-title').hide();
+            $('.bulk-actions').show();
+            $('.action-cnt').html(n + ' Records Selected');
+        } else {
+            $('.column-title').show();
+            $('.bulk-actions').hide();
+        }
+    }
+    $(function () {
+        $(".expand").on("click", function () {
+            $(this).next().slideToggle(200);
+            $expand = $(this).find(">:first-child");
+
+            if ($expand.text() == "+") {
+                $expand.text("-");
+            } else {
+                $expand.text("+");
+            }
+        });
+    });
+    function message(title, text, type) {
+        new PNotify({
+            title: title ? title : '',
+            text: text ? text : '',
+            type: type ? type : '', // '', 'info', 'success', 'error'
+            buttons: {
+                sticker: false
+            }
+        });
+    }
+    $('.profile').on('onmouseover', function () {
+        if (!$(this).hasClass('active')) {
+            $(this).css('background-color', 'rgba(255, 255, 255, 0.5)');
+        }
+    });
+    $('.profile').on('onmouseout', function () {
+        if (!$(this).hasClass('active')) {
+            $(this).css('background-color', 'rgba(255, 255, 255, 0)');
+        }
+    });
+</script>
+<script src="/static/js/app.js"></script>
+<script src="/static/js/controllers.js"></script>
+<script src="/static/js/controllers/news.js"></script>
+<script src="/static/js/controllers/company.js"></script>
+<script src="/static/js/controllers/donate.js"></script>
+<script src="/static/js/controllers/quote.js"></script>
+<script src="/static/js/controllers/association.js"></script>
+
+</body>
+</html>

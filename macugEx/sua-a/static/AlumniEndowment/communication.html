@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <title>我的捐赠记录</title>
+        <link href="/static/AlumniEndowment/css/reset.css" rel="stylesheet">
+        <link href="/static/AlumniEndowment/css/endowment.css" rel="stylesheet">
+        <script src="/static/common/jquery.min.js"></script>
+        <script src="/static/common/common.js"></script>
+    </head>
+
+<body style="background: #d8d8d8;">
+    
+        
+   <div class="com-personal">
+        <p><img src="/static/AlumniEndowment/images/d2cf959.jpg" alt="" style="width:25%;"></p><p>刘小菲</p>
+        <p>您已捐赠爱心款<span>1000</span>元</p>
+   </div>
+   <div class="contain">
+        <p class="com-jz-title">捐赠记录</p>
+        <ul class="com-ul">
+            <li>
+                <img src="/static/AlumniEndowment/images/b0a2c99.png" alt="" style="width: 27%;">
+                <div class="com-li-jj">
+                    <p>汕头大学教育发展基金会</p>
+                    <p>&nbsp;已捐金额：<span>9999</span>元</p>
+                    <p>&nbsp;已捐次数： <span>2</span>  次<a href="#" class="jj-a">多捐一次</a></p>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <img src="/static/AlumniEndowment/images/b0a2c99.png" alt="" style="width: 27%;">
+                <div class="com-li-jj">
+                    <p>汕头大学教育发展基金会</p>
+                    <p>&nbsp;已捐金额：<span>9999</span>元</p>
+                    <p>&nbsp;已捐次数： <span>2</span>  次<a href="#" class="jj-a">多捐一次</a></p>
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+
+   <script>
+       $(document).ready(function () {
+           var userid = getUserId();
+           $.ajax({
+               type:"GET",
+               url:"/resource/users/"+userid+"/donates",
+               dataType : "json",
+               success:function (data) {
+                   if(data.code == 0){
+                       for(var category in data.donates){
+                           for(var i=0;i<data.donates[category].length;i++){
+
+                               var donate = data.donates[category][i];
+
+                               var name = donate.name;
+                               var amount = donate.amount;
+                               var acount = donate.acount;
+                               var imgURL = donate.image_url;
+
+                               var template = "<li><img src='"+imgURL+"'style='width: 27%;'><div class='com-li-jj'><p>"+name+"</p><p>&nbsp;已捐金额：<span>"+amount+"</span>元</p><p>&nbsp;已捐次数： <span>"+acount+"</span>  次<a href='#' class='jj-a'>多捐一次</a></p></div><div class='clear'></div></li>";
+
+                               $('.com-ul').append(template);
+                           }
+                       }
+                   }
+               }
+           })
+       })
+   </script>
+</body>
+</html>

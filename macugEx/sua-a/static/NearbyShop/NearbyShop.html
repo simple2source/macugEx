@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>附近校企</title>
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*附近校企*/
+        .list-contain a{display: block}
+        .list {border-bottom: 1px solid #c1c1c1;text-align: center;}
+        .list .img {height: 90px;width: 90px;padding: 15px;}
+        .list .info {padding-top: 15px;height: 85px;width: 190px;position: relative;}
+        .list .info h4{text-align: left}
+        .list .info .icon {width: 20px;position: absolute;bottom: 0;left: 0}
+        .list .info .address {position: absolute;bottom: 0;left: 14%;color: #a3a3a3}
+        .list .info .restaurant {position: absolute;bottom: 0;right: 0;border: 1px solid #a3a3a3;border-radius: 5px;width: 50%}
+
+        /*i6*/
+        @media screen and (min-width:321px)and (max-width: 376px) {
+            .list .info {width: 230px;}
+        }
+        /*i6p*/
+        @media screen and (min-width:377px)and (max-width: 415px) {
+            .list .info {width: 260px;}
+        }
+
+        /*校企详情*/
+        .detail .contain{padding:6%}
+        .detail  .contain .title{margin-bottom: 20px;}
+        .detail  .contain header p{font-size: 16px;margin-top: 10px;}
+        .detail  .contain header .introduction{font-size: 14px;width: 100%;padding-bottom: 10px;border-bottom:1px solid #c1c1c1}
+        .detail  .contain .middle p{font-size: 16px;margin-top: 10px;}
+        .detail  .contain .middle .name{font-size: 14px;}
+        .detail  .contain .middle img{margin: 10px 0;}
+        .detail  .contain .middle .food{border-bottom:1px solid #c1c1c1 }
+        .detail  .contain footer .phone{padding: 10px;border-bottom: 1px solid #c1c1c1}
+        .detail  .contain footer .phone p:first-child{margin-bottom: 10px;}
+        .detail  .contain footer .phone p:nth-child(2),.contain footer .phone p:nth-child(3){color: #6a6a6a;margin-left: 8%}
+        .detail  .contain footer .address{padding: 10px;}
+        .detail  .contain footer .address p:first-child{margin-bottom: 10px;}
+        .detail  .contain footer .address p:nth-child(2){color: #6a6a6a;margin-left: 8%}
+    </style>
+</head>
+<body>
+    <div class="list-contain">
+
+    </div>
+    <a href="javascript:void (0)">
+        <div class="list clearfix" >
+            <div class="img fl">
+                <img src="/static/NearbyShop/img/6.png" alt="">
+            </div>
+            <div class="info fl">
+                <h4>NiceHouse（花城大道)</h4>
+                <img src="/static/NearbyShop/img/icon13.png" alt="" class="icon">
+                <span class="address">天河区</span>
+                <span class="restaurant">西餐厅</span>
+            </div>
+        </div>
+    </a>
+<!--校企详情-->
+    <div class="detailWarp">
+
+    </div>
+
+<script>
+    $(document).ready(function () {
+        /*定义h4宽度*/
+        $(window).resize(function () {
+            var width = $("#info").width();
+            $(".info h4").width(width);
+        });
+
+        complete.then(function () {
+            wx.getLocation({
+                type: 'gcj02', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                success: function (res) {
+                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                    var speed = res.speed; // 速度，以米/每秒计
+                    var accuracy = res.accuracy; // 位置精度
+                    getNearCompany(latitude, longitude);
+                }
+            });
+        });
+
+        function getNearCompany(lat, lon) {
+            $.ajax({
+                type: "GET",
+                url: "/resource/company/near?lat=" + lat + '&lon=' + lon,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 0) {
+                        for (var i = 0; i < data.companys.length; i++) {
+
+                            var company = data.companys[i];
+
+                            var id = company.companyid;
+                            var imgURL = company.image_url;
+                            var area = company.area;
+                            var name = company.name;
+                            var type = company.type;
+                            var address = company.address;
+
+                            var template = "<a id="+id+"><div class='list clearfix'><div class='img fl'><img src='" + imgURL + "'></div><div class='info fl'><h4>" + name + "</h4><img src='/static/NearbyShop/img/icon13.png' class='icon'><span class='address'>" + area + "</span><span class='restaurant'>" + type + "</span></div></div></a>";
+                            $(".list-contain").append($(template));
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).on('click', 'div.list-contain a', function () {
+            var companyid = $(this).attr('id');
+            showDetail(companyid);
+        });
+
+
+        /*添加校企详情*/
+        function showDetail (id) {
+            $.ajax({
+                type: "GET",
+                url: "/resource/company/"+id,
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 0) {
+                        var name = data.name;
+                        var area = data.area;
+                        var address = data.address;
+                        var title = data.title;
+                        var content = data.content;
+
+                        $(".list-contain").hide();
+
+                         var template = "<div class='detail'><div class='contain clearfix'><div class='fr close'><img src='/static/NearbyShop/img/del.png' alt='关闭'></div><header><h3 class='title'><span id='name'>"+name+"</span></h3></header><div>"+content+"</div></div> </div>";
+                        $(".detailWarp").html(template);
+                        $(".close").click(function () {
+                            $(".detail").hide();
+                            $(".list-contain").show();
+                        })
+                    }
+                }
+
+            });
+
+        }
+
+    })
+</script>
+</body>
+</html>

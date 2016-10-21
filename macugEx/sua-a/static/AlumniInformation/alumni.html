@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <title>校友资讯</title>
+    <link href="/static/AlumniInformation/css/reset.css" rel="stylesheet">
+    <link href="/static/AlumniInformation/css/alumni-information.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        .alumn-ul li h2{width: 60%;white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;padding: 0}
+        .alumn-ul li span{ float: right;margin:2.5% 3% 0 0;font-size: 0.8em; color: #9c9c9c;}
+    </style>
+</head>
+
+<body>
+    <!--资讯列表-->
+    <div class="listContain">
+        <ul class="alumn-ul">
+            <li>
+                <h2 style='display: inline'>【广州】汕大校友会新年演唱会</h2>
+                <span class="fr"><i>2016-1-9</i></span>
+                <p class="alumn-p">1月9日，汕大校友会新年演唱会在中山纪念堂如期盛大举行，受到了各地校友的大力支持......</p>
+            </li>
+        </ul>
+    </div>
+    <!--内容详情-->
+    <div class="detailContain  clearfix">
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            //限制字符个数
+            $(".alumn-p").each(function(){
+                var maxwidth=30;
+                if($(this).text().length>maxwidth){
+                    $(this).text($(this).text().substring(0,maxwidth));
+                    $(this).html($(this).html()+'...');
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "/resource/news",
+                dataType : "json",
+                success: function(data){
+                    if(data.code == 0){
+                        for(var i = 0 ; i<data.news.length;i++){
+
+                            var eachNews = data.news[i];
+
+                            var id = eachNews._id;
+                            var title = eachNews.title;
+                            var content = eachNews.content;
+                            var timestamp = eachNews.timestamp;
+                            var time = getLocalTime(timestamp);
+
+                            var template = "<li id="+id+"><h2 style='display: inline'>"+title+"</h2><span class='fr'><i>"+time+"</i></span><p class='alumn-p'>"+content+"</p></li>";
+                            $(".alumn-ul").append($(template));
+                        }
+                    }
+                }
+            });
+
+            $(document).on('click', 'ul.alumn-ul li', function () {
+                var newsid = $(this).attr('id');
+                showDetail(newsid);
+            });
+
+            /*添加校友资讯详情*/
+            function showDetail (id) {
+                $.ajax({
+                    type: "GET",
+                    url: "/resource/news/"+id,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.code == 0) {
+                            var source = data.source;
+                            var title = data.title;
+                            var content = data.content;
+                            var timestamp = data.timestamp;
+                            var time = getLocalTime(timestamp);
+                            $(".listContain").hide();
+
+                            var template = "<div class='close fr' style='margin-right: 5px;'><img src='/static/AlumnusMeeting/img/del.png' alt='关闭'></div><h1 id='title' style='padding-left:0 '>"+title+"</h1><p class='alumni-small'><span style='padding: 0px 1em 0px 0.4em;color: #9c9c9c'><i class='timestamp'>"+time+"</i></span>"+source+"</p><div class='contain'>"+content+"</div>";
+                            $(".detailContain").html(template);
+                            $(".detailContain").show();
+
+                            $(".close").click(function () {
+                                $(".detailContain").hide();
+                                $(".listContain").show();
+                            })
+                        }
+                    }
+                });
+            }
+
+
+            /*时间戳转化为时间*/
+            function getLocalTime(SS) {return new Date(parseInt(SS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');}
+
+        });
+    </script>
+</body>
+</html>

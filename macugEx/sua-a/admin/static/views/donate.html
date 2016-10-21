@@ -1,0 +1,158 @@
+<div class="col-md-12 col-sm-12 col-xs-12" hidden></div>
+
+<div class="x_panel" data-ng-init="getRecords()">
+    <div class="x_title">
+        <h2>搜索:</h2>
+        <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-left top_search" style="height:10px;">
+            <div class="input-group">
+                <input class="form-control" placeholder="输入基金会名称" type="text" ng-model="foundationsName">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="searchRecords()" style="cursor: pointer;">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 form-group pull-left" style="height:10px;">
+            <select class="form-control" ng-change="change(num)" ng-model="num" ng-options="n for n in numlist">
+                <option value="" disabled>每页显示</option>
+            </select>
+        </div>
+        <ul class="nav navbar-right panel_toolbox">
+            <li class="pull-right">
+                <a class="close-link" style="cursor:pointer;" data-toggle="modal" data-target="#myModal" ng-click="loadQuill()"><i
+                        class="fa fa-users fa-2x"></i>添加捐赠项目</a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <!-- content starts here -->
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>名称</th>
+                <th>创建时间</th>
+                <th>捐赠份数</th>
+                <th>捐赠金额</th>
+                <th>基金会logo</th>
+                <th>编辑</th>
+                <th>删除</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="data in foundations" ng-model="foundations">
+                <td>{[data._id]}</td>
+                <td>{[data.name]}</td>
+                <td>{[data.create_time]}</td>
+                <td>{[data.acount]}</td>
+                <td>{[data.amount]}</td>
+                <td>{[data.image_url]}</td>
+                <td><a style="cursor: pointer;" data-toggle="modal" data-target="#editModal"
+                       ng-click="modify(data)"><i class="fa fa-edit"></i></a>
+                </td>
+                <td><a ng-show="data._id!='admin'" style="color: red;cursor: pointer;"
+                       ng-click="delete(data._id,data)">X</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="example_info" class="dataTables_info">总页数 : {[totalPage]}</div>
+        <div class="dataTables_paginate paging_full_numbers">
+            <a class="first paginate_button paginate_button_disabled" ng-show="pagelist.length && pagelist[0] != 1"
+               ng-click="jumpPage(1)">第一页</a>
+            <a class="previous paginate_button paginate_button_disabled" ng-show="current_page != 1"
+               ng-click="jumpPage(current_page-1)">上一页</a>
+            <span>
+                <a ng-repeat="page in pagelist"
+                   ng-class="{true:'paginate_active',false:'paginate_button'}[current_page==page]"
+                   ng-click="jumpPage(page)">{[page]}</a>
+            </span>
+            <a class="next paginate_button" ng-show="pagelist.length && current_page != totalPage"
+               ng-click="jumpPage(current_page+1)">下一页</a>
+            <a class="last paginate_button" ng-show="pagelist.length && pagelist[pagelist.length-1] != totalPage"
+               ng-click="jumpPage(totalPage)">最后一页</a>
+        </div>
+        <!-- content ends here -->
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">添加捐款项目</h4>
+            </div>
+            <div class="modal-body">
+                <form class="Form" action="/resource/foundation" method="post" enctype="multipart/form-data" >
+                    <div class="form-group">
+                        基金会名称: <input type="text" class="form-control" name="name">
+                        </span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        需要金额: <input type="text" class="form-control" name="need_money"> <br>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="content">捐款简介</label>
+                        <div id="donateEditor"></div>
+                        <input type="hidden" name="content"/>
+                        <input type="hidden"  name="amount" />
+                        <input type="hidden"  name="acount" />
+                        <input type="hidden"  name="create_time"/>
+                        <input type="hidden"  name="image_url"/>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary submitForm"  style="margin-bottom:0px;" ng-click="submit()" data-dismiss="modal">创建</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="editModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{[donate._id]}</h4>
+            </div>
+            <div class="modal-body">
+                <form class="Form" action="/resource/donate" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        名称: <input type="text" name="name" class="form-control" value={[donate.name]} ng-model="donate.name">
+                    </div>
+                     <div class="form-group">
+                        捐赠份数: <input type="text" name="acount" class="form-control" value={[donate.acount]} ng-model="donate.acount">
+                    </div>
+                     <div class="form-group">
+                        捐赠金额: <input type="text" name="amount" class="form-control" value={[donate.amount]} ng-model="donate.amount">
+                    </div>
+                   <div class="form-group" >
+                        <label for="content">描述修改</label>
+                       <div id="modifyDonate"></div>
+                       <input type="hidden" name="content" value="{[donate.content]}" ng-model="donate.content"/>
+                       <input type="hidden" name="need_money" value="{[donate.need_money]}" ng-model="donate.need_money"/>
+                       <input type="hidden" name="create_time" value="{[donate.create_time]}" ng-model="donate.create_time"/>
+                       <input type="hidden"  name="image_url" value="{[donate.image_url]}" ng-model="donate.image_url"/>
+
+
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary submitForm" style="margin-bottom:0px;" ng-click="modifySubmit()" data-dismiss="modal">修改</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>

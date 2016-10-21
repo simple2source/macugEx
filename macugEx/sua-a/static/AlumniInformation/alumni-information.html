@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <title>资讯详情</title>
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <link href="/static/AlumniInformation/css/reset.css" rel="stylesheet">
+    <link href="/static/AlumniInformation/css/alumni-information.css" rel="stylesheet">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+</head>
+
+<body>
+    <div class="contain  clearfix">
+        <div class='close fr' style="margin-right: 5px;"><img src='/static/AlumnusMeeting/img/del.png' alt='关闭'></div>
+        <h1 id="title" style="padding-left:0 ">【广州】汕大校友会新年演唱会</h1>
+        <p class="alumni-small"><span style="padding: 0px 1em 0px 0.4em;color: #9c9c9c"><i class="timestamp">2016-1-9</i></span>汕头大学校友会服务号</p>
+        <div class=""></div>
+    </div>
+
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "/resource/news/"+newid,
+            dataType : "json",
+            success: function(data){
+                if(data.code == 0){
+                        var title = data.title;
+                        var content = data.content;
+                        var timestamp = data.timestamp;
+                        $("#title").text(title);
+                        $("#content").text(content);
+                        $("#timestamp").text(timestamp);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

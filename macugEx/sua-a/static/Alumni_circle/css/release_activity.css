@@ -1,0 +1,56 @@
+*{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+}
+/*发布活动*/
+.activity_box{
+	width:99%;
+	/*padding-top:20px;*/
+	border:1px solid #ccc;
+	box-shadow:0 -5px 3px #ccc;
+	border-radius:8px;
+}
+.activity_box div{
+	width:99.5%;
+	height:45px;
+}
+h4{
+	width:99.5%;
+	height:45px;
+	line-height:45px;
+	color:#666;
+}
+input{
+	width:99.5%;
+	height:inherit;
+	border-radius:5px;
+	border:1px solid #ccc;
+	outline:none;
+}
+textarea{
+	width:99.5%;
+	height:150px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	outline:none;
+	resize:none;
+}
+/*发布活动按钮*/
+.release_activity{
+	width:99.5%;
+	height:50px;
+	margin-top:20px;
+}
+.release_activity a{
+	width:99.5%;
+	display:block;
+	height:inherit;
+	text-align:center;
+	line-height:50px;
+	color:#fff;
+	font-size:20px;
+	border-radius:8px;
+	background:rgba(204, 153, 51, 0.89);
+}

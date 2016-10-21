@@ -1,0 +1,32 @@
+
+
+p{
+    font-size: 1em;
+}
+.alumni-small{
+	padding: 0.9em 0px 0.5em 1.5em;
+
+}
+h1{margin-top: 3vw;font-size: 1.2em;padding-left: 1em;}
+.quo-small{
+	padding: 0.9em 1.2em 0.5em 2em;
+}
+.alumn-ul li{
+	width: 100%;
+	padding-bottom: 2vw;
+	border: 2px solid #d7d7d7;
+	border-radius: 1em;
+}
+.alumn-ul li a{
+	display: inline-block;
+	width: 100%;
+}
+.assic{height: 5vw;cursor:pointer;text-align: center;font-size: 1em;padding-bottom: 1vw;border-bottom: 1px solid #ccc;}
+
+h2{margin-top: 3vw;font-size: 1.1em;padding-left: 0.5em;}
+.alumn-p{padding: 1vw 1em 0px 0.5em;}
+
+.cg-ul li{padding: 1vw 2vw;border-bottom: 1px solid #d7d7d7;}
+.cg-ul img{width: 100%;border-radius: 5px;}
+.cg-data{text-align: right;padding-right: 8vw;font-size: 0.9em;color: #6a6a6a}
+h3{font-size:1em;}

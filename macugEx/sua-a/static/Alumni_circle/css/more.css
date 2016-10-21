@@ -1,0 +1,143 @@
+*{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+}
+/*校友活动*/
+.activity_box{
+	width:99%;
+	height:100%;
+	border:1px solid #ccc;
+	box-shadow:0 -5px 3px #ccc;
+	border-radius:8px;
+}	
+/*二级导航*/
+.navbar{
+	width:100%;
+	height:40px;
+	margin:auto;
+	border-bottom:1px solid #ccc;
+	justify-content: space-around;
+	display:-webkit-flex;
+}
+.navbar a{
+	display:inline-block;
+	width:80px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	color:#666;
+}
+
+/*养生圈*/
+.item_list{
+	width:592px;
+	height:100%;
+	margin:auto;
+}
+.item_list a{
+	display:inline-block;
+	width:150px;
+	height:150px;
+	line-height:150px;
+	text-align:center;
+	border:1px solid #ccc;
+	border-radius:50%; 
+	margin:20px;
+	color:#666;
+}
+@media screen and (min-width:320px){
+.item_list{
+	width:99%;
+	margin:auto;
+	margin-bottom:320px; 
+}
+.item_list a{
+	display:inline-block;
+	width:65px;
+	height:65px;
+	line-height:65px;
+	text-align:center;
+	border:1px solid #ccc;
+	border-radius:50%; 
+	margin:15px;
+	color:#666;
+	font-size:12px;
+}
+}
+@media screen and (min-width:360px){
+.item_list{
+	width:87%;
+	margin:auto;
+	margin-bottom:320px; 
+}
+}
+@media screen and (min-width:410px){
+.item_list{
+	width:76%;
+	margin:auto;
+	margin-bottom:320px; 
+}
+}
+@media screen and (min-width:600px){
+
+.item_list{
+	width:514px;
+	height:100%;
+	margin:auto;
+}
+.item_list a{
+	display:inline-block;
+	width:101px;
+	height:101px;
+	line-height:101px;
+	text-align:center;
+	border:1px solid #ccc;
+	border-radius:50%; 
+	margin:30px;
+	color:#666;
+	font-size:20px;
+}
+}
+@media screen and (min-width:760px){
+/*养生圈*/
+.item_list{
+	width:592px;
+	height:100%;
+	margin:auto;
+}
+.item_list a{
+	display:inline-block;
+	width:150px;
+	height:150px;
+	line-height:150px;
+	text-align:center;
+	border:1px solid #ccc;
+	border-radius:50%; 
+	margin:20px;
+	color:#666;
+	font-size:20px;
+}
+}
+@media screen and (min-width:1024px){
+
+/*养生圈*/
+.item_list{
+	width:592px;
+	height:100%;
+	margin:auto;
+}
+.item_list a{
+	display:inline-block;
+	width:150px;
+	height:150px;
+	line-height:150px;
+	text-align:center;
+	border:1px solid #ccc;
+	border-radius:50%; 
+	margin:20px;
+	color:#666;
+}
+
+}

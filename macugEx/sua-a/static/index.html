@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>汕头大学校友会</title>
+    <link rel="stylesheet" href="/static/common/swiper-3.3.1.min.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*base*/
+        *{margin: 0;padding: 0;}
+        html,body{font-family: "serif";color: black;background: #ffffff;font-family: 微软雅黑;}
+        ul,li ol,li{text-decoration: none;list-style-type: none}
+        a{text-decoration: none;outline:none;}
+        a:hover, a:visited, a:link, a:active {color: black}
+        img{border: none;}
+        .clearfix:after{content: "";  height: 0;  line-height: 0;  width: 0;  display: block;  clear: both;  visibility: hidden;}
+        .clearfix{zoom :1;}
+        .fl{float: left;}
+        .fr{float: right;}
+        /*轮播*/
+        .swiper-container{width: 100%;height: 36vh;}
+        .title{position: absolute;top: 0;z-index: 99;width: 100%;height: 36vh;}
+        .title .wrap{width: 100%;height: 100%;position: relative}
+        .title .wrap img{width: 100px;height: 100px;position: absolute;bottom: 0;left: 0}
+        .title .wrap h2{color: white;position: absolute;bottom: 18px;left: 100px;}
+        /*内容*/
+        .inner{padding: 10px;}
+        .inner div{width: 33%;height: 20vh;text-align: center;vertical-align: middle;border-radius: 50%;}
+        .inner div p{font-size: 18px}
+        .inner div img{margin-top: 20%;width: 45px;height: 40px}
+    </style>
+</head>
+<body>
+    <div class="swiper-container ">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background: url('/static/indexIMG/SDbackground1.png')no-repeat;background-size: 100% 100%"></div>
+            <div class="swiper-slide" style="background: url('/static/indexIMG/SDbackground2.jpg')no-repeat;background-size: 100% 100%"></div>
+            <div class="swiper-slide" style="background: url('/static/indexIMG/SDbackground1.png')no-repeat;background-size: 100% 100%"></div>
+        </div>
+    </div>
+    <div class="title">
+        <div class="wrap">
+            <img src="/static/indexIMG/SchoolBadge.svg" alt="">
+            <h2>汕头大学校友会</h2>
+        </div>
+    </div>
+    <div class="inner">
+        <a href="/static/AlumniCard/AlumniCard.html"><div class="d1 fl"><img src="/static/indexIMG/AlumniCard.png" alt=""><p>校友卡</p></div></a>
+        <a href="/static/NearbyShop/NearbyShop.html"><div class="d1 fl"><img src="/static/indexIMG/NearbyShop.png" alt=""><p>附近校企</p></div></a>
+        <a href="/static/Colleague/colleague.html"><div class="d1 fl"><img src="/static/indexIMG/Colleague.png" alt=""><p>汕大同行</p></div></a>
+        <a href="/static/NearbyCollege/NearbyCollege.html"><div class="d1 fl"><img src="/static/indexIMG/NearbyCollege.png" alt=""><p>附近校友</p></div></a>
+        <a href="/static/Alumni_circle/activity_circle.html"><div class="d1 fl"><img src="/static/indexIMG/Alumni_circle.png" alt=""><p>活动&圈子</p></div></a>
+        <a href="/static/ChenggeQuotation/cg-quotations.html"><div class="d1 fl"><img src="/static/indexIMG/ChenggeQuotation.png" alt=""><p>诚哥语录</p></div></a>
+        <a href="/static/AlumnusMeeting/AlumnusMeeting.html"><div class="d1 fl"><img src="/static/indexIMG/AlumnusMeeting.png" alt=""><p>联系校友会</p></div></a>
+        <a href="/static/AlumniInformation/alumni.html"><div class="d1 fl"><img src="/static/indexIMG/AlumniInformation.png" alt=""><p>校友资讯</p></div></a>
+        <a href="/static/AlumniEndowment/endowment.html"><div class="d1 fl"><img src="/static/indexIMG/AlumniEndowment.png" alt=""><p>校友捐赠</p></div></a>
+    </div>
+    <script src="/static/common/swiper-3.3.1.min.js"></script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true,
+            autoplay : 3000,
+            speed:1000
+        })
+    </script>
+</body>
+</html>

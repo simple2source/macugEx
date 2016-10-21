@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>汕大同行</title>
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*内容*/
+        .contain {
+            padding: 0 6%
+        }
+
+        .contain .inner {
+            width: 100%;
+            padding: 6% 0;
+            border-bottom: 1px solid #c1c1c1
+        }
+
+        .contain .inner img {
+            width: 80px;
+        }
+
+        .contain .inner .info {
+            padding: 0 10%
+        }
+
+        .contain .inner .info .name {
+            font-size: 16px
+        }
+
+        .contain .inner .info .job {
+            margin-left: 10px;
+            padding: 2px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            color: orange;
+        }
+
+        .contain .inner .info p:first-child {
+            margin-bottom: 15px;
+        }
+
+        .contain .inner .info > p:nth-child(2), .contain .inner .info > p:nth-child(3) {
+            color: #909090
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <a href="#">
+        <div class="inner clearfix">
+            <img src="/static/Colleague/img/u116.png" alt="" class="fl">
+            <div class="info fl">
+                <p><b class="name">黄小菲</b><span class="job">销售工程师</span></p>
+                <p>届数 :&nbsp;&nbsp;<span>08届</span></p>
+                <p>专业 :&nbsp;&nbsp;<span>工商管理</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var user = getUser();
+        var career = user['career'];
+        if (!career) {
+            alert('需要填写用户所在行业');
+            return false;
+        }
+        $.ajax({
+            type: "GET",
+            url: "/resource/career/" + career + "/peers",
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 0) {
+                    for (var i = 0; i < data.peers.length; i++) {
+                        var peer = data.peers[i];
+
+                        var id = peer.userid;
+                        var name = peer.name;
+                        var grade = peer.grade;
+                        var specialty = peer.specialty;
+                        var profession = peer.profession;
+
+                        var template = "<a href='#'><div class='inner clearfix'><img src='/static/Colleague/img/u116.png' class='fl'><div class='info fl'><p><b class='name'>" + name + "</b><span class='job'>" + profession + "</span></p><p>届数 :&nbsp;&nbsp;<span>" + grade + "</span></p><p>专业 :&nbsp;&nbsp;<span>" + specialty + "</span></p></div></div></a>";
+
+                        $('.contain').append(template);
+                    }
+                }
+            }
+        });
+    })
+</script>
+</body>
+</html>

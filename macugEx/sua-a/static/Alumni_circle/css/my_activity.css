@@ -1,0 +1,107 @@
+*{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	list-style:none;
+}
+/*我的活动*/
+.activity_box{
+	width:99%;
+	padding-top:20px;
+	border:1px solid #ccc;
+	box-shadow:0 -5px 3px #ccc;
+	border-radius:8px;
+}	
+/*二级导航*/
+nav{
+	width:99%;
+	height:40px;
+	margin:auto;
+	margin-bottom:6px;
+	justify-content: space-around;
+	display:-webkit-flex;
+}
+nav a{
+	display:inline-block;
+	width:90px;
+	height:40px;
+	border-bottom:2px solid #f00;
+	text-align: center;
+	line-height:40px;
+	font-size:24px;
+	color:#666;
+	margin:0 30px;
+}
+/*教育活动*/
+.education_activities{
+	width:99%;
+}
+.activity_first{
+	width:99%;
+	margin:auto;
+	height:100px;
+	border:1px solid #ccc;
+	border-radius:8px;
+}
+.activity_first strong{
+	color:#f00;
+	font-size:20px;
+}
+.activity_first h2 a{
+	font-size:20px;
+	color:#666;
+	font-weight:200;
+}
+
+.activity_first h2,p{
+	width:99%;
+	margin:auto;
+	margin-top:15px;
+}
+.activity_first p a{
+	color:#666;
+}
+.activity_first p span{
+	margin-left:100px;
+}
+@media screen and (min-width:360px){
+.activity_first .son{
+	width:90%;
+	margin:auto;
+}
+@media screen and (min-width:410px){
+.activity_first .son{
+	width:80%;
+	margin:auto;
+}
+@media screen and (min-width:600px){
+.activity_first .son{
+	width:53%;
+	margin:auto;
+}
+}
+@media screen and (min-width:760px){
+.activity_first{
+	width:99%;
+	height:150px;
+	border:1px solid #ccc;
+	border-radius:8px;
+}
+.activity_first h2 a{
+	font-size:24px;
+	color:#666;
+	font-weight:200;
+}
+
+.activity_first h2,p{
+	width:360px;
+	margin:auto;
+	margin-top:30px;
+}
+.activity_first p a{
+	color:#666;
+}
+.activity_first p span{
+	margin-left:150px;
+}
+}

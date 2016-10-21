@@ -1,0 +1,1414 @@
+2016-09-26 11:31:06,698 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 54, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 52, in top-level template code
+    {% for mid, submenu in menu['submenubar'].iteritems() %}
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 408, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'dict object' has no attribute 'submenubar'
+2016-09-26 11:31:13,007 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 54, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 52, in top-level template code
+    {% for mid, submenu in menu['submenubar'].iteritems() %}
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 408, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'dict object' has no attribute 'submenubar'
+2016-09-26 11:38:49,762 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 56, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 52, in top-level template code
+    {% for mid, submenu in menu['submenubar'].iteritems() %}
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 408, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'dict object' has no attribute 'submenubar'
+2016-09-26 11:38:52,945 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 56, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 52, in top-level template code
+    {% for mid, submenu in menu['submenubar'].iteritems() %}
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 408, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'dict object' has no attribute 'submenubar'
+2016-09-26 12:09:42,954 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 65, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 50, in top-level template code
+    <a><i class="fa {{menu['icon']}}"></i>{{menu['name']}}<span class="fa fa-chevron-down"></span></a>
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+2016-09-26 12:09:46,187 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 65, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 50, in top-level template code
+    <a><i class="fa {{menu['icon']}}"></i>{{menu['name']}}<span class="fa fa-chevron-down"></span></a>
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+2016-09-26 12:09:49,225 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 65, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 50, in top-level template code
+    <a><i class="fa {{menu['icon']}}"></i>{{menu['name']}}<span class="fa fa-chevron-down"></span></a>
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+2016-09-26 12:14:14,973 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 65, in index
+    return render_template('admin.html', menubar=menubar_list)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/SUAA/admin/templates/admin.html", line 50, in top-level template code
+    <a><i class="fa {{menu['icon']}}"></i>{{menu['name']}}<span class="fa fa-chevron-down"></span></a>
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+2016-09-27 09:21:05,464 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "admin.py", line 151, in <module>
+    main()
+  File "admin.py", line 146, in main
+    server.serve_forever()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/baseserver.py", line 347, in serve_forever
+    self.start()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/baseserver.py", line 291, in start
+    self.init_socket()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 1222, in init_socket
+    StreamServer.init_socket(self)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/server.py", line 80, in init_socket
+    self.socket = self.get_listener(self.address, self.backlog, self.family)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/server.py", line 91, in get_listener
+    return _tcp_listener(address, backlog=backlog, reuse_addr=self.reuse_addr, family=family)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/server.py", line 177, in _tcp_listener
+    sock.bind(address)
+  File "<string>", line 1, in bind
+error: [Errno 48] Address already in use: ('', 8081)
+2016-09-27 09:21:43,301 CRITICAL sys_exc_hook sys exception traceback
+Traceback (most recent call last):
+  File "admin.py", line 151, in <module>
+    main()
+  File "admin.py", line 146, in main
+    server.serve_forever()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/baseserver.py", line 347, in serve_forever
+    self.start()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/baseserver.py", line 291, in start
+    self.init_socket()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 1222, in init_socket
+    StreamServer.init_socket(self)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/server.py", line 80, in init_socket
+    self.socket = self.get_listener(self.address, self.backlog, self.family)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/server.py", line 91, in get_listener
+    return _tcp_listener(address, backlog=backlog, reuse_addr=self.reuse_addr, family=family)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/server.py", line 177, in _tcp_listener
+    sock.bind(address)
+  File "<string>", line 1, in bind
+error: [Errno 48] Address already in use: ('', 8081)
+2016-10-18 16:10:49,905 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 164, in login
+    user = db.admin.find_one({'_id': username, 'password': generate_password_hash(password, salt)})
+AttributeError: 'module' object has no attribute 'admin'
+2016-10-18 16:23:52,966 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 164, in login
+    user = db.admin.find_one({'_id': username, 'password': generate_password_hash(password, salt)})
+AttributeError: 'module' object has no attribute 'admin'
+2016-10-18 16:24:39,019 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 164, in login
+    user = db.admin.find_one({'_id': username, 'password': generate_password_hash(password, salt)})
+AttributeError: 'module' object has no attribute 'admin'
+2016-10-18 16:25:53,292 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 164, in login
+    user = db.admin.find_one({'_id': username, 'password': generate_password_hash(password, salt)})
+AttributeError: 'module' object has no attribute 'admin'
+2016-10-18 16:26:15,629 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 164, in login
+    user = db.admin.find_one({'_id': username, 'password': generate_password_hash(password, salt)})
+AttributeError: 'module' object has no attribute 'admin'
+2016-10-18 16:26:25,704 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 164, in login
+    user = db.admin.find_one({'_id': username, 'password': generate_password_hash(password, salt)})
+AttributeError: 'module' object has no attribute 'admin'
+2016-10-18 17:14:38,902 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 130, in profile
+    return dumps(user)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2016, 10, 18, 16, 51, 37, 575000) is not JSON serializable
+2016-10-18 17:29:23,090 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 130, in profile
+    session.clear()
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2016, 10, 18, 17, 25, 31, 540000) is not JSON serializable
+2016-10-18 18:11:45,530 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 130, in profile
+    session.clear()
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2016, 10, 18, 18, 5, 5, 425000) is not JSON serializable
+2016-10-18 18:18:51,550 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 130, in profile
+    session.clear()
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2016, 10, 18, 18, 5, 5, 425000) is not JSON serializable
+2016-10-18 18:19:09,752 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 130, in profile
+    session.clear()
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2016, 10, 18, 18, 19, 9, 239000) is not JSON serializable
+2016-10-18 18:23:02,410 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 130, in profile
+    session.clear()
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/fff/.pyenv/versions/2.7.12/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2016, 10, 18, 18, 23, 1, 885000) is not JSON serializable
+2016-10-19 11:27:14,914 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 137, in profile
+    if limit in request.params:
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'params'
+2016-10-19 11:28:28,998 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 137, in profile
+    if limit in request.params:
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'params'
+2016-10-19 11:31:28,015 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 137, in profile
+    if limit in request.params:
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'params'
+2016-10-19 11:33:23,234 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "admin.py", line 137, in profile
+    if limit in request.params:
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'params'
+2016-10-19 11:37:18,709 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 11:40:33,015 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 11:51:07,777 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 11:52:20,963 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 11:53:38,061 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 11:56:52,018 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 12:07:10,185 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 12:09:06,710 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 12:10:25,641 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 12:12:43,569 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 12:13:18,429 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 12:15:08,710 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+2016-10-19 14:08:35,768 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:18:14,243 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:18:53,186 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:19:18,363 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:20:02,335 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:21:23,270 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:22:21,166 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 14:58:31,044 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:05:58,672 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:07:54,455 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:09:18,397 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:10:12,974 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:11:07,245 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:12:03,951 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:12:57,389 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1731, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-10-19 15:13:47,163 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 15:14:33,014 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable
+2016-10-19 15:15:07,417 CRITICAL gevent_exc_hook gevent exception traceback
+Traceback (most recent call last):
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 884, in handle_one_response
+    self.run_application()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/gevent/pywsgi.py", line 870, in run_application
+    self.result = self.application(self.environ, self.start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 2000, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1991, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1567, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1642, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/flask/app.py", line 1746, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/wrappers.py", line 847, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/fff/.pyenv/versions/venv2712/lib/python2.7/site-packages/werkzeug/test.py", line 871, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'dict' object is not callable

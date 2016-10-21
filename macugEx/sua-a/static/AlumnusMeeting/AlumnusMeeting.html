@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>联系校友会</title>
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*base*/
+        *{margin: 0;padding: 0;}
+        html,body{font-family: "serif";color: black;background: #ffffff;font-family: 微软雅黑;}
+        ul,li ol,li{text-decoration: none;list-style-type: none}
+        a{text-decoration: none;outline:none;}
+        a:hover, a:visited, a:link, a:active {color: black}
+        img{border: none;}
+        .clearfix:after{content: "";  height: 0;  line-height: 0;  width: 0;  display: block;  clear: both;  visibility: hidden;}
+        .clearfix{zoom :1;}
+        .fl{float: left;}
+        .fr{float: right;}
+        /*校友会列表*/
+        .listContain{padding: 6%}
+        .listContain .hot p{margin-bottom: 10px;}
+        .listContain .hot .inner{width: 40%;margin: 10px 0 0 5%;padding: 5px;border: 1px solid #a3a3a3; border-radius: 5px;text-align: center}
+        .listContain .other{margin-top: 15px;}
+        .listContain .other .inner{width: 40%;margin: 10px 0 0 5%;padding: 5px;border: 1px solid #a3a3a3; border-radius: 5px;text-align: center}
+        .listContain .other .warp div>p{margin-left: 10%;margin-top: 10px;}
+        /*校友会详情*/
+        .detailContain{padding: 6%}
+        .detailContain .header h2{margin-bottom: 10px;}
+        .detailContain .header p{margin:20px 0 20px 0;}
+        .detailContain .contactWay{padding: 10px;}
+        .detailContain .contactWay p{margin-top: 20px;}
+        .detailContain .contactWay .QRCode{text-align: center;margin-top: 20px;}
+        .detailContain .contactWay .QRCode img{width: 50%}
+    </style>
+</head>
+<body>
+<!--校友会列表-->
+    <div class="listContain">
+        <div class="hot">
+            <p>热门校友会：</p>
+            <div class="listWarp clearfix">
+                <div class="inner fl" id="">汕头大学校友会</div>
+                <div class="inner fl">广州市校友会</div>
+            </div>
+        </div>
+        <!--<div class="other">
+            <p>各地校友: </p>
+            <div class="warp clearfix">
+                <div class="clearfix">
+                    <p>C</p>
+                    <div class="inner fl">汕头大学校友会</div>
+                </div>
+                <div class="clearfix">
+                    <p>G</p>
+                    <div class="inner fl">广州市校友会</div>
+                    <div class="inner fl">广州市校友会</div>
+                    <div class="inner fl">广州市校友会</div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+
+    <!--校友会详情-->
+    <div class="detailContain">
+
+        <div class="contactWay">
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+                $.ajax({
+                    type:"GET",
+                    url : "/resource/association/overview",
+                    dataType : "json",
+                    success : function (data) {
+                        if(data.code == 0){
+                            for(var category in data.associations){
+                                for(var i=0;i<data.associations[category].length;i++){
+
+                                    var association = data.associations[category][i];
+
+                                    var associationid = association.associationid;
+                                    var name = association.name;
+
+                                    var template = "<div class='inner fl' id="+associationid+">"+name+"</div>";
+                                    $(".listWarp").append($(template));
+                                }
+                            }
+                        }
+                    }
+
+                });
+
+            $(document).on('click', 'div.listWarp .inner', function () {
+                var associationid = $(this).attr('id');
+                showDetail(associationid);
+            });
+
+            /*添加校友会详情*/
+            function showDetail (id) {
+                $.ajax({
+                    type: "GET",
+                    url: "/resource/association/"+id,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.code == 0) {
+                            var name = data.name;
+                            var content = data.content;
+                            var type = data.type;
+
+                            $(".listContain").hide();
+
+                            var template = "<div class='header clearfix'><div class='close fr'><img src='/static/AlumnusMeeting/img/del.png' alt='关闭'></div><h2 id='name'>"+name+"</h2></div><div class='contactWay'>"+content+"</div>";
+                            $(".detailContain").html(template);
+                            $(".detailContain").show();
+
+                            $(".close").click(function () {
+                                $(".detailContain").hide();
+                                $(".listContain").show();
+                            })
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

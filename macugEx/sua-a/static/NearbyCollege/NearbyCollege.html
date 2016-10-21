@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>附近校友</title>
+    <link rel="stylesheet" href="/static/common/IvanBase.css">
+    <script src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+    <style>
+        /*内容*/
+        .contain{padding: 0 4%}
+        .contain .inner{width: 100%;padding: 2% 0;border-bottom:1px solid #c1c1c1;vertical-align: middle}
+        .contain .inner img{width: 25%;border-radius: 50%;margin-top: 5px;}
+        .contain .inner .info{padding-left:2%;width: 38%}
+        .contain .inner .info .name{font-size: 14px}
+        .contain .inner .info p:first-child{margin-bottom: 15px;}
+        .contain .inner .info>p:nth-child(2),.contain .inner .info>p:nth-child(3){color: #909090;font-size: 14px;}
+        .contain .inner .info>p:nth-child(3) span{display: inline-block;word-break:break-all;width: auto;}
+        .contain .inner .distance{height: 80px;line-height: 80px;width: 35%;vertical-align: middle}
+        .contain .inner .distance span{color: #6a6a6a}
+        .contain .inner .distance span:nth-child(2){margin-left: 10%;}
+        /*头像大小适应*/
+            /*i6*/
+        @media screen and  (min-width:370px) and (max-width:376px) {
+            .contain .inner img{width: 75px;}
+        }
+            /*i6p*/
+        @media screen and  (min-width:413px) and (max-width:420px) {
+            .contain .inner img{width: 80px;}
+        }
+            /*横屏*/
+        @media screen and  (min-width:560px) and (max-width:2024px) {
+            .contain .inner img{width: 85px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <a href="#">
+            <div class="inner clearfix">
+                <img src="/static/NearbyCollege/img/u116.png" class="fl img">
+                <div class="info fl">
+                    <p><b class="name">黄小菲</b></p>
+                    <p>届数 :&nbsp;&nbsp;<span>08届</span></p>
+                    <p>专业 :&nbsp;&nbsp;<span>数学</span></p>
+                </div>
+                <div class="distance fr">
+                    <span>1.2km</span>
+                    <span>2天</span>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="inner clearfix">
+                <img src="/static/NearbyCollege/img/u116.png" alt="" class="fl img">
+                <div class="info fl">
+                    <p><b class="name">黄小菲</b></p>
+                    <p>届数 :&nbsp;&nbsp;<span>08届</span></p>
+                    <p>专业 :&nbsp;&nbsp;<span>工商管理</span></p>
+                </div>
+                <div class="distance fr">
+                    <span>1.2km</span>
+                    <span>2天</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            /*定义img高度*/
+            $(window).resize(function () {
+                var width = $(".img").width();
+                $(".img").height(width);
+            });
+
+            complete.then(function () {
+                wx.getLocation({
+                    type: 'gcj02', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                    success: function (res) {
+                        var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                        var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                        var speed = res.speed; // 速度，以米/每秒计
+                        var accuracy = res.accuracy; // 位置精度
+                        getNearColleague(latitude, longitude);
+                    }
+                });
+            });
+
+            function getNearColleague(lat,lon) {
+                $.ajax({
+                    type: "GET",
+                    url: "/resource/alumnus/near?lat=" + lat + '&lon=' + lon,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.code == 0) {
+                            for (var i = 0; i < data.alumnus.length; i++) {
+                                var alumnu = data.alumnus[i];
+                                //var id = alumnu.userid;
+                                var imgURL = alumnu.image_url;
+                                var name = alumnu.name;
+                                var grade = alumnu.grade;
+                                var specialty = alumnu.specialty;
+                                var distance = alumnu.distance;
+                                var last_timestamp = alumnu.last_timestamp;/*最近一次时间戳*/
+                                var new_timestamp = Date.parse(new Date());/*当前时间戳*/
+                                     new_timestamp = new_timestamp/1000;
+                                var days =  Math.ceil((new_timestamp-last_timestamp)/3600);/*向上取整*/
+
+
+
+
+                                var template = "<a href='#'><div class='inner clearfix'><img src='" + imgURL + "' class='fl img'><div class='info fl'><p><b class='name'>" + name + "</b></p><p>届数 :&nbsp;&nbsp;<span>" + grade + "</span></p><p>专业 :&nbsp;&nbsp;<span>" + specialty + "</span></p></div><div class='distance fr'><span>" + distance + "km</span><span>" + days + "天</span></div></div></a>";
+                                $('.contain').append(template);
+                            }
+                        }
+                    }
+                });
+            }
+        })
+    </script>
+</body>
+</html>

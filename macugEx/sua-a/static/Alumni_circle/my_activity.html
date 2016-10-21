@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<title>我的活动</title>
+	<link rel="stylesheet" href="/static/Alumni_circle/css/my_activity.css"/>
+	<script type="text/javascript" src="/static/common/jquery.min.js"></script>
+    <script src="/static/common/common.js"></script>
+</head>
+<body>
+	<div class="activity_box">
+		<!-- 二级导航 -->
+		<nav>
+			<a id="navbar1" href="javascript:;">已发布</a>
+			<a id="navbar2" href="javascript:;">已报名</a>
+		</nav>
+	<!-- 教育活动 -->
+		<div class="education_activities" style="display:block;" id="big_box">
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">校友户外0-3岁亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">校友户外0-3岁亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">校友户外0-3岁亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">校友户外0-3岁亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 教育活动2  -->
+		<div class="education_activities" style="display:none;" id="big_box2">
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">广州校已亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">广州校已亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">广州校已亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+			<div class="activity_first">
+				<div class="son">
+					<h2><a href="/static/Alumni_circle/event_details.html">广州校已亲子教育活动</a></h2>
+					<p><a href="/static/Alumni_circle/event_details.html">黄小菲等<strong>8</strong>人已报名<span>2016-8-9</span></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#navbar1').click(function(){
+		$('#big_box').css('display','block');
+		$('#navbar1').css('border-bottom','2px solid #f00');
+		$('#navbar2').css('border-bottom','none');
+		$('#big_box2').css('display','none');
+	})
+		$('#navbar2').click(function(){
+		$('#big_box').css('display','none');
+		$('#navbar1').css('border-bottom','none');
+		$('#navbar2').css('border-bottom','2px solid #f00');
+		$('#big_box2').css('display','block');
+	})
+	</script>
+</body>
+</html>

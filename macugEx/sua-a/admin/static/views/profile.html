@@ -1,0 +1,60 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <ul class="nav navbar-right panel_toolbox">
+        <li class="pull-right">
+            <a class="close-link" style="cursor:pointer;" data-toggle="modal" data-target="#newModal"><i
+                    class="fa fa-users fa-2x"></i>添加用户</a>
+        </li>
+    </ul>
+    <div class="clearfix"></div>
+
+    <table class="table">
+        <tr>
+            <th>用户</th>
+            <th>创建时间</th>
+            <th>最后登录时间</th>
+            <th>密码修改</th>
+        </tr>
+        <tr ng-model="profile_data">
+            <td>{[profile_data._id]}</td>
+            <td>{[profile_data.maketime]}</td>
+            <td>{[profile_data.lasttime]}</td>
+            <td>
+                <input type="password" id="modify_password" name="password" >
+                <button type="button" class="btn btn-xs btn-info" ng-click="modify_name()">修改</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="newModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">添加用户</h4>
+            </div>
+            <div class="modal-body">
+                <form class="Form" method="post" enctype="multipart/form-data">
+                    <div class="input">
+                        <div class="login_icon"><img src="/static/images/login_user.png"/></div>
+                        <input type="text" class="form-control" name="username" placeholder="账户" required=""/>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="input">
+                        <div class="login_icon"><img src="/static/images/login_pass.png"/></div>
+                        <input type="password" class="form-control" name="password" placeholder="密码" required=""/>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"
+                        style="margin-bottom:0px;" ng-click="adminSubmit()" data-dismiss="modal">创建
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
