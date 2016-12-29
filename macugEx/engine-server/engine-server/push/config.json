@@ -1,7 +1,0 @@
-{
-  "com.test.app": {
-    "develop": "./cert/develop.pem",
-    "produce": "./cert/produce.pem",
-    "password": "1234"
-  }
-}

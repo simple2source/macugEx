@@ -1,8 +1,0 @@
-site_name: SUAA Document
-copyright: 'LK Team@2016'
-theme: mkdocs
-markdown_extensions:
-  - smarty
-pages:
-  - '接口文档': index.md
-  - '数据定义': db.md
