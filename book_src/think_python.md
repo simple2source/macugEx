@@ -49,3 +49,10 @@ it's about tornado
 
 #### celery
 - celery最佳实践 http://www.tuicool.com/articles/FBzMjqm 
+- 在 Flask 项目中使用 Celery http://www.tuicool.com/articles/UziEN3I
+
+#### yield 生成器
+－ http://blog.csdn.net/haskei/article/details/54908853
+
+#### 深入理解python 3.4 中async
+－ http://xidui.github.io/2015/10/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3python3-4-Asyncio%E5%BA%93%E4%B8%8ENode-js%E7%9A%84%E5%BC%82%E6%AD%A5IO%E6%9C%BA%E5%88%B6/?utm_source=tuicool&utm_medium=referral
