@@ -32,6 +32,7 @@ node_module
 node_module/*
 gulpack
 gulpack/*
+erl_crash.dump
 
 # Installer logs
 runapp
