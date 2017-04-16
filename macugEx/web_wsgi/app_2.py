@@ -149,7 +149,7 @@ class ApplicationV4(object):
         for method, pattern, handler in self.ROUTER:
             if method.upper() != request.method:
                 continue
-            m = pattern.match(pattern, request.path)
+            m = pattern.match(request.path)
             if m:
                 request.args = m.groups()
                 request.kwargs = _Vars(m.groupdict())
@@ -173,7 +173,7 @@ def hello(request):
     return response
 
 
-#  ----------v5 route,get\post\put--------->
+#  ----------v5 get\post\put in route,can use route and get to register--------->
 
 
 class ApplicationV5(object):
@@ -201,11 +201,12 @@ class ApplicationV5(object):
 
     def __call__(self, request):
         for pattern, handler, methods in self.ROUTER:
-            if isinstance(methods, (tuple, list, set)) and request.method not in methods:
-                continue
-            if isinstance(methods, str) and request.method != methods.upper():
-                continue
-            m = pattern.match(pattern, request.path)
+            if methods:
+                if isinstance(methods, (tuple, list, set)) and request.method not in methods:
+                    continue
+                if isinstance(methods, str) and request.method != methods.upper():
+                    continue
+            m = pattern.match(request.path)
             if m:
                 request.args = m.groups()
                 request.kwargs = _Vars(m.groupdict())

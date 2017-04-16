@@ -11,12 +11,19 @@ it's about flask
 - flask request content and application content
 - http://kronosapiens.github.io/blog/2014/08/14/understanding-contexts-in-flask.html
 - https://blog.tonyseek.com/post/the-context-mechanism-of-flask/
-- http://stackoverflow.com/questions/33126391/share-sqlalchemy-models-between-flask-and-other-apps
+- http://stackoverflow.com/questions/33126391/share-sqlalchemy-models-between-flask-and-other-appsflask 
+- 深入浅出 http://www.letiantian.me/2014-06-28-flask-restful-url/
 
 ###### Flask mega-tutorial
 - flask 应用导航和全文搜索
 - http://flask-mega-tutorial.readthedocs.io/zh_CN/latest/textsearch.html#id8
 － https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers-contacts-and-friends
+
+##### flask源码剖析
+- https://segmentfault.com/a/1190000008383197
+
+##### 
+- nginx+flask+wsgi http://stackoverflow.com/questions/219110/how-python-web-frameworks-wsgi-and-cgi-fit-together
 
 #### ORM
 it's about orm operation
@@ -56,3 +63,18 @@ it's about tornado
 
 #### 深入理解python 3.4 中async
 － http://xidui.github.io/2015/10/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3python3-4-Asyncio%E5%BA%93%E4%B8%8ENode-js%E7%9A%84%E5%BC%82%E6%AD%A5IO%E6%9C%BA%E5%88%B6/?utm_source=tuicool&utm_medium=referral
+
+#### 你真的会python吗
+- http://python.jobbole.com/86869/?utm_source=group.jobbole.com&utm_medium=relatedArticles
+
+#### logging模块配置
+- http://www.jianshu.com/p/feb86c06c4f4
+
+#### python cookbook并发编程
+- http://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p01_start_stop_thread.html
+
+#### python规范实践
+- https://gist.github.com/sloria/7001839
+
+#### python设计模式
+- https://neo1218.github.io/pattern/
