@@ -342,5 +342,66 @@ def log_init(name, filename):
   return logger
   
 if __name__ =='__main__':
-  print 'dsdsdsddd'
+    import smtplib
+    from email.mime.text import MIMEText
+    from email.header import Header
+
+    def SendEmail(fromAdd, toAdd, subject, attachfile, htmlText):
+
+        strFrom = fromAdd
+        strTo = toAdd
+        msg = MIMEText(htmlText)
+        msg['Content-Type'] = 'Text/HTML'
+        msg['Subject'] = Header(subject, 'gb2312')
+        msg['To'] = strTo
+        msg['From'] = strFrom
+
+        smtp = smtplib.SMTP('smtp.qq.com')
+        smtp.login('501257367@qq.com', 'password')
+        try:
+            smtp.sendmail(strFrom, strTo, msg.as_string())
+        finally:
+            smtp.close
+
+    content = '''<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<table cellpadding="0" cellspacing="0" width="650" border="0" align="center" bgcolor="#f3f3f2" height="30">
+<tr>
+<td style="color:#8c8b8b; font-size:12px;font-family:Arial, Helvetica, sans-serif;" align="right" height="30">为了您能够正常收到来自京东的优惠信息和会员邮件，请将<a href=" " target="_blank">customer_service@jd.com</a >添加进您的通讯录 </td>
+<td width="10" bgcolor="#f3f3f2"> </td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="650" border="0" align="center" bgcolor="#f3f3f2">
+<tr>
+<td width="10" bgcolor="#f3f3f2"> </td>
+<td bgcolor="#FFFFFF"></td>
+<td width="218" height="61" bgcolor="#FFFFFF" align="right"><a href="http://e.weibo.com/u/2510049230" target="_blank">< img src="http://img30.360buyimg.com/EdmPlatform/g12/M00/04/09/rBEQYVGMaI0IAAAAAAALcL-op8cAAA1iwIlfxUAAAuI914.png" border="0" style=" color:#005aa0; font-size:16px; font-weight:bold;"></a ></td>
+<td width="20" height="61" bgcolor="#FFFFFF" style="border-right:1px solid #b3b3b2;"> </td>
+<td width="10" height="61" bgcolor="#f3f3f2" style="border-left:1px solid #dededd;"> </td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="650" border="0" align="center" bgcolor="#f3f3f2">
+<tr>
+<td width="28" height="33" bgcolor="#cc0b0b">< img src="http://img30.360buyimg.com/EdmPlatform/g7/M03/07/0B/rBEHZVBbxd4IAAAAAAAB9gsyV9AAABcCQP__boAAAJG042.jpg" width="28" height="33" border="0"></td>
+<td width="28" height="33" bgcolor="#cc0b0b">< img src="http://img30.360buyimg.com/EdmPlatform/g7/M03/07/0B/rBEHZVBbxgMIAAAAAAAB_SFfd3UAABcDQP__VYAAAKq678.jpg" width="28" height="33" border="0"></td>
+</tr>
+</table>'''
+    # SendEmail("496350357@qq.com", "747106549@qq.com", "", "hello", content)
+    _user = "496350357@qq.com"
+    _pwd = "gqpaewkcnttwbhgb"
+    _to = "67669182@qq.com"
+
+    msg = MIMEText(content, _subtype='html')
+    msg['Content-Type'] = 'Text/HTML'
+    msg['Subject'] = Header("don't panic a test", 'gb2312')
+    msg["From"] = _user
+    msg["To"] = _to
+
+    try:
+        s = smtplib.SMTP_SSL("smtp.qq.com", 465)
+        s.login(_user, _pwd)
+        s.sendmail(_user, _to, msg.as_string())
+        s.quit()
+        print "Success!"
+    except smtplib.SMTPException, e:
+        print "Falied,%s" % e
   

@@ -78,3 +78,15 @@ it's about tornado
 
 #### python设计模式
 - https://neo1218.github.io/pattern/
+
+#### python多线程
+－ python线程笔记 http://mp.weixin.qq.com/s?__biz=MzA4MjEyNTA5Mw==&mid=2652565009&idx=2&sn=7b726d1b2a4da1f87b97f2a0115aae83&chksm=8464c65bb3134f4d1565fffe4ce7a182c89233322407c19b7094366ef76881ad137eaaa0e0d1&mpshare=1&scene=23&srcid=0515DEsL29w1T18xz1GxeDr5#rd
+
+#### python socket 实现一个http服务
+- http://blog.csdn.net/jnu_simba/article/details/27229693
+
+#### python how to 描述符
+- http://python.usyiyi.cn/translate/python_352/howto/descriptor.html
+
+#### wsgi,fastcai,cgi
+-https://stackoverflow.com/questions/219110/how-python-web-frameworks-wsgi-and-cgi-fit-together
