@@ -8,16 +8,21 @@ it's about python language
 #### Flask
 it's about flask
 ###### Flask content
+- http://exploreflask.com/en/latest/preface.html
 - flask request content and application content
 - http://kronosapiens.github.io/blog/2014/08/14/understanding-contexts-in-flask.html
 - https://blog.tonyseek.com/post/the-context-mechanism-of-flask/
 - http://stackoverflow.com/questions/33126391/share-sqlalchemy-models-between-flask-and-other-appsflask 
 - 深入浅出 http://www.letiantian.me/2014-06-28-flask-restful-url/
+- 应用上下文和请求上下文 http://www.bjhee.com/flask-ad1.html
 
 ###### Flask mega-tutorial
 - flask 应用导航和全文搜索
 - http://flask-mega-tutorial.readthedocs.io/zh_CN/latest/textsearch.html#id8
 － https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers-contacts-and-friends
+
+##### flask 应用最佳实践中文版
+- http://spacewander.github.io/explore-flask-zh/index.html
 
 ##### flask源码剖析
 - https://segmentfault.com/a/1190000008383197
@@ -49,6 +54,8 @@ it's about tornado
 
 #### 数据结构
 - https://facert.gitbooks.io/python-data-structure-cn/
+
+- 使用python解决数据结构和算法 http://interactivepython.org/courselib/static/pythonds/index.html
 
 #### 文件锁
 - http://tilde.town/~cristo/file-locking-in-python.html
@@ -90,3 +97,15 @@ it's about tornado
 
 #### wsgi,fastcai,cgi
 -https://stackoverflow.com/questions/219110/how-python-web-frameworks-wsgi-and-cgi-fit-together
+
+#### tornado introduction
+- https://mirrors.segmentfault.com/itt2zh/index.html
+
+#### use tornado to container
+- http://www.tornadoweb.org/en/stable/wsgi.html
+
+#### python metaclass
+- https://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python?rq=1
+
+#### full stack python
+- https://www.fullstackpython.com/wsgi-servers.html
