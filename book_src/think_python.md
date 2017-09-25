@@ -1,5 +1,7 @@
 ## python article
 
+#### 重要的资料与书籍
+- https://github.com/PacktPublishing
 #### self
 it's about python language
 ###### threading local
@@ -52,10 +54,12 @@ it's about django
 it's about tornado
 - 简易tornado框架封装 https://www.gitbook.com/book/andrew-liu/django-blog/details
 
-#### 数据结构
+#### 数据结构与算法
 - https://facert.gitbooks.io/python-data-structure-cn/
 
 - 使用python解决数据结构和算法 http://interactivepython.org/courselib/static/pythonds/index.html
+- 使用python实现数据结构和算法 https://github.com/PacktPublishing/Python-Data-Structures-and-Algorithms
+- 参考实现 http://javayhu.me/blog/2014/07/01/python-algorithms---c8-dynamic-programming/
 
 #### 文件锁
 - http://tilde.town/~cristo/file-locking-in-python.html
