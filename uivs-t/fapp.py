@@ -126,6 +126,7 @@ def html(u, name):
 
 @app.route('/t')
 def t():
+    print(session)
     return session['name']
 
 
@@ -198,7 +199,7 @@ if __name__ == '__main__':
     app.session_cookie_name = 'u300000'
     from datetime import timedelta
     # session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=5)
+    app.permanent_session_lifetime = timedelta(minutes=10)
     print(app.url_map)
     app.run(host='0.0.0.0', debug=True, port=3001, use_reloader=False)
     # use tornado container run flask app

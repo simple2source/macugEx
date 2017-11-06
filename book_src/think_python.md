@@ -1,5 +1,8 @@
 ## python article
 
+### python wiki
+- https://wiki.python.org/moin/TimeComplexity
+
 #### 重要的资料与书籍
 - https://github.com/PacktPublishing
 #### self
@@ -56,6 +59,7 @@ it's about tornado
 
 #### 数据结构与算法
 - https://facert.gitbooks.io/python-data-structure-cn/
+- http://www.tianjun.ml/essays/58
 
 - 使用python解决数据结构和算法 http://interactivepython.org/courselib/static/pythonds/index.html
 - 使用python实现数据结构和算法 https://github.com/PacktPublishing/Python-Data-Structures-and-Algorithms
