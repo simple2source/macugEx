@@ -117,3 +117,6 @@ it's about tornado
 
 #### full stack python
 - https://www.fullstackpython.com/wsgi-servers.html
+
+#### async and sync
+- https://www.aeracode.org/2018/02/19/python-async-simplified/
